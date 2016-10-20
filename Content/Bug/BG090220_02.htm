@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>オートメーションのLoadメソッドで指定した期間の実績を取得できない</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">問題の発生するバージョン</p>
+        <p>TimeTracker FX 2.5以降</p>
+        <p>&#160;</p>
+        <p class="title">問題が修正されるバージョン</p>
+        <p>TimeTracker FX 3.5</p>
+        <p>&#160;</p>
+        <p class="title">内容</p>
+        <p>TimeSheet.Application.Loadメソッドは、引数に指定した開始日から終了日の、期間の実績を取得するメソッドです。</p>
+        <p>しかし、TimeTracker FX 2.5以降では、指定した期間ではなく、タイムシートのオプション画面で設定している期間の実績を取得します。</p>
+        <p>
+            <img src="../Image/BG090220_02_1.png" alt="" width="400" height="326" border="0" class="img_1" />
+        </p>
+        <ul>
+            <li class="p_info_1">
+                <p>タイムシートのオプション画面は、タイムシートの［ツール］－［オプション］をクリックして表示します。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">回避方法</p>
+        <p>実績を取得する期間が、過去12ヶ月から未来3ヶ月までの間であれば、タイムシートのオプション画面で期間を設定してください。</p>
+        <ul>
+            <li class="p_warning_1">
+                <p class="warning">タイムシートのオプション画面で設定できる期間以外の実績は取得できません。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+    </body>
+</html>

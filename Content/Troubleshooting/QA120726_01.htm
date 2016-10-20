@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="TimeTracker FX起動時に、システムエラーが発生する" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中" MadCap:lastBlockDepth="4" MadCap:lastHeight="2568" MadCap:lastWidth="674">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>［Active Directory連携］機能を利用してTimeTracker FXにログインできない</title>
+        <link href="../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <h3>このトピックの対象</h3>
+        <p class="p2">TimeTracker FX 3.5以降</p>
+        <h2>症状</h2>
+        <p>［Active Directory連携］機能を有効に設定した環境で、TimeTracker FXにログインできない。</p>
+        <h2>原因と対策</h2>
+        <p>本現象が起こる可能性の高い原因を列挙します。<br xmlns="http://www.w3.org/1999/xhtml" />各原因が該当しないかご確認ください。<br xmlns="http://www.w3.org/1999/xhtml" />また、各原因についての対応方法は以降に記載しております。</p>
+        <ul type="disc">
+            <li class="p"><a href="#case1" xmlns="http://www.w3.org/1999/xhtml">［アカウントの編集］でログインするアカウントに［ADログイン名］が設定されていない</a>
+            </li>
+            <li class="p"><a href="#case2" xmlns="http://www.w3.org/1999/xhtml">指定したLDAPパスの組織（OU）以下にアカウント（ユーザー）が所属していない</a>
+            </li>
+            <li class="P"><a href="#case3" xmlns="http://www.w3.org/1999/xhtml">利用するクライアントPCから連携するActive Directory（ドメイン）環境へ接続できない</a>
+            </li>
+        </ul>
+        <p>これらの原因が該当しない場合は、<a href="../Inquiry/TB061101_01.htm" xmlns="http://www.w3.org/1999/xhtml">お問い合わせに必要な情報</a>を添えて、<a href="TB061101_02.htm" target="_blank" xmlns="http://www.w3.org/1999/xhtml">こちら</a>までご連絡ください。<br xmlns="http://www.w3.org/1999/xhtml" />［アカウントの編集］でログインするアカウントに［ADログイン名］が設定されていない<a name="case1" id="case1" xmlns="http://www.w3.org/1999/xhtml"></a></p>
+        <h4>【原因】</h4>
+        <p class="p3">［Active Directory連携］では、［アカウントの編集］で各アカウントに割り当てられる情報（［ADログイン名］）をもとに指定したActive Directory（ドメイン）と連携し、アカウントとパスワードの認証を行います。</p>
+        <p class="p3" xmlns="http://www.w3.org/1999/xhtml">このため、［アカウントの編集］で各アカウントに［ADログイン名］が設定されていない（空欄）場合、連携するドメインからユーザーを特定することができず、TimeTracker FXにログインすることができません。</p>
+        <p xmlns="" class="p3">
+            <img src="../Image/QA120726_01_1.png" class="img_1" xmlns="http://www.w3.org/1999/xhtml" />
+        </p>
+        <h4>【対策】</h4>
+        <p class="p3">［Active Directory連携］をご利用いただく場合には、Administratorツールの［アカウントの編集］で各アカウントに［ADログイン名］を設定してください。<br xmlns="http://www.w3.org/1999/xhtml" />［ADログイン名］の設定方法につきましては、<a href="../newdoc/AccountView.htm" target="_blank" xmlns="http://www.w3.org/1999/xhtml">こちら</a>をご確認ください。</p>
+        <p xmlns="" class="p3">
+            <img src="../Image/QA120726_01_2.png" class="img_1" xmlns="http://www.w3.org/1999/xhtml" />
+        </p>
+        <p class="p3">対策を行っても状況が改善されない場合は、次の原因をご確認ください。</p>
+        <h3>指定したLDAPパスの組織（OU）以下にアカウント（ユーザー）が所属していない<a name="case2" id="case2" xmlns="http://www.w3.org/1999/xhtml"></a></h3>
+        <h4>【原因】</h4>
+        <p class="p3">[Active Directory連携]で連携可能なアカウントは、指定した「LDAPパス」以下に所属するユーザーとなります。<br xmlns="http://www.w3.org/1999/xhtml" />このため、指定した組織（OU）以下に所属しないユーザーについては、アカウントとパスワードの認証を行えません。</p>
+        <p xmlns="" class="p3">
+            <img src="../Image/QA120726_01_3.png" class="img_1" xmlns="http://www.w3.org/1999/xhtml" />
+        </p>
+        <h4>【対策】</h4>
+        <p class="p3">TimeTracker FXを利用するユーザーが複数の組織（OU）に所属する場合には、対象となる組織（OU）が所属する共通の上位組織（OU）またはドメインの「LDAPパス」を指定してください。</p>
+        <p xmlns="" class="p3">
+            <img src="../Image/QA120726_01_4.png" class="img_1" xmlns="http://www.w3.org/1999/xhtml" />
+        </p>
+        <p class="p3" xmlns="http://www.w3.org/1999/xhtml">対策を行っても状況が改善されない場合は、次の原因をご確認ください。</p>
+        <h3>利用するクライアントPCから連携するActive Directory（ドメイン）環境へ接続できない<a name="case3" xmlns="http://www.w3.org/1999/xhtml"></a></h3>
+        <h4>【原因】</h4>
+        <p class="p3">TimeTracker FXの［Active Directory連携］では、TimeTracker FXのデータベースから連携に必要な情報を取得（下図①）し、クライアントPCから連携するActive Directory（ドメイン）環境へ接続して、アカウントとパスワードの認証（下図②）を行います。</p>
+        <p xmlns="" class="p3">
+            <img src="../Image/QA120726_01_5.png" class="img_1" xmlns="http://www.w3.org/1999/xhtml" />
+        </p>
+        <p class="p3" xmlns="http://www.w3.org/1999/xhtml">このため、クライアントPCが連携するActive Directory（ドメイン）環境に参加していない場合や接続ができない場合にはアカウントとパスワードの認証に失敗し、TimeTracker FXにログインすることができません。</p>
+        <p xmlns="" class="p3">
+            <img src="../Image/QA120726_01_6.png" class="img_1" xmlns="http://www.w3.org/1999/xhtml" />
+        </p>
+        <h4>【対策】</h4>
+        <p class="p3">［Active Directory連携］をご利用いただく場合には、連携するActive Directory（ドメイン）環境に参加または接続可能なクライアントPCをご利用ください。</p>
+        <p>&#160;</p>
+    </body>
+</html>

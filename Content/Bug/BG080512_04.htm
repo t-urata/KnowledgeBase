@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="バックアップしたデータベースが復元できない場合がある" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>バックアップしたデータベースが復元できない場合がある</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">問題の発生するバージョン</p>
+        <p>TimeTracker FX 2.5.0</p>
+        <p>&#160;</p>
+        <p class="title">問題が修正されるバージョン</p>
+        <p>未定</p>
+        <p>&#160;</p>
+        <p class="title">内容</p>
+        <p>TimeTracker FX 2.0.xで作成したデータベースをコピー後、コピー元となったデータベースが復元できなくなります。</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>TimeTracker FX 2.0.xで作成したデータベースを、Server Managerに登録する。</p>
+            </li>
+            <li class="p">
+                <p>登録したデータベースを、Server Managerの［データベースをコピーする］機能でコピーする。</p>
+            </li>
+            <li class="p">
+                <p>コピー元のデータベースを、Server Managerの［手動でバックアップする］機能でバックアップする。</p>
+            </li>
+            <li class="p">
+                <p>Server Managerの［データベースを復元する］機能でコピー元のデータベースを復元する。</p>
+            </li>
+            <li class="p">
+                <p>復元に失敗する。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p class="title">回避方法</p>
+        <p>以下の手順を行ってください。</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>Server Managerを起動します。</p>
+            </li>
+            <li class="p">
+                <p>データベースの管理で復元に失敗したデータベースを選択します。</p>
+            </li>
+            <li class="p">
+                <p>復元に失敗したデータベースの管理画面で［データベースの登録を解除する］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>データベースの登録を解除した後、Server Managerのホーム画面に戻ります。</p>
+            </li>
+            <li class="p">
+                <p>［既存のデータファイルをサーバに登録する］クリックし、復元に失敗したデータベースを再度登録し直します。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+    </body>
+</html>

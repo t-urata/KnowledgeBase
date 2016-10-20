@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="3758" MadCap:lastWidth="978">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>SQL Server 2008の管理アカウント（saアカウント）のパスワードを変更する</title>
+        <link href="../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>SQL Server 2008のsaアカウントのパスワードを忘れた時など、パスワードを変更する方法をご紹介します。<br xmlns="http://www.w3.org/1999/xhtml" />パスワードの変更は、「Microsoft SQL Server Management Studio」を使って強制的にパスワードを変更します。<br xmlns="http://www.w3.org/1999/xhtml" />※この変更方法は、SQL Server 2005も同様な操作で変更可能です。</p>
+        <h2>設定方法</h2>
+        <ol class="ol_1">
+            <li class="p">管理者権限を持つユーザでサーバマシンにログインします。<br xmlns="http://www.w3.org/1999/xhtml" />	本操作は、SQL Serverの「Windows認証」を利用してsaアカウントのパスワードを変更します。<br xmlns="http://www.w3.org/1999/xhtml" />サーバマシンのAdministratorまたはAdministratorsグループに所属するユーザにてログインします。&#160;</li>
+        </ol>
+        <ol start="2" class="ol_1">
+            <li class="p">Windows［スタート］メニュー－［すべてのプログラム］－［Microsoft SQL Server 2008］から「Microsoft 
+	 SQL Server Management Studio」を起動します。<br xmlns="http://www.w3.org/1999/xhtml" />TimeTracker FXに同梱される「SQL Server Express」には、「Microsoft 
+ SQL Server Management Studio」が含まれません。<br xmlns="http://www.w3.org/1999/xhtml" />Microsoft社のホームページより<a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=c243a5ae-4bd1-4e3d-94b8-5a0f62bf7796&amp;displayLang=ja" xmlns="http://www.w3.org/1999/xhtml">ダウンロード</a>いただき、別途インストールを行ってください。<br xmlns="http://www.w3.org/1999/xhtml" /></li>
+            <img src="../Image/KB101201_01_1.png" alt="" width="487" height="275" border="0" class="img_1" />
+            <li class="p">認証モードに「Windows認証」を選択し、SQL Serverへ接続します。<br /><br /><span class="span_8"><img src="../Image/KB101201_01_2.PNG" alt="" width="292" height="221" border="0" class="img_1" /></span></li>
+            <li class="p">［オブジェクトエクスプローラ］の［セキュリティ］－［ログイン］より「sa」アカウントを選択し、［プロパティ］を開きます。<br /><br /><img src="../Image/KB101201_01_3.png" alt="" width="518" height="336" border="0" class="img_1" /><br /><br /></li>
+            <li class="p">［全般］タブの［パスワード］に新しいパスワードを入力します。<br /><br /><img src="../Image/KB101201_01_4.PNG" alt="" width="430" height="196" border="0" class="img_1" /><br /><br /></li>
+            <li class="p">［状態］タブの［設定］情報を確認します。<br /></li>
+            <ul type="disc">
+                <li>データベースエンジンへの接続する権限　・・・　許可</li>
+                <li>ログイン　・・・　有効</li>
+            </ul>
+            <img src="../Image/KB101201_01_5.PNG" alt="" width="300" height="234" border="0" class="img_1" />
+            <li class="p">オブジェクトエクスプローラのデータベース名からSQL Serverのサービスを再起動します。<br /><br /><span class="span_8"><br /></span><img src="../Image/KB101201_01_6.png" alt="" width="588" height="502" border="0" class="img_1" /><br /><br /><br /></li>
+            <li class="p">「Microsoft SQL Server Management Studio」を再度起動します。<br /><br /></li>
+            <li class="p">認証モードに「SQL Server認証」を選択し、以下の情報にてSQL Serverへ接続し、パスワードが変更されたことを確認します。<br /></li>
+            <ul type="disc">
+                <li class="p">ログイン　　　・・・　sa</li>
+                <li class="p">パスワード　 ・・・　手順５にて設定した新しいパスワード</li>
+            </ul>
+            <br />
+            <img src="../Image/KB101201_01_7.PNG" alt="" width="292" height="221" border="0" class="img_1" />
+        </ol>
+        <br />&#160;<p class="p2">これで、パスワードの変更が完了です。</p><h2>SQL Serverの設定確認</h2><p>手順9の後、TimeTracker FXのデータベースを作成、登録を行う前に下記のSQL Serverの設定が正しく設定されていることをご確認下さい。</p><ol class="ol_1"><li class="p"><p><MadCap:toggler targets="t3">SQL Serverのサーバ認証が「 SQL Server認証とWindows認証」モードとなっていること</MadCap:toggler>	&#160;</p><div MadCap:targetName="t3"><p>［データベースのプロパティ］－［セキュリティ］から［サーバ認証］が「混合モード（SQL Server認証モードとWindows認証モード）」であることを確認する。</p><p><img src="../Image/KB101201_01_8.png" alt="" width="356" height="127" border="0" class="img_1" /></p><p>※変更した設定情報を適応するには、SQL Serverのサービスの再起動が必要です。</p></div></li><li class="p"><p><MadCap:toggler targets="t2">SQL Serverへのリモート接続が許可されていること</MadCap:toggler>	&#160;</p><div MadCap:targetName="t2"><p>［データベースのプロパティ］－［接続］から［リモートサーバ接続］の設定が許可されていることを確認する。</p><p><img src="../Image/KB101201_01_9.png" alt="" width="358" height="329" border="0" class="img_1" /></p><p>※変更した設定情報を適応するには、SQL Serverのサービスを再起動の必要です。</p></div></li><li class="p"><p><MadCap:toggler targets="t1">通信プロトコルのTCP/IPが有効になっていること</MadCap:toggler></p><div MadCap:targetName="t1"><p>［Microsoft SQL Server 200*］－［構成ツール］－［SQL Server 構成マネージャー］から<br xmlns="http://www.w3.org/1999/xhtml" />［SQL Server ネットワークの構成］－［TIMETRACKERFXのプロトコル］設定の［TCP/IP］が「有効」でことを確認する。</p><p><img src="../Image/KB101201_01_10.PNG" alt="" width="454" height="168" border="0" class="img_1" /></p><p>&#160;</p></div></li></ol></body>
+</html>

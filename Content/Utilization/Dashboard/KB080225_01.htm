@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="チュートリアル-推移モニタ" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中" MadCap:lastBlockDepth="5" MadCap:lastHeight="3857" MadCap:lastWidth="634">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>推移モニタ</title>
+        <link rel="StyleSheet" href="../../fx_support.css" type="text/css" />
+        <style type="text/css">
+body {
+	border-left-style: None;
+	border-right-style: None;
+	border-top-style: None;
+	border-bottom-style: None;
+}
+</style>
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>推移モニタの具体的な使用方法をご紹介します。</p>
+        <p>推移モニタは、ダッシュボード･アナリスト･プランナーから確認できます。</p>
+        <ul type="disc">
+            <li class="p_info_1">
+                <p>FX 3.1以降のバージョンでは、ダッシュボードの[推移モニタ]は[プロジェクト推移モニタ]という名称になります。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">はじめに</p>
+        <p>推移モニタは、プロジェクトやプロジェクト内の特定のタスク･タスクパッケージの、進捗･工数･コストなどの情報を週ごとに集計し、折れ線グラフで表示できます。</p>
+        <p>推移モニタはダッシュボード･アナリスト･プランナーで使用できます。それぞれ以下の特徴があります。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>ダッシュボード<br />	プロジェクトや注目する作業の推移を常に表示しておき、作業が順調であることを確認できます。</p>
+            </li>
+            <li class="p">
+                <p>アナリスト<br />	複数のプロジェクトを確認中に、気になったプロジェクトの作業状況の変化を確認できます。</p>
+            </li>
+            <li class="p">
+                <p>プランナー<br />	問題が発生したプロジェクトでどの部分がいつ頃から問題を生じていたか確認できます。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p>例として、［TimeTrackerの開発］プロジェクトとその中の［作成］タスクパッケージの、計画工数と実績工数をモニタする方法をご紹介します。</p>
+        <p>TimeTracker FXを4週間運用し、週単位の動向を確認します。</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>サーバタスクの設定を確認する</p>
+            </li>
+            <li class="p">
+                <p>推移モニタで確認する対象を公開ノードに設定する</p>
+            </li>
+            <li class="p">
+                <p>TimeTracker FXを運用する</p>
+            </li>
+            <li class="p">
+                <p>プランナーでプロジェクト全体の推移を確認する</p>
+            </li>
+            <li class="p">
+                <p>ダッシュボードで［作成］タスクパッケージの推移を確認する</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p class="title">サーバタスクの設定を確認する</p>
+        <p>推移データを作成するサーバタスクの設定を確認します。</p>
+        <p>本手順では、TimeTracker FX 2.5以降を例にして説明します。</p>
+        <p>TimeTracker FX 2.0.xをご利用の場合は、 <a href="http://www.timetracker.jp/support/documents/20/WebHelp/Administrator/OthersGroup/ServerTaskView/edit_servertask_setup.htm#servertask_state" target="_blank" id="a1">こちら</a>をご覧ください。</p>
+        <ol start="1">
+            <li class="p">
+                <p>Windows［スタート］-［すべてのプログラム］-［TimeTracker FX］-［Server 
+	 Manager］を選択します。</p>
+            </li>
+            <li class="p">
+                <p>Server Managerの［データベースの管理］の［サーバタスク処理状態］欄で運用中のデータベースが［稼働中］となっていることを確認します。</p>
+            </li>
+        </ol>
+        <ul>
+            <li class="p_info">
+                <p>［サーバタスク処理状態］が［停止中］となっている場合は<a href="../Administrator/KB071126_02.htm">こちら</a>をご覧ください</p>
+            </li>
+        </ul>
+        <ol start="3">
+            <li class="p">
+                <p>Server Managerの［データベースの管理］で運用中のデータベースの［データベース］欄をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>プロパティ画面で、［データベースの管理］の［サーバタスクを設定する］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［サーバタスク一覧］の［推移データの作成］の［次回実行日時］が翌日以降に設定されていることを確認します。<br /><img src="../../Image/KB080225_01_3.png" alt="" width="500" height="76" border="1" class="img_5" /></p>
+            </li>
+        </ol>
+        <ul>
+            <li class="p_info">
+                <p>設定した［次回実行日時］にサーバマシンが稼働していない場合は、サーバタスクが実行されません。</p>
+            </li>
+        </ul>
+        <ol start="6" class="ol_1">
+            <li class="p">
+                <p>集計する曜日と時間を変更する場合は、［曜日］･［時刻］欄のリストから任意の値を設定します。</p>
+            </li>
+            <li class="p">
+                <p>［データベースに反映］をクリックすると、変更後の［曜日］･［時刻］が登録されます。</p>
+            </li>
+        </ol>
+        <ul>
+            <li class="p_info">
+                <p>［次回実行日時］は、変更前の［次回実行日時］以降の日時に再設定されます。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">推移モニタで確認する対象を設定する</p>
+        <p>推移モニタで確認する対象を公開ノードに設定します。<br /><img src="../../Image/KB080225_01_1.png" alt="" width="412" height="160" border="1" class="img_5" /></p>
+        <ul>
+            <li class="p_info">
+                <p>公開ノードに設定する以前のデータは推移モニタに表示できません。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <ol start="1" class="ol_1">
+            <li class="p">
+                <p>Windows［スタート］-［すべてのプログラム］-［TimeTracker FX］-［TimeTracker 
+	 FX］を選択します。</p>
+            </li>
+            <li class="p">
+                <p>TimeTracker FXのログイン画面を表示しますので、ログインします。</p>
+            </li>
+            <li class="p">
+                <p>エクスプローラーバーから［プロジェクトを開く］を選択します。</p>
+            </li>
+            <li class="p">
+                <p>［プロジェクトを開く］ダイアログから、［TimeTrackerの開発］プロジェクトを選択します。</p>
+            </li>
+            <li class="p">
+                <p>［作成］タスクパッケージを選択します。</p>
+            </li>
+            <li class="p">
+                <p>［編集］メニューの［公開ノードに設定］を選択します。</p>
+            </li>
+        </ol>
+        <ul>
+            <li class="p_info">
+                <p>FX 3以降は、［スケジュール］メニューの［公開ノードに設定］を選択します。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">TimeTracker FXを運用する</p>
+        <p>TimeTracker FXを運用し、実績を入力します。</p>
+        <p>推移モニタのデータは毎週集計されます。</p>
+        <ul>
+            <li class="p_info">
+                <p>推移モニタのデータは、集計時点のデータです。後日追加した実績は、過去の推移データに反映されません。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>［ファイル］メニューの［サーバタスク］を選択します。</p>
+            </li>
+            <li class="p">
+                <p>［サーバタスク］ダイアログを表示しますので、［フィルタ条件］の［+］をクリックしてください。</p>
+            </li>
+        </ol>
+        <ul>
+            <li class="p_info">
+                <p>TimeTracker FX 2.0.xの場合は、手順3に進んでください。</p>
+            </li>
+        </ul>
+        <ol start="3" class="ol_1">
+            <li class="p">
+                <p>［処理済みの要求も表示］にチェックをいれます。</p>
+            </li>
+            <li class="p">
+                <p>［推移データの作成］が計画通り処理されていることを確認します。</p>
+            </li>
+        </ol>
+        <p class="p_2">
+            <img src="../../Image/KB080225_01_5.png" alt="" width="500" height="162" border="1" class="img_5" />
+        </p>
+        <p>&#160;</p>
+        <p class="title">プランナーで推移モニタを確認する</p>
+        <p>プランナーの［推移モニタ］ドッキングウィンドウで、推移モニタを表示します。</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>TimeTracker FXのプランナーを起動します。</p>
+            </li>
+            <li class="p">
+                <p>［TimeTrackerの開発］プロジェクトを開きます。</p>
+            </li>
+            <li class="p">
+                <p>［表示］メニューの［ドッキングウィンドウ］-［推移モニタ］を選択します。</p>
+            </li>
+            <li class="p">
+                <p>［推移モニタ］ドッキングウィンドウの［設定］ボタンをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［推移モニタの設定］ダイアログを表示しますので、［グラフの系列］タブをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>
+                    <MadCap:toggler targets="t7">［計画工数(H)］と［実績工数(H)］にチェックをいれます。</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t7">
+                    <p>
+                        <img src="../../Image/KB080225_01_6.png" alt="" width="262" height="192" border="1" class="img_5" />
+                    </p>
+                </div>
+            </li>
+            <li class="p">
+                <p>［推移モニタの設定］ダイアログの［グラフの軸］タブをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>
+                    <MadCap:toggler targets="t6">［表示データ数］を［4］に設定します。</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t6">
+                    <p>
+                        <img src="../../Image/KB080225_01_7.png" alt="" width="370" height="144" border="1" class="img_5" />
+                    </p>
+                </div>
+            </li>
+            <li class="p">
+                <p>［OK］ボタンをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>計画テーブルから公開ノードを選択します。</p>
+            </li>
+            <li class="p">
+                <p>［推移モニタ］ドッキングウィンドウの［更新］ボタンをクリックすると、推移モニタを表示します。</p>
+            </li>
+        </ol>
+        <p class="p_2">
+            <img src="../../Image/KB080225_01_8.png" alt="" width="432" height="138" border="1" class="img_5" />
+        </p>
+        <ul>
+            <li class="p_info">
+                <p>FX 3以降は、今週の集計を行っていない場合、推移データは前週の結果を表示します。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">ダッシュボードで推移モニタを確認する</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>TimeTracker FXを起動します。</p>
+            </li>
+            <li class="p">
+                <p>ダッシュボードのページエリアで、右クリックをします。</p>
+            </li>
+            <li class="p">
+                <p>［編集］メニューの［ウィジェットの追加］を選択します。</p>
+            </li>
+            <li class="p">
+                <p>［ウィジェットの選択］ダイアログで［推移モニタ］を選択します。</p>
+            </li>
+            <li class="p">
+                <p>［推移モニタの設定］ダイアログを表示しますので、［プロジェクト］タブをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>
+                    <MadCap:toggler targets="t5">［プロジェクトの選択］をクリックします。</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t5">
+                    <p>
+                        <img src="../../Image/KB080225_01_10.png" alt="" width="404" height="133" border="1" class="img_5" />
+                    </p>
+                </div>
+            </li>
+            <li class="p">
+                <p>［プロジェクトの一覧］ダイアログを表示しますので、［TimeTrackerの開発］プロジェクトを選択します。</p>
+            </li>
+            <li class="p">
+                <p>
+                    <MadCap:toggler targets="t4">［対象ノードを指定しない］からチェックをはずします。</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t4">
+                    <p>
+                        <img src="../../Image/KB080225_01_11.png" alt="" width="382" height="115" border="1" class="img_5" />
+                    </p>
+                </div>
+            </li>
+            <li class="p">
+                <p>［ノードの選択］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>
+                    <MadCap:toggler targets="t3">［ノードの選択］ダイアログを表示しますので、［作成］タスクパッケージを選択します。</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t3">
+                    <p>
+                        <img src="../../Image/KB080225_01_12.png" alt="" width="284" height="153" border="1" class="img_5" />
+                    </p>
+                </div>
+            </li>
+            <li class="p">
+                <p>［推移モニタの設定］ダイアログの［グラフの系列］タブをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>
+                    <MadCap:toggler targets="t2">［計画工数(H)］と［実績工数(H)］にチェックをいれます。</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t2">
+                    <p>
+                        <img src="../../Image/KB080225_01_13.png" alt="" width="364" height="184" border="1" class="img_5" />
+                    </p>
+                </div>
+            </li>
+            <li class="p">
+                <p>［推移モニタの設定］ダイアログの［グラフの軸］タブをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>
+                    <MadCap:toggler targets="t1">［表示データ数］を［4］に設定します。</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t1">
+                    <p>
+                        <img src="../../Image/KB080225_01_14.png" alt="" width="370" height="157" border="1" class="img_5" />
+                    </p>
+                </div>
+            </li>
+            <li class="p">
+                <p>［OK］ボタンをクリックすると、推移モニタを表示します。</p>
+            </li>
+        </ol>
+        <p class="p_2">
+            <img src="../../Image/KB080225_01_15.png" alt="" width="400" height="242" border="1" class="img_5" />
+        </p>
+        <ul>
+            <li class="p_info">
+                <p>FX 3以降は、今週の集計を行っていない場合、推移データは前週の結果を表示します。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+    </body>
+</html>

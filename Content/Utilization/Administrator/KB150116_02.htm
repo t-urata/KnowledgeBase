@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Default.Not Ready for Publish" MadCap:lastBlockDepth="8" MadCap:lastHeight="2378" MadCap:lastWidth="1502">
+    <head>
+        <link href="../../KBTable.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>権限範囲の活用例：役割によるアクセス範囲の設定</title>
+        <link href="../../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Article" />　権限範囲の活用例：役割によるアクセス範囲の設定</h1>
+        <table style="caption-side: top;margin-left: 0;margin-right: auto;mc-table-style: url('../../KBTable.css');width: 350px;" summary="Article number, product name and version number" class="TableStyle-KBTable" cellspacing="0">
+            <col style="width: 150px;" class="Column-Column1" />
+            <col style="width: 200px;" class="Column-Column1" />
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>更新日:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">2015/1/19</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象バージョン:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">3.0以降</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象エディション:</b>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">Professional / Standard</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <p>TimeTracker FXは組織を階層化して定義できます。(例えば「開発部」の「開発1課」など)<br />また、アカウントに設定する役割の権限は、組織の階層と関連付けることでアクセス可能なデータの範囲を定義できます。</p>
+        <p>本コンテンツでは具体的な事例として、役職に応じたアクセス範囲の限定方法を紹介します。権限を適用する範囲の検討で参考にしてください。</p>
+        <h3>本トピックの説明で使用する組織</h3>
+        <p>本トピックは以下の組織を想定して役割や権限範囲を説明します。</p>
+        <img src="../../Image/KB150116_02_1.png" />
+        <p>TimeTracker FXでは末端の組織を[組織]とし、上位組織のレベルを[組織Lv]で定義します。<br />上図では[組織Lv2]まで利用し、[組織]と組み合わせて3階層の構成を定義しています。<br />これに基づき、以下の事例を紹介します。</p>
+        <h3>&lt;事例&gt;</h3>
+        <table style="border-collapse: collapse;margin-left: 0;margin-right: auto;width: 600px;" class="contents_table">
+            <col />
+            <col />
+            <col />
+            <thead>
+                <tr>
+                    <th class="contents_table">No.</th>
+                    <th class="contents_table">役職</th>
+                    <th class="contents_table">用途</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: center;">1</td>
+                    <td><a href="#method1" target="_self">TimeTracker FXの管理者</a>
+                    </td>
+                    <td>TimeTracker FXの推進者やデータベース管理者など、全体の設定や運用を行う</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">2</td>
+                    <td><a href="#method2" target="_self">部門長</a>
+                    </td>
+                    <td>管轄部門全体のプロジェクトや部門内の担当者の情報を確認する</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">3</td>
+                    <td><a href="#method3" target="_self">プロジェクトマネージャ</a>
+                    </td>
+                    <td>自分が管理するプロジェクトや部内のプロジェクト情報を確認する</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">4</td>
+                    <td><a href="#method4" target="_self">リーダーやメンバー</a>
+                    </td>
+                    <td>自分が担当するプロジェクトの情報のみを確認する</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>1. TimeTracker FXの管理者<a name="method1"></a></h2>
+        <p>多くの場合、全体の設定や運用を行うため、組織に関係なく全体に対してアクセスすることが一般的に必要となります。</p>
+        <img src="../../Image/KB150116_02_2.png" />
+        <p>この場合、設定する[権限範囲]は「すべて」とすることで全体を指定することができます。</p>
+        <img src="../../Image/KB150116_02_3.png" />
+        <h2>2. 部門長<a name="method2"></a></h2>
+        <p>多くの場合、管轄部門全体のプロジェクトや部門内の担当者の情報を確認するため、管轄部門に属するすべての組織に対してアクセスすることが一般的に必要となります。</p>
+        <img src="../../Image/KB150116_02_4.png" />
+        <p>この場合、[権限範囲]は事業部の範囲に相当する「組織Lv1」に指定することで、部門に属する組織をすべて指定することができます。</p>
+        <img src="../../Image/KB150116_02_5.png" />
+        <h2>3. プロジェクトマネージャ<a name="method3"></a></h2>
+        <p>多くの場合、自分が管理するプロジェクトや所属する部のプロジェクトを確認するため、自部署に属するすべての組織に対してアクセスすることが一般的に必要となります。</p>
+        <img src="../../Image/KB150116_02_6.png" />
+        <p>この場合、設定する[権限範囲]は部の分割粒度に該当する「組織Lv2」とすることで部署に属する組織をすべて指定することができます。</p>
+        <img src="../../Image/KB150116_02_7.png" />
+        <h2>4. リーダーやメンバー<a name="method4"></a></h2>
+        <p>多くの場合、自分が参加するプロジェクトを確認するため、一般的に所属組織のみアクセスを可能にします。</p>
+        <img src="../../Image/KB150116_02_8.png" />
+        <p>この場合、設定する[権限範囲]は所属する組織に該当する「組織」とすることで所属組織のみを指定することができます。</p>
+        <img src="../../Image/KB150116_02_9.png" />
+        <p>&#160;</p>
+    </body>
+</html>

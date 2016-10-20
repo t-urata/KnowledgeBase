@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+        <meta http_equiv="Content-Language" content="ja-JP" /><title>工程ごとの工数バランスからプロジェクトの問題を見つける</title>
+        <link rel="StyleSheet" href="../../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>プランナーのカスタムレポートを利用して、プロジェクトの問題を見つける具体的な使用方法をご紹介します。</p>
+        <p>このトピックでは、各工程ごとの工数バランスを確認し、プロジェクトの問題発見に役立てます。</p>
+        <p>&#160;</p>
+        <p class="title">このトピックの対象</p>
+        <p>TimeTracker FX 2.7.0以降のProfessional Edition</p>
+        <p>&#160;</p>
+        <p class="title">はじめに</p>
+        <p>例として、サンプルデータのアクティビティカテゴリ1のアクティビティを以下のように設定しています。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>アクティビティカテゴリ1</p>
+            </li>
+            <li class="p" type="circle">
+                <p class="p_5">[工程]</p>
+            </li>
+            <li class="p">
+                <p>アクティビティ</p>
+            </li>
+            <li class="p" type="circle">
+                <p class="p_5">［仕様］</p>
+            </li>
+            <li class="p" type="circle">
+                <p class="p_5">［設計］</p>
+            </li>
+            <li class="p" type="circle">
+                <p class="p_5">［制作］</p>
+            </li>
+            <li class="p" type="circle">
+                <p class="p_5">［テスト］</p>
+            </li>
+            <li class="p" type="circle">
+                <p class="p_5">［管理］</p>
+            </li>
+            <li class="p" type="circle">
+                <p class="p_5">［不具合修正］</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">工数バランスを確認するカスタムレポートを作成する</p>
+        <p>実際に、工数のバランスを確認するカスタムレポートを作成してみましょう。</p>
+        <p>&#160;</p>
+        <p>【手順】</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>［クイックレポート］ドッキングウィンドウを右クリックし、コンテキストメニューから［新しいレポート］を選択します。</p>
+            </li>
+            <li class="p">［カスタムレポートの編集］ダイアログが表示されるので、新規レポートの名前を設定し、［工数の内訳］を選択します。</li>
+        </ol>
+        <p class="p_2">
+            <img src="../../Image/KB100120_02_1.png" alt="" width="419" height="322" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <ol start="3" class="ol_1">
+            <li class="p">［OK］をクリックすると、新しいクイックレポートが［クイックレポート］ドッキングウィンドウに追加・表示されます。</li>
+            <li class="p">［クイックレポート］ドッキングウィンドウを右クリックし、コンテキストメニューから［このレポートの設定］を選択します。<br />
+	［カスタムレポートの編集］ダイアログが表示されます。</li>
+        </ol>
+        <p class="p_2">
+            <img src="../../Image/KB100120_02_2.png" alt="" width="271" height="370" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <ol start="5" class="ol_1">
+            <li class="p">［追加］をクリックすると、［集計項目の設定］ダイアログが表示されるので、集計項目の条件となるキーワードを作成し［OK］をクリックします。</li>
+        </ol>
+        <p class="p_2">
+            <img src="../../Image/KB100120_02_3.png" alt="" width="726" height="377" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <ol start="6" class="ol_1">
+            <li class="p">作成した集計項目が、［カスタムレポートの編集］ダイアログに追加されます。</li>
+        </ol>
+        <p class="p_2">
+            <img src="../../Image/KB100120_02_4.png" alt="" width="355" height="445" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <ol start="7" class="ol_1">
+            <li class="p">手順5.～6.を参考にし、以下の集計項目を作成します。</li>
+        </ol>
+        <p class="p_2">
+            <img src="../../Image/KB100120_02_5.png" alt="" width="240" height="199" border="0" class="img_1" />
+        </p>
+        <ul>
+            <li class="p_warning">
+                <p class="p_5">実績が複数の条件に該当する場合、並び順で一番上の集計項目として集計されます。</p>
+            </li>
+        </ul>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">各集計項目で作成する条件は、以下の通りです。</p>
+            </li>
+        </ul>
+        <ul type="disc">
+            <li class="p">
+                <p class="p_2">
+                    <MadCap:toggler targets="t6">仕様</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t6">
+                    <p class="p_2">
+                        <img src="../../Image/KB100120_02_6.png" alt="" width="460" height="316" border="0" class="img_1" />
+                    </p>
+                </div>
+            </li>
+            <li class="p">
+                <p class="p_2">
+                    <MadCap:toggler targets="t5">設計</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t5">
+                    <p class="p_2">
+                        <img src="../../Image/KB100120_02_7.png" alt="" width="465" height="317" border="0" class="img_1" />
+                    </p>
+                </div>
+            </li>
+            <li class="p">
+                <p class="p_2">
+                    <MadCap:toggler targets="t4">製作</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t4">
+                    <p class="p_2">
+                        <img src="../../Image/KB100120_02_8.png" alt="" width="466" height="317" border="0" class="img_1" />
+                    </p>
+                </div>
+            </li>
+            <li class="p">
+                <p class="p_2">
+                    <MadCap:toggler targets="t3">テスト</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t3">
+                    <p class="p_2">
+                        <img src="../../Image/KB100120_02_9.png" alt="" width="468" height="319" border="0" class="img_1" />
+                    </p>
+                </div>
+            </li>
+            <li class="p">
+                <p class="p_2">
+                    <MadCap:toggler targets="t2">管理</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t2">
+                    <p class="p_2">
+                        <img src="../../Image/KB100120_02_10.png" alt="" width="468" height="319" border="0" class="img_1" />
+                    </p>
+                </div>
+            </li>
+            <li class="p">
+                <p class="p_2">
+                    <MadCap:toggler targets="t1">不具合修正</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t1">
+                    <p class="p_2">
+                        <img src="../../Image/KB100120_02_11.png" alt="" width="468" height="322" border="0" class="img_1" />
+                    </p>
+                </div>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p>以上で、仕事ぶりを確認するカスタムレポートの作成は完了です。</p>
+        <p>&#160;</p>
+        <p class="title">フェーズごとに工数バランスを確認する<a name="analyz1"></a></p>
+        <p>プランナーのクイックレポートは、選択したWBSごとに内容を表示・確認することができます。</p>
+        <p>表示内容を切り替え、フェーズごとの工数を確認してみましょう。</p>
+        <ul type="disc">
+            <li class="P-title">
+                <p class="title">プロジェクト全体</p>
+            </li>
+        </ul>
+        <ol class="ol_1">
+            <li class="p">
+                <p class="p_5">ルートノードを選択します。</p>
+            </li>
+        </ol>
+        <p class="p_4">
+            <img src="../../Image/KB100120_02_12.png" alt="" width="340" height="104" border="0" class="img_1" />
+        </p>
+        <ol start="2" class="ol_1">
+            <li class="p">
+                <p class="p_5">［クイックレポート］ドッキングウィンドウに、工程別に集計したプロジェクト全体の工数が表示されます。</p>
+            </li>
+        </ol>
+        <ul type="disc">
+            <li class="P-title">
+                <p class="title">フェーズごと</p>
+            </li>
+        </ul>
+        <ol class="ol_1">
+            <li class="p">
+                <p class="p_5">表示したいフェーズに該当する、WBSを選択します。</p>
+            </li>
+        </ol>
+        <p class="p_4">
+            <img src="../../Image/KB100120_02_13.png" alt="" width="340" height="104" border="0" class="img_1" />
+        </p>
+        <ol start="2" class="ol_1">
+            <li class="p">
+                <p class="p_5">［クイックレポート］ドッキングウィンドウに、選択したフェーズの、工程別に集計した工数が表示されます。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p>【確認内容】</p>
+        <p class="p_5">
+            <img src="../../Image/KB100120_02_14.png" alt="" width="612" height="480" border="0" class="img_1" />
+        </p>
+        <p class="p_5">プロジェクト全体では、工程ごとの工数にバランスが取れており問題が無いように見えます。</p>
+        <p class="p_5">しかしフェーズごとに確認したことにより、何らかの問題を抱えている可能性があることが見つかりました。</p>
+        <p>&#160;</p>
+        <p class="title">問題のあるフェーズの工数推移を確認する</p>
+        <p>前項［<a href="KB100120_02.htm#analyz1">フェーズごとに工数バランスを確認する</a>］見つかった、問題があるフェーズの詳細を確認してみましょう（この例では「要求A」）。</p>
+        <p>ここでは、［クイックレポート：詳細］ドッキングウィンドウで工数推移を確認し、どんな問題があったのかを分析します。</p>
+        <p>&#160;</p>
+        <p>【手順】</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>［クイックレポート：詳細］ドッキングウィンドウを表示します。</p>
+            </li>
+            <li class="p">問題があったフェーズのWBS（この例では「要求A」）を選択します。</li>
+            <li class="p">［クイックレポート：詳細］ドッキングで以下の設定をし、工数推移を表示します。</li>
+        </ol>
+        <ul type="disc">
+            <li class="p">
+                <p class="p_2">集計単位　：［週］を選択します。</p>
+            </li>
+            <li class="p">
+                <p class="p_2">計画・実績　：［実績］を選択します。</p>
+            </li>
+            <li class="p">
+                <p class="p_2">選択ノードの期間　：チェックを入れます。</p>
+            </li>
+            <li class="p">
+                <p class="p_2">チャート種別　：［折れ線］を選択します。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p>【確認内容】</p>
+        <p class="p_5">
+            <img src="../../Image/KB100120_02_15.png" alt="" width="714" height="315" border="0" class="img_1" />
+        </p>
+        <p class="p_5">「不具合修正」工数が、テスト実施中に増加していることが分かります。</p>
+        <p class="p_5">また「設計」工数が少ないことから、設計工程に十分な工数を投入できなかったことが、「不具合修正」工数が増加した原因ではないかと推察されます。</p>
+        <p>&#160;</p>
+        <p class="title">プロジェクトを振り返る</p>
+        <p>クイックレポートは、ドキュメント（PDFファイル）に出力することができます。ドキュメントにはクイックレポートに表示しているグラフを表示し、更に任意のコメントを記入することもできます。</p>
+        <p>出力したドキュメントをもとに、プロジェクトメンバで原因や改善策を検討しましょう。</p>
+        <p>&#160;</p>
+        <p>【手順】</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>［クイックレポート］ドッキングウィンドウを右クリックし、［ドキュメントに出力］を選択します。</p>
+            </li>
+            <li class="p">
+                <p>［保存先］を指定し、［コメント］を記載して［OK］ボタンをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［クイックレポート］ドッキングウィンドウ、および［クイックレポート：詳細］ドッキングウィンドウのグラフが、ドキュメントとして出力されます。</p>
+            </li>
+        </ol>
+        <p class="p_2">
+            <img src="../../Image/KB100120_02_16.png" alt="" width="475" height="614" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+    </body>
+</html>

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.完了" MadCap:lastBlockDepth="8" MadCap:lastHeight="568" MadCap:lastWidth="1206">
+    <head>
+        <link href="../../KBTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>サーバタスクによるデータ更新のタイミングと影響範囲</title>
+        <link href="../../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Article" />　サーバタスクによるデータ更新のタイミングと影響範囲</h1>
+        <table style="caption-side: top;margin-left: 0;margin-right: auto;mc-table-style: url('../../KBTable.css');width: 350px;" summary="Article number, product name and version number" class="TableStyle-KBTable" cellspacing="0">
+            <col style="width: 150px;" class="Column-Column1" />
+            <col style="width: 200px;" class="Column-Column1" />
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>更新日:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">2015/3/10</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象バージョン:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">3.5以降</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象エディション:</b>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">Professional / Standard</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>概要</h2>
+        <p>サーバタスクはサーバマシンで動作するデータ更新プログラムです。<br xmlns="http://www.w3.org/1999/xhtml" />プロジェクトの情報や作業実績を分析したデータを定期的に作成して、各機能に表示します。</p>
+        <h2>サーバタスクの実行周期と作成されるデータの用途</h2>
+        <table style="border-collapse: collapse;margin-left: 0;margin-right: auto;width: 650px;" class="contents_table">
+            <thead>
+                <tr>
+                    <th class="contents_table" rowspan="2">サーバタスク</th>
+                    <th class="contents_table" rowspan="2">実行周期<br xmlns="http://www.w3.org/1999/xhtml" />(スケジュール)</th>
+                    <th class="contents_table" colspan="2">用途</th>
+                </tr>
+                <tr>
+                    <th class="contents_table">ツール</th>
+                    <th class="contents_table">機能</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td rowspan="3">推移データの作成</td>
+                    <td rowspan="3">毎週</td>
+                    <td>ダッシュボード</td>
+                    <td>[プロジェクト推移モニタ]ウィジェット</td>
+                </tr>
+                <tr>
+                    <td>プランナー</td>
+                    <td>[推移モニタ]ドッキングウィンドウ</td>
+                </tr>
+                <tr>
+                    <td>アナリスト</td>
+                    <td>[ガントチャート]ビューの推移モニタ</td>
+                </tr>
+                <tr>
+                    <td rowspan="5">プロジェクト情報の更新</td>
+                    <td rowspan="5">毎日</td>
+                    <td>ダッシュボード</td>
+                    <td>
+						[プロジェクトモニタ]ウィジェット<ul><li xmlns="http://www.w3.org/1999/xhtml" class="p_information">				[工数入力定着率]は除く
+					</li></ul></td>
+                </tr>
+                <tr>
+                    <td rowspan="3">アナリスト</td>
+                    <td>[プロジェクトサマリ]ビュー</td>
+                </tr>
+                <tr>
+                    <td>[ガントチャート]ビュー</td>
+                </tr>
+                <tr>
+                    <td>
+						[マイルストーンサマリ]ビュー<ul><li xmlns="http://www.w3.org/1999/xhtml" class="p_information">公開マイルストーンのみ表示する場合
+					</li></ul></td>
+                </tr>
+                <tr>
+                    <td>ピボット分析</td>
+                    <td>[プロジェクトサマリ]テーブル</td>
+                </tr>
+                <tr>
+                    <td rowspan="4">リソース負荷データの更新</td>
+                    <td rowspan="4">[リアルタイム]<br xmlns="http://www.w3.org/1999/xhtml" />または[毎日]</td>
+                    <td>プランナー</td>
+                    <td>[リソース負荷]ドッキングウィンドウ</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">アナリスト</td>
+                    <td>[リソースサマリ]ビュー</td>
+                </tr>
+                <tr>
+                    <td>[リソース負荷]ビュー</td>
+                </tr>
+                <tr>
+                    <td>ピボット分析</td>
+                    <td>[リソース負荷]テーブル</td>
+                </tr>
+                <tr>
+                    <td>操作ログのファイル出力</td>
+                    <td>[リアルタイム]<br xmlns="http://www.w3.org/1999/xhtml" />または[毎日]</td>
+                    <td>Administrator</td>
+                    <td>[操作ログ]ビュー</td>
+                </tr>
+            </tbody>
+        </table>
+        <p xmlns="">&#160;</p>
+    </body>
+</html>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="V1シリーズからアップグレードするとき、コードのユニークチェックによりにエラーが発生することがある" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.完了" MadCap:conditions="Primary.非公開">
+    <head><title>V1シリーズからアップグレードするとき、コードのユニークチェックによりにエラーが発生する場合がある</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">内容</p>
+        <p>［データベース作成ウィザード］で、TimeTracker V1.xのデータベースをアップグレードすると次のエラーが発生する場合があります。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>
+                    <MadCap:toggler targets="t3">プロジェクトコードのユニークチェックが原因の場合</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t3">
+                    <p>
+                        <img src="../Image/RS070205_02_1.png" alt="" width="458" height="149" border="0" class="img_1" />
+                    </p>
+                </div>
+            </li>
+            <li class="p">
+                <p>
+                    <MadCap:toggler targets="t2">タスクコードのユニークチェックが原因の場合</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t2">
+                    <p>
+                        <img src="../Image/RS070205_02_2.png" alt="" width="458" height="233" border="0" class="img_1" />
+                    </p>
+                </div>
+            </li>
+        </ul>
+        <p>このエラーは、以下の条件のいずれかを満たす場合に発生します。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>Administratorで［プロジェクトコードがユニークになるようにシステムがチェックする］がチェックされており、空または重複するプロジェクトコードが設定されている</p>
+            </li>
+            <li class="p">
+                <p>Administratorで［タスクコードがユニークになるようにシステムがチェックする］がチェックされており、空または重複するタスクコードが設定されている</p>
+            </li>
+        </ul>
+        <ul>
+            <li class="p_info_1">
+                <p class="info">これらの条件は、ユニークチェック機能を利用せず運用したのち、ユニークチェック機能を有効にすると発生する可能性があります。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">回避方法</p>
+        <p>TimeTracker FX 2.0.2をご利用ください。</p>
+        <p>
+            <MadCap:toggler targets="t1">こちら</MadCap:toggler>の方法でも回避できます。</p>
+        <div MadCap:targetName="t1">
+            <ol class="ol_1">
+                <li class="p">
+                    <p>TimeTracker V1.xのAdministratorを起動します。</p>
+                </li>
+                <li class="p">
+                    <p>［その他］部ループの［システムの動作］をクリックします。</p>
+                </li>
+                <li class="p">
+                    <p>以下のチェックをはずします。</p>
+                    <ul>
+                        <li type="disc" class="p">
+                            <p>［プロジェクトコードがユニークになるようにシステムがチェックする］</p>
+                        </li>
+                        <li type="disc" class="p">
+                            <p>［タスクコードがユニークになるようにシステムがチェックする］</p>
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+            <ol start="4" class="ol_1">
+                <li class="p">
+                    <p>［データベースに反映］ボタンをクリックして、Administratorを終了します。</p>
+                </li>
+                <li class="p">
+                    <p>TimeTracker FXの［データベース作成ウィザード］を再度実行します。</p>
+                </li>
+                <li class="p_warning_1">
+                    <p class="warning">エラー発生時に設定した、ログインおよびデータベース名は利用できません。ご注意ください。</p>
+                </li>
+            </ol>
+            <p>&#160;</p>
+            <p>&#160;</p>
+        </div>
+        <p>&#160;</p>
+    </body>
+</html>

@@ -1,0 +1,163 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Default.Not Ready for Publish" MadCap:lastBlockDepth="9" MadCap:lastHeight="1388" MadCap:lastWidth="1443">
+    <head>
+        <link href="../../KBTable.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>プロジェクトのWBS情報を表示する</title>
+        <link href="../../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Article" />　プロジェクトのWBS情報を表示する</h1>
+        <table style="caption-side: top;margin-left: 0;margin-right: auto;mc-table-style: url('../../KBTable.css');width: 350px;" summary="Article number, product name and version number" class="TableStyle-KBTable" cellspacing="0">
+            <col style="width: 150px;" class="Column-Column1" />
+            <col style="width: 200px;" class="Column-Column1" />
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>更新日:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">2014/7/8</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象バージョン:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">3.6以降</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象エディション:</b>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">Professional / Standard</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>概要</h2>
+        <p>プロジェクトのWBS情報をブラウザ上に表示するツールです。<br />閲覧可能なプロジェクトの一覧を、まず表示します。<br />そこから対象のプロジェクトを指定して、WBS情報を表示できます。<br />続けて他のプロジェクトのWBSを表示することも可能です。</p>
+        <p>
+            <img src="../../Image/WA140708_01_1.png" />
+        </p>
+        <h2>使用プログラミング言語</h2>
+        <p>JavaScript</p>
+        <h2>利用方法</h2>
+        <p>本サンプルツールの利用方法は以下のとおりです。</p>
+        <ol>
+            <li>本ページ下部の［<a href="#download">ダウンロード</a>］より［WebAPI_GetWBSNodeData.zip］をクリックして、サンプルツールをダウンロードします。</li>
+            <li>ダウンロードした圧縮ファイルを、任意のフォルダへ展開します。</li>
+            <li>［WebAPI_WBS情報表示ツール_取扱説明書.pdf］を開きます。</li>
+            <li>［WebAPI_WBS情報表示ツール_取扱説明書.pdf］の「2.3 操作方法」の手順に従い操作します。</li>
+        </ol>
+        <h2>出力データ</h2>
+        <p>WBS情報の表示候補となるプロジェクトを表示する［プロジェクト情報一覧］画面では、以下の項目をブラウザ上に表示します。</p>
+        <table style="border-collapse: collapse;margin-left: 0;margin-right: auto;width: 600px;" class="contents_table">
+            <thead>
+                <tr>
+                    <th class="contents_table">No.</th>
+                    <th class="contents_table">フィールド</th>
+                    <th class="contents_table">補足</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: center;">1</td>
+                    <td>選択</td>
+                    <td>WBS情報の表示対象にするプロジェクトを選択するラジオボタンです。<br />ここで選択したプロジェクトのWBS情報を表示します。</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">2</td>
+                    <td>プロジェクトコード</td>
+                    <td>プロジェクトコードを表示します。</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">3</td>
+                    <td>プロジェクト名</td>
+                    <td>プロジェクトの名前を表示します。</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">4</td>
+                    <td>マネージャ名</td>
+                    <td>プロジェクトマネージャの名前を表示します。</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">5</td>
+                    <td>組織名</td>
+                    <td>プロジェクトマネージャが所属する組織の名前を表示します。</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">6</td>
+                    <td>開始日</td>
+                    <td>プロジェクトの開始日を「YYYY/MM/DD」の形式で表示します。</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">7</td>
+                    <td>終了日</td>
+                    <td>プロジェクトの終了日を「YYYY/MM/DD」の形式で表示します。</td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <p>プロジェクトを選択後に表示される［WBS情報表示］画面では、以下の項目をブラウザ上に表示します。</p>
+        <table style="border-collapse: collapse;margin-left: 0;margin-right: auto;width: 600px;" class="contents_table">
+            <thead>
+                <tr>
+                    <th class="contents_table">No.</th>
+                    <th class="contents_table">フィールド</th>
+                    <th class="contents_table">補足</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: center;">1</td>
+                    <td>アウトライン番号</td>
+                    <td>WBSの階層構造を示す番号です。
+					<ul><li class="p_information" style="font-size: 9pt;">［ノード種別］がプロジェクトの行は空白になります。</li></ul></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">2</td>
+                    <td>ノード名</td>
+                    <td>ノードの名前を表示します。</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">3</td>
+                    <td>開始日</td>
+                    <td>ノードの開始日を「YYYY/MM/DD」の形式で表示します。</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">4</td>
+                    <td>終了日</td>
+                    <td>ノードの終了日を「YYYY/MM/DD」の形式で表示します。</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">5</td>
+                    <td>進捗率</td>
+                    <td>ノードの進捗率を表示します。
+						<ul><li class="p_information" style="font-size: 9pt;">進捗率を管理しないノードは「N/A」で表示します。</li></ul></td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">6</td>
+                    <td>ノード種別</td>
+                    <td>ノードの種類を示す名称です。</td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>注意事項</h2>
+        <p>本サンプルツールでは、ログインユーザの権限によって制限があります。</p>
+        <ul>
+            <li>選択できるプロジェクトは、ログインユーザが閲覧できるプロジェクトの範囲となります。</li>
+        </ul>
+        <p>なお、サンプルツールのカスタマイズ方法についてのお問い合わせは受け付けておりません。<br />Web APIの詳細は、TimeTracker FX Web APIガイドをご覧ください。</p>
+        <h2>ダウンロード<a name="download"></a></h2>
+        <ul>
+            <li class="download"><a href="http://www.timetracker.jp/support/documents/KB/Content/downloads/sample/WebAPI_GetWBSNodeData.zip">WebAPI_GetWBSNodeData.zip</a> (287KB)</li>
+        </ul>
+        <p>&#160;</p>
+    </body>
+</html>

@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.完了" MadCap:lastBlockDepth="5" MadCap:lastHeight="2162" MadCap:lastWidth="634" MadCap:conditions="Primary.非公開">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title></title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>TimeTracker V1.xからの変更点を、簡単にご説明します。</p>
+        <p>&#160;</p>
+        <p class="title">同一プロジェクトに関する多重起動の制約</p>
+        <p>従来、Planner は同じ実行環境にて複数起動し、それぞれで同一プロジェクトを開けましたが、TimeTracker FXでは（編集・閲覧・バージョン指定を問わず）同一プロジェクトのプロジェクトは１つしか開けません。</p>
+        <p>&#160;</p>
+        <p class="title">［進捗レポート］機能の廃止</p>
+        <p>従来の、［プラグイン］－［進捗レポート］機能が、TimeTracker FXでは無くなっています。</p>
+        <p>代わりに、［進捗レポート］機能で表示していたアーンドバリュー管理手法における各種値を、TimeTracker FXでは、計画テーブル上の列として表示できます。</p>
+        <p>&#160;</p>
+        <p class="title">［プロジェクトのエクスポート］機能の廃止</p>
+        <p>従来の［プロジェクトのエクスポート］機能が、TimeTracker FXでは無くなっています。</p>
+        <p>［プロジェクトのエクスポート］機能が担っていた役割・用途は、新機能により実現できます。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>ガントチャートのイメージをExcel形式に変換、印刷する → <a href="../newdoc/print_preview.htm" target="_blank" xmlns="http://www.w3.org/1999/xhtml">ガントチャートの印刷＆プレビュー機能</a></p>
+            </li>
+            <li class="p">
+                <p>顧客・協力会社へプロジェクト計画を資料として配付する →<a href="../newdoc/projectexport.htm" target="_blank" xmlns="http://www.w3.org/1999/xhtml">プロジェクト計画のオフライン機能</a></p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">アーンドバリュー管理手法の用語の変更</p>
+        <p>従来、アーンドバリュー管理手法の価値基準として［工数］を採用していました。TimeTracker FXでは、［コスト］概念の導入に伴い、価値基準に［コスト］も加えています。</p>
+        <p>これにより、幾つかの値の名称が変更されています。例えば［工数指標］（工数ベースの指標）は、従来は［CPI］と表していましたが、TimeTracker 
+ FXでは［TPI］と表現が変更されています。</p>
+        <p>一方で［コスト指標］（コストベースの指標）が TimeTracker FXで新たにサポートされますが、こちらは［CPI］と表します。下表にまとめてありますので、ご確認の上ご注意下さい。</p>
+        <table cellspacing="0">
+            <col width="221" />
+            <col width="221" />
+            <col width="118" />
+            <tr valign="top">
+                <td width="221" bgcolor="#C0C0C0" class="td_1">
+                    <p>TimeTracker V1.xでの用語</p>
+                </td>
+                <td width="221" bgcolor="#C0C0C0" class="td_2">
+                    <p>TimeTracker FXでの用語</p>
+                </td>
+                <td width="118" bgcolor="#C0C0C0" class="td_2">
+                    <p>用語の意味</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td width="221" class="td_3">
+                    <p>EV (Earned Value)</p>
+                </td>
+                <td width="221" class="td_4">
+                    <p>ETV 
+		 (Earned Time Value）</p>
+                </td>
+                <td width="118" class="td_4">
+                    <p>獲得工数</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td width="221" class="td_3">
+                    <p>－</p>
+                </td>
+                <td width="221" class="td_4">
+                    <p>EV 
+		 (Earned Value)</p>
+                </td>
+                <td width="118" class="td_4">
+                    <p>獲得コスト</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td width="221" class="td_3">
+                    <p>CPI (Cost Performance Index)</p>
+                </td>
+                <td width="221" class="td_4">
+                    <p>TPI 
+		 (Time Performance Index）</p>
+                </td>
+                <td width="118" class="td_4">
+                    <p>工数指標</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td width="221" class="td_3">
+                    <p>－</p>
+                </td>
+                <td width="221" class="td_4">
+                    <p>CPI 
+		 (Cost Performance Index)</p>
+                </td>
+                <td width="118" class="td_4">
+                    <p>コスト指標</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td width="221" class="td_3">
+                    <p>CV (Cost Variance）</p>
+                </td>
+                <td width="221" class="td_4">
+                    <p>TV 
+		 (Time Variance）</p>
+                </td>
+                <td width="118" class="td_4">
+                    <p>遅れ工数</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td width="221" class="td_3">
+                    <p>－</p>
+                </td>
+                <td width="221" class="td_4">
+                    <p>CV 
+		 (Cost Variance)</p>
+                </td>
+                <td width="118" class="td_4">
+                    <p>遅れコスト</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td width="221" class="td_3">
+                    <p>CVAC (Cost Variance At Completion)</p>
+                </td>
+                <td width="221" class="td_4">
+                    <p>TVAC 
+		 (Time Variance At Completion）</p>
+                </td>
+                <td width="118" class="td_4">
+                    <p>最終予測遅れ工数</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td width="221" class="td_3">
+                    <p>－</p>
+                </td>
+                <td width="221" class="td_4">
+                    <p>CVAC 
+		 (Cost Variance At Completion）</p>
+                </td>
+                <td width="118" class="td_4">
+                    <p>最終予測遅れコスト</p>
+                </td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <p class="title">［デフォルトの進捗率計算方法］の設定UIの変更（Professional Edition のみ）</p>
+        <p>従来、プロジェクトの設定情報のうち［デフォルトの進捗率計算方法］の設定UIは、［プロジェクトの設定］ダイアログの［一般］ページ上に、ドロップダウンリストとして設けられていました。</p>
+        <p>TimeTracker FXProfessional Editionでは、同ダイアログの［フィールド定義］ページ上の［フィールド定義］グリッド中で設定するように変更されました。</p>
+        <p>操作方法については、<a href="../newdoc/setproject_fielddef.htm" target="_blank" xmlns="http://www.w3.org/1999/xhtml">こちら</a>をご覧ください。</p>
+        <p>&#160;</p>
+        <p class="title">計画ビュー上でのタスクパッケージへのWBSノード挿入位置の変更</p>
+        <p>従来、タスクパッケージを指定して新規ノードを挿入する際や、［テンプレート］からWBSノードをタスクパッケージへドラッグ＆ドロップする際に、挿入されたノードは対象タスクパッケージ内で一番下の位置に加えられていました。</p>
+        <p>TimeTracker FXでは、同様の操作をすると、対象タスクパッケージ内で一番上の位置に加えられるように変更されています。</p>
+        <p>&#160;</p>
+        <p class="title">計画ビュー上でのWBSノードの移動操作の変更</p>
+        <p>従来のWBSノードの移動操作は、マウスの左ボタンを押しながらのドラッグ＆ドロップで行っていました。</p>
+        <p>TimeTracker FXでは、マウスの右ボタンを押しながらのドラッグ＆ドロップに、変更されています。</p>
+        <p>&#160;</p>
+        <p class="title">テンプレートからのノードのコピーにおけるコピー対象属性の変更</p>
+        <p>従来、［テンプレート］で再利用元プロジェクトからWBSノードをドラッグ＆ドロップする際に、ノードの属性の値も共にコピーされていました。</p>
+        <p>TimeTracker FXでは、ドラッグ＆ドロップによりコピーされるノードの属性が、変更されています。</p>
+        <p>詳細は<a href="../newdoc/node_tamplate.htm" target="_blank" xmlns="http://www.w3.org/1999/xhtml">こちら</a>をご覧ください。</p>
+        <p>&#160;</p>
+        <p class="title">タスクパッケージ配下タスクへの一括リソース割り当て操作の変更</p>
+        <p>従来は、タスクパッケージに対してリソース割り当てを設定することで、孫ノード以下も含めた配下の全タスクに、設定が反映されていました。</p>
+        <p>TimeTracker FXで同等の設定を行うには、 <MadCap:toggler targets="t1">対象タスクパッケージとその配下の全ノードを選択する</MadCap:toggler>必要があります。</p>
+        <div MadCap:targetName="t1">
+            <ol class="ol_1">
+                <li class="p">
+                    <p>&#160;タスクパッケージを選択する。</p>
+                </li>
+                <li class="p">
+                    <p>&#160;右ボタンをクリックして、ポップアップメニューを表示する。</p>
+                </li>
+                <li class="p">
+                    <p>&#160;［ツリー］-［このノード以下を選択］を選択する。 → 対象タスクパッケージとその配下の全ノードが、選択された状態になります。</p>
+                </li>
+                <li class="p">
+                    <p>&#160;以降は、通常と同様の［リソース割り当て］操作を行う。</p>
+                </li>
+            </ol>
+        </div>
+        <p>&#160;</p>
+        <p class="title">テーブルの［列のカスタマイズ］機能の変更</p>
+        <p>従来［計画テーブル］で列の表示／非表示を設定していた［列のカスタマイズ］機能が、TimeTracker FXでは［ガントテーブル］の、［テーブルの編集］機能および［テーブルの定義］機能に変更されています。</p>
+        <p>ただし、列の表示／非表示の設定操作は、基本的に変わりありません。</p>
+        <p>&#160;</p>
+        <p class="title">［計画］・［タスク詳細］・［リソース詳細］各ビューの分離</p>
+        <p>従来、［計画］・［タスク詳細］・［リソース詳細］の各ビューは Planner のウィンドウ上で一体になっていました。</p>
+        <p>TimeTracker FXでは、［計画］・［タスク詳細］・［リソース詳細］はそれぞれ、統合されたアプリケーション内の個別の子ウィンドウとして、独立して表示されています。</p>
+        <p>また、［タスク詳細］・［リソース詳細］各ウィンドウは［計画］ウィンドウ上での操作により表示されますが、元となった［計画］ウィンドウを閉じても［タスク詳細］・［リソース詳細］各ウィンドウは自動で閉じられることはありません。</p>
+        <p>&#160;</p>
+        <p class="title">［ベースラインの表示］操作に伴うテーブルの関連列表示の変更</p>
+        <p>従来、［ベースラインの表示］操作でベースライン表示／非表示を切り替えた際には、［計画テーブル］上でベースライン関連データ（［BL開始日］・［BL終了日］・［BL計画工数］）の列が、連動して自動的に表示／非表示されていました。TimeTracker 
+ FXでは、この連動した表示／非表示は行われません。</p>
+        <p>ベースライン関連データ（［ベースラインの開始日］・［ベースラインの終了日］・［ベースラインの計画工数］）の表示／非表示は、ユーザ自身が［ガントテーブル］の［テーブルの編集］機能および［テーブルの定義］機能を用いて、適宜 
+ 設定してください。</p>
+        <p>ただし、［ガントチャート］上のベースライン関連データは、従来通り［ベースラインの表示］操作に連動して自動的に表示／非表示されます。</p>
+        <p>&#160;</p>
+        <p class="title">プロジェクトのベースラインを開いた際の実績データの変更</p>
+        <p>従来、［プロジェクトを開く］ダイアログで［バージョンを指定して開く］を選択して、プロジェクトのベースラインを開いた際に、計画データはベースライン保存時点の値でしたが、実績データは現在の最新の値が表示されていました。</p>
+        <p>TimeTracker FXでは、計画データだけでなく実績データも、ベースライン保存時点の値が表示されるようになっています。</p>
+        <p>&#160;</p>
+        <p class="title">プロジェクト計画の［エクスポート］・［インポート］機能の廃止</p>
+        <p>従来の、CSV形式ファイルを介したプロジェクト計画の［エクスポート］・［インポート］機能が、TimeTracker FXでは無くなっています。</p>
+        <p>代わりに TimeTracker FXでは、Microsoft Project プロジェクトファイルを直接・簡単にインポートできます。ただし 
+ Microsoft Project プロジェクトファイルへのエクスポートはできません。</p>
+        <p>&#160;</p>
+        <p class="title">プロジェクトの［公開するバージョン］設定の廃止</p>
+        <p>従来、［プロジェクトの設定］ダイアログの［バージョン］ページ上で、［公開するバージョン］として［現在のバージョンを公開］・［最新のベースラインを公開］のいずれかを選択できました。</p>
+        <p>TimeTracker FXでは、［公開するバージョン］の設定はできず、動作上は必ず［現在のバージョンを公開］するようになっています。</p>
+        <p>&#160;</p>
+    </body>
+</html>

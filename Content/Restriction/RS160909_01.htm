@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="882" MadCap:lastWidth="832">
+    <head>
+        <link href="../KBTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+        <meta http_equiv="Content-Language" content="ja-JP" /><title>　Web Editionのタイムシートで一部の実績が表示されない場合がある </title>
+        <link href="../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <table style="caption-side: top;margin-left: 0;margin-right: auto;mc-table-style: url('../KBTable.css');width: 350px;" summary="Article number, product name and version number" class="TableStyle-KBTable" cellspacing="0" xmlns="http://www.w3.org/1999/xhtml">
+            <col style="width: 150px;" class="Column-Column1" />
+            <col style="width: 200px;" class="Column-Column1" />
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable" xmlns="http://www.w3.org/1999/xhtml"><b>更新日:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable" xmlns="http://www.w3.org/1999/xhtml">2016/9/9</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象バージョン:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">3.7以降</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象エディション:</b>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">Professional / Standard </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2 xmlns="http://www.w3.org/1999/xhtml">現象</h2>
+        <p>Web Editionでタイムシートを開いた時に一部の実績データが表示されない。</p>
+        <h2 xmlns="http://www.w3.org/1999/xhtml">発生条件</h2>
+        <p>一週間の実績データが100件を超えた場合に発生します。<br />タイムシートの表示単位を「日」に変更しても、当該週の実績データ件数が100を超えると発生します。</p>
+        <h2 xmlns="http://www.w3.org/1999/xhtml">回避方法</h2>
+        <p>Web Editionのサーバ上で定義されているデータ取得の上限数を、一週間の実績データ数を考慮した値に変更します。上限数を無制限にする場合は0を設定します。<br />変更方法は以下のとおりです。</p>
+        <p class="p2" style="margin-bottom: 4pt;">【変更方法】</p>
+        <p class="p2" style="margin-bottom: 4pt;">Web APIのインストールフォルダ直下にあるファイル「Web.config」をテキストエディタで開き、以下の赤字の箇所を修正して保存します。</p>
+        <p class="p3" style="margin-bottom: 4pt;">----------------------------------------------------------------------</p>
+        <p class="p4" style="margin-bottom: 4pt;">&lt;!-- APIによるレコード取得件数の設定値 --&gt;<br xmlns="http://www.w3.org/1999/xhtml" />&lt;add key="DefaultLimit" value="<span style="color: #ff0000;" xmlns="http://www.w3.org/1999/xhtml">100</span>" /&gt;</p>
+        <p class="p3" xmlns="http://www.w3.org/1999/xhtml">----------------------------------------------------------------------</p>
+        <p class="p3" xmlns="http://www.w3.org/1999/xhtml" style="margin-bottom: 4pt;">Web APIのインストールフォルダ名はIISマネージャーで確認することができます。</p>
+        <p class="p3" xmlns="">
+            <img src="../Image/RS160909_01_1.png" class="img_1" xmlns="http://www.w3.org/1999/xhtml" />
+        </p>
+        <p class="p3" style="margin-bottom: 4pt;">上記画面の場合、Web APIのインストールフォルダパスは以下になります。</p>
+        <p class="p4">C:\inetpub\wwwroot\TimeTrackerFXWebAPI3.9.0</p>
+    </body>
+</html>

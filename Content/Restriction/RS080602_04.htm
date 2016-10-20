@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="Server_Managerから、データベースのデータファイルを格納したフォルダに移動できない場合がある" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中">
+    <head><title>Server Managerから、データベースのデータファイルを格納したフォルダに移動できない場合がある</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">内容</p>
+        <p>データベースのデータファイルを格納したフォルダ名に、［ . ］と［ = ］を含む場合、Server Managerのプロパティ画面から、データファイルを格納したフォルダが開けません。</p>
+        <p>開けない場合の動作については、OSによって異なります。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>Windows Vista：ログインユーザのドキュメントフォルダまたは、コンピュータフォルダ</p>
+            </li>
+            <li class="p">
+                <p>Windows Vista以外のOS：エラーダイアログを表示</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>［ . ］と［ = ］を含むフォルダ名のフォルダを作成する<br />
+（例えば、C:\Data\!#$%&amp;()=-~^`@{[+;}],._ ）</p>
+            </li>
+            <li class="p">
+                <p>作成したフォルダ内に、TimeTracker FXのデータベースを作成する</p>
+            </li>
+            <li class="p">
+                <p>Server Managerで該当データベースのプロパティ画面を表示する</p>
+            </li>
+            <li class="p">
+                <p>データファイルのリンクをクリックする</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p class="title">回避方法</p>
+        <p>データベースのデータファイルを格納するフォルダ名を、［ . ］と［ = ］を含む名前にしないでください。</p>
+        <p>&#160;</p>
+    </body>
+</html>

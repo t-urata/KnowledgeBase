@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="Excel連携でTimeTracker FXからインポートできるセルの条件はありますか" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中" MadCap:lastBlockDepth="6" MadCap:lastHeight="2565" MadCap:lastWidth="965">
+    <head xmlns="http://www.w3.org/1999/xhtml">
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" xmlns="http://www.w3.org/1999/xhtml" /><title xmlns="http://www.w3.org/1999/xhtml">Excel連携アドインで、TimeTracker FXからインポートするとき、エラーが発生します</title>
+        <link href="../../KBTable.css" rel="stylesheet" MadCap:stylesheetType="table" xmlns="http://www.w3.org/1999/xhtml" />
+        <link href="../../FX_KB.css" rel="stylesheet" type="text/css" xmlns="http://www.w3.org/1999/xhtml" />
+    </head>
+    <body xmlns="http://www.w3.org/1999/xhtml">
+        <h1 xmlns="http://www.w3.org/1999/xhtml"><MadCap:variable name="System.Title" />
+        </h1>
+        <h3 xmlns="http://www.w3.org/1999/xhtml">このトピックの対象</h3>
+        <p xmlns="http://www.w3.org/1999/xhtml" class="p2">TimeTracker FX 2.5.0以降のProfessional Edition</p>
+        <h2 xmlns="http://www.w3.org/1999/xhtml">内容</h2>
+        <p xmlns="http://www.w3.org/1999/xhtml">Excel連携アドインで、TimeTracker FXからインポートする場合、Excelのセルに設定が必要です。<br xmlns="http://www.w3.org/1999/xhtml" />このトピックでは、以下の内容を説明します。</p>
+        <ul type="disc" xmlns="http://www.w3.org/1999/xhtml">
+            <li class="p"><a href="QA090324_03.htm#case1">Excelのセルの設定方法</a>
+            </li>
+            <li class="p"><a href="QA090324_03.htm#case2">TimeTracker FXからインポートする方法</a>
+            </li>
+        </ul>
+        <h3 xmlns="http://www.w3.org/1999/xhtml">Excelのセルの設定方法<a name="case1" id="case1" xmlns="http://www.w3.org/1999/xhtml"></a></h3>
+        <ol class="ol2" xmlns="http://www.w3.org/1999/xhtml">
+            <li class="p">インポート先のExcelの表に、値を入力します。<br /><img src="../../Image/QA090324_03_1.png" alt="" width="600" height="299" border="0" class="img_1" /><br />	&#160;</li>
+            <li class="p">［TimeTracker FXツールバー］の［表を選択］をクリックし、インポート先のExcelの表全体を選択します。<br /><img src="../../Image/QA090324_03_2.png" alt="" width="254" height="39" border="0" class="img_1" /></li>
+            <ul>
+                <li class="p_warning">［表を選択］は表として選択するために、最上行と最左列に値が設定されている必要があります。</li>
+            </ul>
+            <ul>
+                <li class="p_information">最上行は、表の見出しとして扱われます。</li>
+            </ul>
+            <p class="p_2">
+                <img src="../../Image/QA090324_03_3.png" alt="" width="525" height="92" border="0" class="img_1" />
+                <br />&#160;</p>
+        </ol>
+        <ol start="3" class="ol2" xmlns="http://www.w3.org/1999/xhtml">
+            <li class="p" type="1">プロジェクトを開き、インポート元となるノードを選択します。<br /><img src="../../Image/QA090324_03_4.png" alt="" width="500" height="196" border="0" class="img_1" /><br />	&#160;</li>
+            <li class="p" type="1">［TimeTracker FXツールバー］の［選択ノードと関連付け］をクリックし、選択範囲にインポートするノードを設定します。<br /><img src="../../Image/QA090324_03_5.png" alt="" width="385" height="258" border="0" class="img_1" /></li>
+        </ol>
+        <p class="p3" xmlns="http://www.w3.org/1999/xhtml">以上の操作で、TimeTracker FXからインポートする場合に必要な、Excelのセルの設定は完了です。</p>
+        <p xmlns="http://www.w3.org/1999/xhtml">&#160;</p>
+        <h3 xmlns="http://www.w3.org/1999/xhtml">TimeTracker FXからインポートする方法<a name="case2" id="case2" xmlns="http://www.w3.org/1999/xhtml"></a></h3>
+        <ol class="ol2" xmlns="http://www.w3.org/1999/xhtml">
+            <li class="p">［TimeTracker FXツールバー］の［表を選択］をクリックし、インポート先のExcelの表全体を選択します。</li>
+            <li class="p">［TimeTracker FXツールバー］の［TimeTracker FXからインポート］をクリックします。<br /><img src="../../Image/QA090324_03_6.png" alt="" width="271" height="36" border="0" class="img_1" /><br />	&#160;</li>
+            <li class="p">Excelの見出しと、TimeTracker FXのフィールドを関係付けるダイアログを表示します。<br /><img src="../../Image/QA090324_03_7.png" alt="" width="406" height="415" border="0" class="img_1" /><br />	&#160;</li>
+            <p class="p_2">以下の表の対応となっていることを確認した後、［OK］をクリックします。</p>
+            <table cellspacing="0" width="500" class="table_1">
+                <col style="width: 50.001%;" />
+                <col style="width: 49.999%;" />
+                <tr valign="top">
+                    <td style="width: 50.001%;" bgcolor="#C0C0C0" class="td_1">
+                        <p>Excelの見出し</p>
+                    </td>
+                    <td style="width: 49.999%;" bgcolor="#C0C0C0" class="td_2">
+                        <p>TimeTracker FXのフィールド</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="width: 50.001%;" class="td_3">
+                        <p>名前</p>
+                    </td>
+                    <td style="width: 49.999%;" class="td_4">
+                        <p>名前（Name）</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="width: 50.001%;" class="td_3">
+                        <p>アウトライン番号</p>
+                    </td>
+                    <td style="width: 49.999%;" class="td_4">
+                        <p>アウトライン番号（OutlineNumber）</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="width: 50.001%;" class="td_3">
+                        <p>計画工数</p>
+                    </td>
+                    <td style="width: 49.999%;" class="td_4">
+                        <p>計画工数（PlannedTime）</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="width: 50.001%;" class="td_3">
+                        <p>実績工数</p>
+                    </td>
+                    <td style="width: 49.999%;" class="td_4">
+                        <p>実績工数（ActualTime）</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="width: 50.001%;" class="td_3">
+                        <p>開始日</p>
+                    </td>
+                    <td style="width: 49.999%;" class="td_4">
+                        <p>開始日（PlannedStartDate）</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="width: 50.001%;" class="td_3">
+                        <p>終了日</p>
+                    </td>
+                    <td style="width: 49.999%;" class="td_4">
+                        <p>終了日（PlannedFinishDate）</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="width: 50.001%;" class="td_3">
+                        <p>進捗率</p>
+                    </td>
+                    <td style="width: 49.999%;" class="td_4">
+                        <p>進捗率（Progress）</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="width: 50.001%;" class="td_3">
+                        <p>リーダー名</p>
+                    </td>
+                    <td style="width: 49.999%;" class="td_4">
+                        <p>リーダー名（Leader）</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td style="width: 50.001%;" class="td_3">
+                        <p>課題と対策</p>
+                    </td>
+                    <td style="width: 49.999%;" class="td_4">
+                        <p>（なし）</p>
+                    </td>
+                </tr>
+            </table>
+        </ol>
+        <ol start="4" class="ol2" xmlns="http://www.w3.org/1999/xhtml">
+            <li class="p">選択範囲に、TimeTracker FXのデータがインポートされます。<br /><img src="../../Image/QA090324_03_8.png" alt="" width="600" height="295" border="0" class="img_1" /></li>
+        </ol>
+        <p xmlns="http://www.w3.org/1999/xhtml">&#160;</p>
+    </body>
+</html>

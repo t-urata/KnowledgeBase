@@ -1,0 +1,427 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Default.Not Ready for Publish" MadCap:lastBlockDepth="6" MadCap:lastHeight="3007" MadCap:lastWidth="1075">
+    <head>
+        <link href="../KBTable.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>サーバマシンの移行とTimeTracker FX のバージョンアップを同時に行う</title>
+        <link href="../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Article" />　サーバマシンの移行とTimeTracker FX のバージョンアップを同時に行う</h1>
+        <table style="caption-side: top;margin-left: 0;margin-right: auto;mc-table-style: url('../KBTable.css');width: 350px;" summary="Article number, product name and version number" class="TableStyle-KBTable" cellspacing="0">
+            <col style="width: 150px;" class="Column-Column1" />
+            <col style="width: 200px;" class="Column-Column1" />
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>更新日:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">2016/9/7</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象バージョン:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable" style="padding-top: 4px;">3.9</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象エディション:</b>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">Professional / Standard</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h2>概要</h2>
+        <p>以下のような要因によって、TimeTracker FX運用中のサーバマシンを別のサーバマシンに移行することがあるかと思います。</p>
+        <ul>
+            <li>TimeTracker FX のバージョンアップ</li>
+            <li>サーバマシンの老朽化やソフトウェア（OSなど）のサポート終了</li>
+        </ul>
+        <p>場合によっては、移行先のサーバマシンの環境が利用中のTimeTracker FXの動作保証対象外となってしまうため、<br />サーバマシンの移行とTimeTracker FXのバージョンアップを合わせて検討する必要があります。</p>
+        <p>運用中のTimeTracker FXのバージョンや、移行元・移行先のサーバマシンの環境によって、サーバマシンの移行に必要な手順が異なります。<br />ここでは、運用環境に合わせたTimeTracker FX 3.9へのバージョンアップとサーバマシンの移行手順を紹介します。</p>
+        <ol>
+            <li class="p_information">ご利用中のTimeTracker FXの動作保証環境については、<a href="kb110323_01.htm">こちら</a>をご覧ください。</li>
+            <li class="p_information">TimeTracker FXのバージョンの確認方法については、<a href="KB070131_01.htm">こちら</a>をご覧ください。</li>
+        </ol>
+        <h2>運用環境のパターンと移行シナリオ</h2>
+        <p>運用環境（移行元・移行先サーバマシン）のパターンと移行シナリオを紹介します。<br />運用環境に合った移行シナリオを選択してください。</p>
+        <div class="div2">
+            <table style="borderborder-collapse: collapse;margin-left: 0;margin-right: auto;" class="contents_table" xmlns="http://www.w3.org/1999/xhtml">
+                <col />
+                <col style="width: 160px;" />
+                <col style="width: 260px;" />
+                <col style="width: 260px;" />
+                <col style="width: 130px;" />
+                <thead>
+                    <tr>
+                        <th class="contents_table" style="text-align: center;" rowspan="2">No.</th>
+                        <th colspan="2" style="text-align: center;">移行元サーバマシン</th>
+                        <th style="text-align: center;">移行先サーバマシン</th>
+                        <th rowspan="2" style="text-align: center;">移行シナリオ</th>
+                    </tr>
+                    <tr>
+                        <th style="text-align: center;">TimeTracker FX</th>
+                        <th style="text-align: center;">SQL Server</th>
+                        <th style="text-align: center;">SQL Server</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: center;">1</td>
+                        <td style="text-align: center;">3.6 ～ 3.8</td>
+                        <td style="text-align: center;"> TimeTracker FXの各バージョンの動作保証環境であること</td>
+                        <td style="text-align: center;"> バージョンアップするTimeTracker FXの動作保証環境であること</td>
+                        <td style="text-align: center;"><a href="#scenario1" xmlns="">シナリオ1</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">2</td>
+                        <td style="text-align: center;" rowspan="4">3.5 以前</td>
+                        <td style="text-align: center;" rowspan="2">2008 / 2008 R2</td>
+                        <td style="text-align: center;">2008 / 2008 R2</td>
+                        <td style="text-align: center;"><a href="#scenario1" xmlns="">シナリオ1</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">3</td>
+                        <td style="text-align: center;">2012 / 2014</td>
+                        <td style="text-align: center;"><a href="#scenario2" xmlns="">シナリオ2</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">4</td>
+                        <td style="text-align: center;" rowspan="2">2000 / 2005</td>
+                        <td style="text-align: center;">2008 / 2008 R2</td>
+                        <td style="text-align: center;"><a href="#scenario1" xmlns="">シナリオ1</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">5</td>
+                        <td style="text-align: center;">2012 / 2014</td>
+                        <td style="text-align: center;"><a href="#scenario3" xmlns="">シナリオ3</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <ol class="ol2">
+            <li class="p_warning">該当しないパターンは動作保証対象外の環境になります。一度、弊社サポートチームまでお問い合わせください。</li>
+        </ol>
+        <h2>移行シナリオ</h2>
+        <p>ここでは、移行シナリオの流れと手順の詳細を紹介します。<br />各移行シナリオの手順に従い、データベースを移行してください。<br /></p>
+        <p>手順の詳細は、TimeTracker FXのヘルプやガイドに記載しております。<br />「ドキュメント」列のリンクよりドキュメントを開き、「実施範囲」列の内容を実施してください。<br /></p>
+        <h3><a name="scenario1"></a>シナリオ1</h3>
+        <p class="p2">一番基本的な移行手順となります。<br />移行元マシンにあるデータベースを移行先マシンにコピーし、最新バージョンで利用できるようアップグレードを行います。</p>
+        <p class="p3">
+            <img src="../Image/KB160907_01_1.png" />
+        </p>
+        <h4>移行元マシンでの移行準備</h4>
+        <div class="div3">
+            <table style="borderborder-collapse: collapse;margin-left: 0;margin-right: auto;" class="contents_table" xmlns="http://www.w3.org/1999/xhtml">
+                <col />
+                <col style="width: 300px;" />
+                <col style="width: 320px;" />
+                <col style="width: 320px;" />
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">No.</th>
+                        <th style="text-align: center;">手順</th>
+                        <th style="text-align: center;">ドキュメント</th>
+                        <th style="text-align: center;">実施範囲</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: center;">1</td>
+                        <td style="text-align: left;">データベースをバックアップする</td>
+                        <td style="text-align: left;">[Server Manager ヘルプ]<br /><a href="../newdoc/backup_manual.htm" target="_blank" xmlns=""> 手動でバックアップする</a></td>
+                        <td style="text-align: center;">-</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">2</td>
+                        <td style="text-align: left;">データベースの登録を解除する</td>
+                        <td style="text-align: left;">[データベース移行・復旧ガイド]<br /><a href="../newdoc/Migration_NewServer.htm" target="_blank" xmlns=""> 新しいサーバマシンにデータベースを移行する</a></td>
+                        <td style="text-align: left;" xmlns="">「1. 利用者に利用停止を案内する」~「5. データベースの登録を解除する」</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>&#160;</p>
+        <h4>移行先マシンへのデータベース移行</h4>
+        <div class="div3">
+            <table style="borderborder-collapse: collapse;margin-left: 0;margin-right: auto;" class="contents_table" xmlns="http://www.w3.org/1999/xhtml">
+                <col />
+                <col style="width: 300px;" />
+                <col style="width: 320px;" />
+                <col style="width: 320px;" />
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">No.</th>
+                        <th style="text-align: center;">手順</th>
+                        <th style="text-align: center;">ドキュメント</th>
+                        <th style="text-align: center;">実施範囲</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: center;">1</td>
+                        <td style="text-align: left;">SQL Server をインストールする</td>
+                        <td style="text-align: left;">[ナレッジベース]<br />&#160;&#160;<a href="KB061101_03.htm">データベースのインストール・設定方法の詳細について</a></td>
+                        <td style="text-align: center;">-</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">2</td>
+                        <td style="text-align: left;">TimeTracker FXをインストールする</td>
+                        <td style="text-align: left;">[セットアップガイド]<br />&#160;&#160;<a href="../newdoc/pdct_new_install.htm" target="_blank" xmlns="">新規に導入する</a></td>
+                        <td style="text-align: left;">「2. データベースサーバを準備する」 ～「3. サーバマシンにTimeTracker FXをインストールする」</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">3</td>
+                        <td style="text-align: left;">登録を解除したデータファイルを移行先マシンにコピーし、登録する</td>
+                        <td style="text-align: left;">[データベース移行・復旧ガイド]<br />&#160;&#160;<a href="../newdoc/Migration_NewServer.htm" target="_blank" xmlns="">新しいサーバマシンにデータベースを移行する</a></td>
+                        <td style="text-align: left;">「6. データファイルを移行先のサーバマシンにコピーする」～「13. サーバ設定ファイルを展開する」</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">4</td>
+                        <td style="text-align: left;">データベースを最新バージョンにアップグレードする</td>
+                        <td style="text-align: left;">[Server Manager ヘルプ]<br />&#160;&#160;<a href="../newdoc/db_upgrade_fx.htm" target="_blank" xmlns="">データベースをアップグレードする</a></td>
+                        <td style="text-align: center;">-</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>&#160;</p>
+        <ol class="ol2">
+            <li class="p_information">Web APIをご利用中の場合、移行に伴いWeb APIの再設定が必要となります。<br />詳細な手順については、<a href="KB150211_01.htm">こちら</a>をご覧ください。</li>
+        </ol>
+        <p>&#160;</p>
+        <h3><a name="scenario2"></a>シナリオ2</h3>
+        <p class="p2">SQL Serverの制約上、<a href="#scenario1">シナリオ1</a>のように移行元マシンのTimeTracker FXのデータベースを移行先マシンの環境に登録できない場合に実施する手順です。<br />あらかじめ移行元マシンにてTimeTracker FXをアップグレードし、移行先のマシンへコピーします。</p>
+        <p class="p3">
+            <img src="../Image/KB160907_01_2.png" />
+        </p>
+        <h4>移行元マシンでの移行準備</h4>
+        <div class="div3">
+            <table style="borderborder-collapse: collapse;margin-left: 0;margin-right: auto;" class="contents_table" xmlns="http://www.w3.org/1999/xhtml">
+                <col />
+                <col style="width: 300px;" />
+                <col style="width: 320px;" />
+                <col style="width: 320px;" />
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">No.</th>
+                        <th style="text-align: center;">手順</th>
+                        <th style="text-align: center;">ドキュメント</th>
+                        <th style="text-align: center;">実施範囲</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: center;">1</td>
+                        <td style="text-align: left;">データベースをバックアップする</td>
+                        <td style="text-align: left;">[Server Manager ヘルプ]<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;<a href="../newdoc/backup_manual.htm" target="_blank" xmlns="">手動でバックアップする</a></td>
+                        <td style="text-align: center;">-</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">2</td>
+                        <td style="text-align: left;">TimeTracker FXをインストールする</td>
+                        <td style="text-align: left;">[セットアップガイド]<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;<a href="../newdoc/pdct_new_install.htm" target="_blank" xmlns="">新規に導入する</a></td>
+                        <td style="text-align: left;">「2. データベースサーバを準備する」～「3. サーバマシンにTimeTracker FXをインストールする」</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">3</td>
+                        <td style="text-align: left;">データベースを最新バージョンにアップグレードする</td>
+                        <td style="text-align: left;">[Server Manager ヘルプ]<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;<a href="../newdoc/db_upgrade_fx.htm" target="_blank" xmlns="">データベースをアップグレードする</a></td>
+                        <td style="text-align: center;">-</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">4</td>
+                        <td style="text-align: left;">データベースの登録を解除する</td>
+                        <td style="text-align: left;">[データベース移行・復旧ガイド]<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;<a href="../newdoc/Migration_NewServer.htm" target="_blank" xmlns="">新しいサーバマシンにデータベースを移行する</a></td>
+                        <td style="text-align: left;">「1. 利用者に利用停止を案内する」~「5. データベースの登録を解除する」</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>&#160;</p>
+        <h4>移行先マシンへのデータベース移行</h4>
+        <div class="div3">
+            <table style="borderborder-collapse: collapse;margin-left: 0;margin-right: auto;" class="contents_table" xmlns="http://www.w3.org/1999/xhtml">
+                <col />
+                <col style="width: 300px;" />
+                <col style="width: 320px;" />
+                <col style="width: 320px;" />
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">No.</th>
+                        <th style="text-align: center;">手順</th>
+                        <th style="text-align: center;">ドキュメント</th>
+                        <th style="text-align: center;">実施範囲</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: center;">1</td>
+                        <td style="text-align: left;">SQL Server をインストールする</td>
+                        <td style="text-align: left;">[ナレッジベース]<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;<a href="KB061101_03.htm" xmlns="http://www.w3.org/1999/xhtml">データベースのインストール・設定方法の詳細について</a></td>
+                        <td style="text-align: center;">-</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">2</td>
+                        <td style="text-align: left;">TimeTracker FXをインストールする</td>
+                        <td style="text-align: left;">[セットアップガイド]<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;<a href="../newdoc/pdct_new_install.htm" target="_blank" xmlns="">新規に導入する</a></td>
+                        <td style="text-align: left;">「2. データベースサーバを準備する」～「3. サーバマシンにTimeTracker FXをインストールする」</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">3</td>
+                        <td style="text-align: left;">登録を解除したデータファイルを移行先マシンにコピーし、登録する</td>
+                        <td style="text-align: left;">[データベース移行・復旧ガイド]<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;<a href="../newdoc/Migration_NewServer.htm" target="_blank" xmlns="">新しいサーバマシンにデータベースを移行する</a></td>
+                        <td style="text-align: left;">「6. データファイルを移行先のサーバマシンにコピーする」～「13. サーバ設定ファイルを展開する」</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>&#160;</p>
+        <h3><a name="scenario3"></a>シナリオ3</h3>
+        <p class="p2">SQL Server の制約上、<a href="#scenario1">シナリオ1</a>のように移行元マシンのTimeTracker FXのデータベースを移行先マシンの環境に登録できず、<br /><a href="#scenario2">シナリオ2</a>のように移行元マシンにてTimeTracker FXをアップグレードできない場合の手順です。</p>
+        <p class="p2">中間マシンを用意し、データベースを中間マシン上でアップグレードすることで、移行先マシンにデータベースをコピーすることができます。<br />中間マシンとして以下の環境をご用意ください。</p>
+        <ul class="ul2">
+            <li style="list-style: none;">OS：　最新バージョンのTimeTracker FXおよびSQL Server の動作保証環境となるOS</li>
+            <li style="list-style: none;">SQL Server： 2008または2008 R2</li>
+        </ul>
+        <p class="p3">
+            <img src="../Image/KB160907_01_3.png" />
+        </p>
+        <h4>移行元マシンでの移行準備</h4>
+        <div class="div3">
+            <table style="borderborder-collapse: collapse;margin-left: 0;margin-right: auto;" class="contents_table" xmlns="http://www.w3.org/1999/xhtml">
+                <col />
+                <col style="width: 300px;" />
+                <col style="width: 320px;" />
+                <col style="width: 320px;" />
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">No.</th>
+                        <th style="text-align: center;">手順</th>
+                        <th style="text-align: center;">ドキュメント</th>
+                        <th style="text-align: center;">実施範囲</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: center;">1</td>
+                        <td style="text-align: left;">データベースをバックアップする</td>
+                        <td style="text-align: left;">[Server Manager ヘルプ]<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;<a href="../newdoc/backup_manual.htm" target="_blank" xmlns="">手動でバックアップする</a></td>
+                        <td style="text-align: center;">-</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">2</td>
+                        <td style="text-align: left;">データベースの登録を解除する</td>
+                        <td style="text-align: left;">[データベース移行・復旧ガイド]<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;<a href="../newdoc/Migration_NewServer.htm" target="_blank" xmlns="">新しいサーバマシンにデータベースを移行する</a></td>
+                        <td style="text-align: left;">「1. 利用者に利用停止を案内する」~「5. データベースの登録を解除する」</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>&#160;</p>
+        <h4>中間マシン上にてデータベースをアップグレード</h4>
+        <div class="div3">
+            <table style="borderborder-collapse: collapse;margin-left: 0;margin-right: auto;" class="contents_table" xmlns="http://www.w3.org/1999/xhtml">
+                <col />
+                <col style="width: 300px;" />
+                <col style="width: 320px;" />
+                <col style="width: 320px;" />
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">No.</th>
+                        <th style="text-align: center;">手順</th>
+                        <th style="text-align: center;">ドキュメント</th>
+                        <th style="text-align: center;">実施範囲</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: center;">1</td>
+                        <td style="text-align: left;">SQL Server をインストールする</td>
+                        <td style="text-align: left;">[ナレッジベース]<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;<a href="KB061101_03.htm" xmlns="http://www.w3.org/1999/xhtml">データベースのインストール・設定方法の詳細について</a></td>
+                        <td style="text-align: center;">-</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">2</td>
+                        <td style="text-align: left;">TimeTracker FXをインストールする</td>
+                        <td style="text-align: left;">[セットアップガイド]<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;<a href="../newdoc/pdct_new_install.htm" target="_blank" xmlns="">新規に導入する</a></td>
+                        <td style="text-align: left;">「2. データベースサーバを準備する」～「3. サーバマシンにTimeTracker FXをインストールする」</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">3</td>
+                        <td style="text-align: left;">登録を解除したデータファイルを中間マシンにコピーし、登録する</td>
+                        <td style="text-align: left;">[データベース移行・復旧ガイド]<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;<a href="../newdoc/Migration_NewServer.htm" target="_blank" xmlns="">新しいサーバマシンにデータベースを移行する</a></td>
+                        <td style="text-align: left;">「6. データファイルを移行先のサーバマシンにコピーする」～「13. サーバ設定ファイルを展開する」</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">4</td>
+                        <td style="text-align: left;">データベースを最新バージョンにアップグレードする</td>
+                        <td style="text-align: left;">[Server Manager ヘルプ]<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;<a href="../newdoc/db_upgrade_fx.htm" target="_blank" xmlns="">データベースをアップグレードする</a></td>
+                        <td style="text-align: center;">-</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">5</td>
+                        <td style="text-align: left;">データベースの登録を解除する</td>
+                        <td style="text-align: left;">[データベース移行・復旧ガイド]<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;<a href="../newdoc/Migration_NewServer.htm" target="_blank" xmlns="">新しいサーバマシンにデータベースを移行する</a></td>
+                        <td style="text-align: left;">「1. 利用者に利用停止を案内する」~「5. データベースの登録を解除する」</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>&#160;</p>
+        <h4>移行先マシンへのデータベース移行</h4>
+        <div class="div3">
+            <table style="borderborder-collapse: collapse;margin-left: 0;margin-right: auto;" class="contents_table" xmlns="http://www.w3.org/1999/xhtml">
+                <col />
+                <col style="width: 300px;" />
+                <col style="width: 320px;" />
+                <col style="width: 320px;" />
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">No.</th>
+                        <th style="text-align: center;">手順</th>
+                        <th style="text-align: center;">ドキュメント</th>
+                        <th style="text-align: center;">実施範囲</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: center;">1</td>
+                        <td style="text-align: left;">SQL Server をインストールする</td>
+                        <td style="text-align: left;">[ナレッジベース]<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;<a href="KB061101_03.htm" xmlns="http://www.w3.org/1999/xhtml">データベースのインストール・設定方法の詳細について</a></td>
+                        <td style="text-align: center;">-</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">2</td>
+                        <td style="text-align: left;">TimeTracker FXをインストールする</td>
+                        <td style="text-align: left;">[セットアップガイド]<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;<a href="../newdoc/pdct_new_install.htm" target="_blank" xmlns="">新規に導入する</a></td>
+                        <td style="text-align: left;">「2. データベースサーバを準備する」～「3. サーバマシンにTimeTracker FXをインストールする」</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">3</td>
+                        <td style="text-align: left;">登録を解除したデータファイルを移行先マシンにコピーし、登録する</td>
+                        <td style="text-align: left;">[データベース移行・復旧ガイド]<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;<a href="../newdoc/Migration_NewServer.htm" target="_blank" xmlns="">新しいサーバマシンにデータベースを移行する</a></td>
+                        <td style="text-align: left;">「6. データファイルを移行先のサーバマシンにコピーする」～「13. サーバ設定ファイルを展開する」</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="MSP2000・2002で、多数のリンクを設定したタスクをインポートするとエラーが発生する" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.完了" MadCap:conditions="Primary.非公開">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>Microsoft Project 2000および2002で、多数のリンクを設定したタスクをインポートするとエラーが発生する場合がある</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">問題の発生するバージョン</p>
+        <p>TimeTracker FX 2.0.0以降</p>
+        <p>&#160;</p>
+        <p class="title">問題が修正されるバージョン</p>
+        <p>未定</p>
+        <p>&#160;</p>
+        <p class="title">内容</p>
+        <p>Microsoft Project 2000および2002で、多数のリンクを設定したタスクをインポートするとエラーが発生します。</p>
+        <ul>
+            <li class="p_info_1">
+                <p>Microsoft Project 2003では発生しません。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p>【手順】</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>Microsoft Projectで、特定のタスクを先行ノードとして十数のリンクを設定して保存します。</p>
+            </li>
+            <li class="p">
+                <p>TimeTracker FXを起動して、任意のプロジェクトを開きます。</p>
+            </li>
+            <li class="p">
+                <p>プランナーの［ファイル］メニューから［Microsoft Projectからインポート］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>Microsoft Projectのファイルを選択します。</p>
+            </li>
+            <li class="p">
+                <p>インポート処理中に <MadCap:toggler targets="t1">［エラー］ダイアログ</MadCap:toggler>が開きます。</p>
+                <div MadCap:targetName="t1">
+                    <p>
+                        <img src="../Image/BG070514_01.png" alt="" width="340" height="153" border="0" class="img_1" />
+                    </p>
+                </div>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p class="title">回避方法</p>
+        <p>以下のいずれかの方法があります。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>リンクはインポートせず、TimeTracker FXでリンクを再設定する方法</p>
+            </li>
+        </ul>
+        <p class="p_2">［Microsoft Project ファイルのインポート］ダイアログで［タスクのリンク］のチェックをはずします。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>Microsoft Project 2003を利用する方法</p>
+            </li>
+        </ul>
+        <p class="p_2">Microsoft Project 2003では、本問題は発生せずインポートできます。</p>
+        <p>&#160;</p>
+    </body>
+</html>

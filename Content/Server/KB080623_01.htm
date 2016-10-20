@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="SQL_Server_Expressのリモート接続を有効にするには" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中" MadCap:lastBlockDepth="6" MadCap:lastHeight="2143" MadCap:lastWidth="633">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>SQL Server Expressのリモート接続を有効にするには</title>
+        <link href="../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>SQL Server Expressのデフォルトの設定では、リモート接続を許可していないため、クライアントPCからサーバマシンに接続できません。<br xmlns="http://www.w3.org/1999/xhtml" />リモート接続を有効にする手順をご紹介します。</p>
+        <p>作成されたデータベースのインスタンスの種類によって必要な手順が異なります。</p>
+        <ul>
+            <li type="circle" xmlns="http://www.w3.org/1999/xhtml">「名前付きインスタンス」の場合<br xmlns="http://www.w3.org/1999/xhtml" /><p>・<a href="#RemoteStartUp" xmlns="http://www.w3.org/1999/xhtml">SQL Server Expressでリモート接続を有効にする</a><br xmlns="http://www.w3.org/1999/xhtml" />・<a href="#BrowserStartUp" xmlns="http://www.w3.org/1999/xhtml">SQL Server Browserサービスを有効にする</a></p></li>
+        </ul>
+        <ul xmlns="http://www.w3.org/1999/xhtml">
+            <li type="circle" xmlns="http://www.w3.org/1999/xhtml">「既定のインスタンス」の場合<br xmlns="http://www.w3.org/1999/xhtml" /><p>・<a href="#RemoteStartUp" xmlns="http://www.w3.org/1999/xhtml">SQL Server Expressでリモート接続を有効にする</a></p></li>
+        </ul>
+        <ul class="ul2">
+            <li class="p_information">ここでは、SQL Server 2008 Expressでの手順をご紹介します。<br xmlns="http://www.w3.org/1999/xhtml" /></li>
+        </ul>
+        <ul xmlns="http://www.w3.org/1999/xhtml" class="ul2">
+            <li class="p_information">TimeTracker FXのオートランからSQL Server  Expressをインストールした場合、「名前付きインスタンス」になります。<br xmlns="http://www.w3.org/1999/xhtml" /></li>
+        </ul>
+        <p>&#160;</p>
+        <h3>SQL Server Expressでリモート接続を有効にする<a name="RemoteStartUp" xmlns="http://www.w3.org/1999/xhtml"></a></h3>
+        <ul class="ul2">
+            <li class="p_information">本手順ではSQL Server Management Studioを利用します。Express EditionにはSQL Server Management Studioが同梱されていないため、別途インストールの必要があります。</li>
+        </ul>
+        <ol class="ol2">
+            <li class="p">Windows［スタート］－［すべてのプログラム］－［Microsoft SQL Server 2008］から［SQL Server Management Studio］を選択し、<br xmlns="http://www.w3.org/1999/xhtml" />「SQL Server Manegement Studio」を起動します。</li>
+            <li class="p">［オブジェクトエクスプローラ］に表示されるサーバー名でマウス右クリックし、<br xmlns="http://www.w3.org/1999/xhtml" />［プロパティ］から［サーバーのプロパティ］ダイアログを開きます。</li>
+            <li class="p">［ページの選択］（画面左側）－［接続］を選択し、［リモートサーバー接続］にて<br xmlns="http://www.w3.org/1999/xhtml" />「このサーバーへのリモート接続を許可する」にチェックします。<br xmlns="http://www.w3.org/1999/xhtml" /><img src="../Image/KB080623_01_3.png" xmlns="http://www.w3.org/1999/xhtml" /><br xmlns="http://www.w3.org/1999/xhtml" /></li>
+            <li class="p">［OK］ボタンをクリックし、［サーバーのプロパティ］ダイアログを閉じます。</li>
+            <li class="p">［SQL Server Management Studio］を終了します。</li>
+            <li class="p">Windows［スタート］－［すべてのプログラム］－［Microsoft SQL Server 2008］から<br xmlns="http://www.w3.org/1999/xhtml" />［構成ツール］－［SQL Server 構成マネージャ］を選択し、「SQL Server Configuration Manager」を起動します。</li>
+            <li class="p">［SQL Server ネットワークの構成］－［（インスタンス名）のプロトコル］を選択し、<br xmlns="http://www.w3.org/1999/xhtml" />各プロトコルの設定を以下のように設定します。<br xmlns="http://www.w3.org/1999/xhtml" /><img src="../Image/KB080623_01_4.png" xmlns="http://www.w3.org/1999/xhtml" /><br xmlns="http://www.w3.org/1999/xhtml" /></li>
+            <li class="p">［SQL Server のサービス］を選択し、「SQL Server （インスタンス名）」のサービスを再起動します。<br xmlns="http://www.w3.org/1999/xhtml" /><img src="../Image/KB080623_01_5.png" xmlns="http://www.w3.org/1999/xhtml" /><br xmlns="http://www.w3.org/1999/xhtml" /></li>
+        </ol>
+        <p>&#160;</p>
+        <h3>SQL Server Browserサービスを有効にする<a name="BrowserStartUp" xmlns="http://www.w3.org/1999/xhtml"></a></h3>
+        <ol class="ol2">
+            <li class="p">Windows［スタート］－［すべてのプログラム］－［Microsoft SQL Server 2008］から［構成ツール］－［SQL Server 構成マネージャ］を選択し、「SQL Server Configuration Manager」を起動します。</li>
+            <li class="p">［SQL Server のサービス］－「SQL Server Browser」を選択し、マウス右クリックからプロパティを開きます。<br xmlns="http://www.w3.org/1999/xhtml" /><img src="../Image/KB080623_01_6.png" xmlns="http://www.w3.org/1999/xhtml" /><br xmlns="http://www.w3.org/1999/xhtml" /></li>
+            <li class="p">［SQL Server Browserサービス］ダイアログの［サービス］タブを選択し、［開始モード］を「自動」に設定します。<br xmlns="http://www.w3.org/1999/xhtml" /><img src="../Image/KB080623_01_7.png" xmlns="http://www.w3.org/1999/xhtml" /><br xmlns="http://www.w3.org/1999/xhtml" /></li>
+            <li class="p">［ログオン］タブの［サービスの状態］から「SQL Browserサービス」を開始または再起動します。</li>
+        </ol>
+        <p xmlns="">&#160;</p>
+    </body>
+</html>

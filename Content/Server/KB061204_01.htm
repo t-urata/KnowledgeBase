@@ -1,0 +1,117 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.非公開" MadCap:id="Windowsファイアウォールを有効にした状態でTimeTracker_FXを使うには" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.完了" MadCap:lastBlockDepth="6" MadCap:lastHeight="965" MadCap:lastWidth="807">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>Windowsファイアウォールに指定の通信を許可するには</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <ul>
+            <li class="p_warning_1">
+                <p class="warning">本手順は、TimeTracker 
+	 FX サポートチームより案内があった場合に行ってください。</p>
+            </li>
+            <li class="p_warning_1">
+                <p class="warning">既定のインスタンスと名前付きインスタンスが共存している環境では、本手順を行わないでください。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">内容</p>
+        <p>サーバマシンのWindowsファイアウォールを有効にした状態で、SQL Serverの通信ポートを許可する方法を説明します。</p>
+        <p>&#160;</p>
+        <p class="title">前提条件</p>
+        <p>名前付きインスタンスを利用している場合、事前にTCPポートを固定する必要があります。</p>
+        <p>本手順では、名前付きインスタンスのTCPポートを「1433」に固定している場合を例にしています。</p>
+        <ul>
+            <li class="p_warning_1">
+                <p>利用する通信ポートについては<a href="KB070118_01.htm">こちら</a>をご覧ください。</p>
+            </li>
+            <li class="p_info_1">
+                <p>名前付きインスタンスを利用している環境で、通信ポートを固定したい場合は以下のトピックをご覧ください。</p>
+            </li>
+        </ul>
+        <ul type="disc">
+            <li class="p">
+                <p class="p_5">SQL Server 2005以降、またはSQL 
+	 Server 2005以降のExpressを利用されている場合は<a href="KB100308_02.htm">こちら</a></p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">設定手順</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>Windowsスタートメニューの［コントロールパネル］を開きます。</p>
+            </li>
+            <li class="p">
+                <p>［セキュリティセンター］の［Windowsファイアウォール］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>
+                    <MadCap:toggler targets="t1">［Windowsファイアウォール］ダイアログ</MadCap:toggler>が開きます。</p>
+                <div MadCap:targetName="t1">
+                    <p>
+                        <img src="../Image/KB061204_01_2.png" alt="" width="450" height="280" border="0" class="img_1" />
+                    </p>
+                </div>
+            </li>
+            <li class="p">
+                <p>［例外を許可しない］のチェックをはずします。</p>
+            </li>
+            <li class="p">
+                <p>［例外］タブをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［ポートの追加］ボタンをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［ポートの追加ダイアログ］にTCPポートの設定を行います。</p>
+                <ul type="disc">
+                    <li class="p">
+                        <p>［名前］･･･ms-sql-s（任意）</p>
+                    </li>
+                    <li class="p">
+                        <p>［ポート番号］･･･1433</p>
+                    </li>
+                    <li class="p">
+                        <p>［TCP/UDP］･･･TCP</p>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <ol start="8" class="ol_1">
+            <li class="p">
+                <p>［OK］ボタンをクリックして、［ポートの追加ダイアログ］ダイアログを閉じます。</p>
+            </li>
+            <li class="p">
+                <p>［ポートの追加ダイアログ］にUDPポートの設定を行います。</p>
+            </li>
+        </ol>
+        <ul type="disc">
+            <li class="li_1">
+                <ul type="disc">
+                    <li class="p">
+                        <p>［名前］･･･ms-sql-m（任意）</p>
+                    </li>
+                    <li class="p">
+                        <p>［ポート番号］･･･1434</p>
+                    </li>
+                    <li class="p">
+                        <p>［TCP/UDP］･･･UDP</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="p_warning">
+                <p class="p_5">既定のインスタンスで動作している場合は必要ありません。</p>
+            </li>
+        </ul>
+        <ol start="10" class="ol_1">
+            <li class="p">
+                <p>［OK］ボタンをクリックして、［ポートの追加ダイアログ］ダイアログを閉じます。</p>
+            </li>
+            <li class="p">
+                <p>［OK］ボタンをクリックして、［Windowsファイアウォール］ダイアログを閉じます。</p>
+            </li>
+        </ol>
+    </body>
+</html>

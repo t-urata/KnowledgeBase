@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="1157" MadCap:lastWidth="1302">
+	<head>
+		<meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>ピボット分析の「プロジェクト」ならびに「タスク」テーブルで実績コストが正しく集計されない</title>
+		<link rel="StyleSheet" href="..\fx_support.css" type="text/css" />
+	</head>
+	<body>
+		<h1><MadCap:variable name="System.Title" />
+		</h1>
+		<p class="title">問題の発生するバージョン</p>
+		<p>TimeTracker FX 3.5 Professional Edition</p>
+		<p>&#160;</p>
+		<p class="title">問題が修正されるバージョン</p>
+		<p>TimeTracker FX 3.6 Professional Edition</p>
+		<p>&#160;</p>
+		<p class="title">内容</p>
+		<p>ピボット分析機能でビューを作成する際に指定するテーブルによっては、実績コストの値が正しく集計されない現象が発生します。</p>
+		<ul>
+			<li class="p_info">
+				<p>本来の値（各メンバーのコスト単価×実績工数）ではなくマネージャのコスト単価をすべての工数に対して適用し、計算されます。</p>
+			</li>
+		</ul>
+		<p>&#160;</p>
+		<p>上記の現象が発生するのは、「プロジェクト」ならびに「タスク」テーブルを使用した場合のみです。</p>
+		<p>その他のテーブルを使用した場合はこの問題は発生しません。</p>
+		<p>&#160;</p>
+		<p class="p_12">
+			<img src="../Image/BG130528_01.png" xmlns="http://www.w3.org/1999/xhtml" />
+		</p>
+		<p>&#160;</p>
+		<p class="title">回避方法</p>
+		<p>作成済みのビューについて、テーブルを変更することはできません。</p>
+		<p>「プロジェクト」と「タスク」以外のテーブルを使用してビューを作成する必要があります。</p>
+		<p>&#160;</p>
+		<p>ビューの作成方法は、以下の手順をご確認ください。</p>
+		<ol class="ol_1">
+			<li class="p">
+				<p> ピボット分析でビューを追加するグループを選択し、右クリックをします。</p>
+			</li>
+			<li class="p">
+				<p> 表示されるメニューから［ビューの追加］を選択します。</p>
+			</li>
+			<li class="p">
+				<p> ［ビュー作成］ダイアログで［ビュー名］を指定して、［次へ］をクリックします。</p>
+			</li>
+			<li class="p">
+				<p> ［出力テーブル］を選択する画面で以下の表を確認し、現象が発生するテーブルと同様のデータ集計が可能なテーブルを選択します。</p>
+			</li>
+			<table cellspacing="0" width="500">
+				<col style="width: 20%;" />
+				<col style="width: 30%;" />
+				<tr valign="top">
+					<td style="width: 20%;" bgcolor="#C0C0C0" class="td_1">
+						<p>現象が発生するテーブル</p>
+					</td>
+					<td style="width: 30%;" bgcolor="#C0C0C0" class="td_2">
+						<p>同様のデータ集計が可能なテーブル</p>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td style="width: 20%;" class="td_3" rowspan="2">
+						<p xmlns="http://www.w3.org/1999/xhtml">プロジェクト</p>
+					</td>
+					<td style="width: 30%;" class="td_4">
+						<p>プロジェクト × アカウント</p>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td style="width: 30%;" class="td_4">
+						<p>タスク × アカウント</p>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td style="width: 20%;" class="td_3">
+						<p>タスク</p>
+					</td>
+					<td style="width: 30%;" class="td_4">
+						<p>タスク × アカウント</p>
+					</td>
+				</tr>
+			</table>
+			<li class="p">
+				<p> ［出力テーブル］を選択後、［次へ］をクリックします。</p>
+			</li>
+			<li class="p">
+				<p> その他の設定は、現象が発生したビューと同様にします。</p>
+			</li>
+		</ol>
+	</body>
+</html>

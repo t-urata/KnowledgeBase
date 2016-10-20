@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="プロジェクトを開く途中で、システムエラーが発生する場合がある" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中" MadCap:conditions="Primary.非公開">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>プロジェクトを開くとシステムエラーが発生する場合がある</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">問題の発生するバージョン</p>
+        <p>TimeTracker FX 2.0.0以降</p>
+        <p>&#160;</p>
+        <p class="title">問題が修正されるバージョン</p>
+        <p>TimeTracker FX 2.7.0</p>
+        <p>&#160;</p>
+        <p class="title">内容</p>
+        <p>タスクの進捗率が「リソース平均」で設定されているときに、進捗率が算出時の誤差により100%を超える場合があります。</p>
+        <p>プランナーで上記のプロジェクトを開く際、システムエラーが発生し、プロジェクトを開けなくなります。</p>
+        <p>
+            <img src="../Image/TB061208_01.png" alt="" width="400" height="173" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p class="title">回避方法</p>
+        <p>以下の手順で、該当タスクの［進捗率］を修正してください。</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>該当プロジェクトの、該当タスクを特定します。<br />
+	現象直前に修正していたタスクをご確認ください。</p>
+            </li>
+        </ol>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">該当のタスクが不明な場合は、<a href="../Troubleshooting/TB061101_0A.htm">こちら</a>までお問い合わせください。</p>
+            </li>
+        </ul>
+        <ol start="2" class="ol_1">
+            <li class="p">
+                <p>該当タスクに割り当てた、いずれかのメンバの［進捗率］を0%とします。</p>
+            </li>
+            <li class="p">
+                <p>該当プロジェクトを開きます。</p>
+            </li>
+            <li class="p">
+                <p>該当タスクの［進捗率の決定方法］を「ユーザ入力値」とし、［進捗率］を100%にします。</p>
+            </li>
+            <li class="p">
+                <p>手順2で0%にしたメンバの進捗率を、元の数値に戻します。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+    </body>
+</html>

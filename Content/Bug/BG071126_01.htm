@@ -1,0 +1,260 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="サーバタスクの処理中に、編集中のプロジェクトが多数存在すると問題が発生することがある" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中" MadCap:lastBlockDepth="10" MadCap:lastHeight="1788" MadCap:lastWidth="879">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>サーバタスクの処理中に編集中のプロジェクトが多数存在するとサーバタスクの処理が増加する</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">問題の発生するバージョン</p>
+        <p>TimeTracker FX 2.0.0以降</p>
+        <p>&#160;</p>
+        <p class="title">問題が修正されるバージョン</p>
+        <p>TimeTracker FX 2.5.0</p>
+        <p>&#160;</p>
+        <p class="title">内容</p>
+        <p>サーバタスクの処理中に編集中のプロジェクトが多数存在すると、リトライ処理によりサーバタスクの処理時間が増加します。</p>
+        <p>また、状況によってはサーバタスクが正常に処理できないことがあります。</p>
+        <p>&#160;</p>
+        <p>この問題は、以下の場合に発生します。</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>プランナーで［プロジェクトA］を開きます。</p>
+            </li>
+            <li class="p">
+                <p>何らかの理由により、TimeTracker FXが異常終了します。</p>
+            </li>
+            <li class="p">
+                <p>［プロジェクトA］は、正しく終了できていないため［チェックアウト］状態が［編集中］のまま維持されます。</p>
+            </li>
+            <li class="p">
+                <p>Administratorで設定した時刻に、サーバタスク［プロジェクト情報の更新］の処理を行います。</p>
+            </li>
+            <li class="p">
+                <p>［プロジェクトA］は編集中のため、5分後にリトライを行います。</p>
+            </li>
+            <li class="p">
+                <p>利用者が［プロジェクトA］を開くまで、サーバタスクはリトライを繰り返します。</p>
+            </li>
+            <li class="p">
+                <p>翌日のAdministratorで設定した時刻に、サーバタスク［プロジェクト情報の更新］の処理を行います。</p>
+            </li>
+        </ol>
+        <p class="p_2">前日の処理がリトライを繰り返している状態でも、新たにサーバタスクの処理を追加します。</p>
+        <ol start="8" class="ol_1">
+            <li class="p">
+                <p>［プロジェクトA］は編集中のため、5分後にリトライを行います。</p>
+            </li>
+            <li class="p">
+                <p>利用者が［プロジェクトA］を開くまで、2件のサーバタスクが5分ごとにリトライを繰り返します。</p>
+            </li>
+            <li class="p">
+                <p>利用者が［プロジェクトA］を開き、保存操作を行うまで毎日1件ずつサーバタスクが増加します。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p class="title">回避方法</p>
+        <p>サーバタスクの状況を定期的に確認して、編集中のプロジェクトを終了します。</p>
+        <ol start="1" class="ol_1">
+            <li class="p">
+                <p>ページ末尾の<a href="BG071126_01.htm#download">［ダウンロード］</a>より、サーバタスクログ診断ツールをダウンロードします。</p>
+            </li>
+            <li class="p">
+                <p>ダウンロードした圧縮ファイルを、任意のフォルダへ展開します。</p>
+            </li>
+            <li class="p">
+                <p>TimeTracker FXを起動している場合は、データを保存して終了します。</p>
+            </li>
+            <li class="p">
+                <p>コマンドプロンプトを起動します。</p>
+            </li>
+            <li class="p">
+                <p>以下のコマンドを入力します。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="550" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <p>cd サンプルスクリプトを展開したフォルダ</p>
+                    <p>cscript.exe SvrTskChk.vbe ログイン名 パスワード</p>
+                </td>
+            </tr>
+        </table>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">［DB管理］権限を付与したアカウントでログインしてください。</p>
+            </li>
+            <li class="p_info">
+                <p class="p_5">実行例は <MadCap:toggler targets="t6">こちら</MadCap:toggler>をご覧ください。</p>
+                <div MadCap:targetName="t6">
+                    <table cellspacing="0" width="550" class="table_4">
+                        <col style="width: 100%;" />
+                        <tr>
+                            <td style="width: 100%;" bgcolor="#C0C0C0" class="td_1">
+                                <p>C:\&gt;<span class="span_1">cd Sample</span></p>
+                                <p>C:\Sample&gt;<span class="span_1">cscript.exe 
+				 SvrTskChk.vbe okamoto password</span></p>
+                                <p>Microsoft (R) Windows Script Host Version 5.6</p>
+                                <p>Copyright (C) Microsoft Corporation 1996-2001. All rights 
+				 reserved.</p>
+                                <p>&#160;</p>
+                                <p>サーバタスク &#160;&#160;&#160;未処理件数</p>
+                                <p>------------------------------</p>
+                                <p>ProjectUpdater &#160;46</p>
+                                <p>&#160;</p>
+                                <p>処理開始日時 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;ステータス詳細</p>
+                                <p>----------------------------------------</p>
+                                <p>2007/10/22 02:03:00 &#160;&#160;&#160;&#160;処理に失敗したため5分後にリトライします。プロジェクト 
+				 [P</p>
+                                <p>RJ-001]R商品開発 - 実績収集の事例 は岡本 直哉 さんが編集中</p>
+                                <p>2007/10/23 02:02:28 &#160;&#160;&#160;&#160;処理に失敗したため5分後にリトライします。プロジェクト 
+				 [P</p>
+                                <p>RJ-001]R商品開発 - 実績収集の事例 は岡本 直哉 さんが編集中</p>
+                                <p>2007/10/24 02:03:00 &#160;&#160;&#160;&#160;処理に失敗したため5分後にリトライします。プロジェクト 
+				 [P</p>
+                                <p>RJ-001]R商品開発 - 実績収集の事例 は岡本 直哉 さんが編集中</p>
+                                <p>2007/10/25 02:02:00 &#160;&#160;&#160;&#160;処理に失敗したため5分後にリトライします。このプロジェク</p>
+                                <p>ト情報は登録できません。</p>
+                                <p>&#160;</p>
+                                <p>処理に失敗したサーバタスク</p>
+                                <p>----------------------------------------</p>
+                                <p>処理に失敗したため5分後にリトライします。プロジェクト [PRJ-001]R商品開発 - 実績</p>
+                                <p>収集の事例 は岡本 直哉 さんが編集中</p>
+                                <p>&#160;</p>
+                                <p>C:\Sample&gt;</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ul>
+        <ol start="6" class="ol_1">
+            <li class="p">
+                <p>実行結果を確認します。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="550" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <p>サーバタスクの種類ごとに、未処理件数を集計した結果です。</p>
+                    <ul type="disc">
+                        <li class="p">
+                            <p>
+                                <MadCap:toggler targets="t5">サーバタスク</MadCap:toggler>
+                            </p>
+                            <div MadCap:targetName="t5">
+                                <p>サーバタスクの処理です。［ProjectUpdater］の未処理件数を確認します。</p>
+                            </div>
+                        </li>
+                        <li class="p">
+                            <p>
+                                <MadCap:toggler targets="t4">未処理件数</MadCap:toggler>
+                            </p>
+                            <div MadCap:targetName="t4">
+                                <p>終了していないサーバタスクの数です。</p>
+                                <ul>
+                                    <li class="p_warning_1">
+                                        <p class="warning">［ProjectUpdater］の未処理件数が300件を超えると、リソース負荷の更新や推移データの作成が行えません。</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="width: 100%;" class="td_3">
+                    <p>終了していないサーバタスクを、処理開始日時が古い処理から5件出力します。</p>
+                    <ul type="disc">
+                        <li class="p">
+                            <p>
+                                <MadCap:toggler targets="t3">処理開始日時</MadCap:toggler>
+                            </p>
+                            <div MadCap:targetName="t3">
+                                <p>対象のサーバタスクが処理を開始した日時です。</p>
+                            </div>
+                        </li>
+                        <li class="p">
+                            <p>
+                                <MadCap:toggler targets="t2">ステータス詳細</MadCap:toggler>
+                            </p>
+                            <div MadCap:targetName="t2">
+                                <p>サーバタスクが処理に失敗した原因です。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="width: 100%;" class="td_3">
+                    <p>サーバタスクが処理に失敗した原因を、すべて出力します。</p>
+                    <ul type="disc">
+                        <li class="p">
+                            <p>
+                                <MadCap:toggler targets="t1">処理に失敗したサーバタスク</MadCap:toggler>
+                            </p>
+                            <div MadCap:targetName="t1">
+                                <p>サーバタスクが処理に失敗した原因です。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <ol start="7" class="ol_1">
+            <li class="p">
+                <p>［処理に失敗したサーバタスク］から、プロジェクト名と編集中の利用者を確認します。</p>
+            </li>
+            <li class="p">
+                <p>編集中の利用者に以下の内容を依頼します。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="550" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <ol class="ol_1">
+                        <li class="p_1">
+                            <p>TimeTracker FXを起動します。</p>
+                        </li>
+                        <li class="p_1">
+                            <p>プランナーで対象のプロジェクト計画を開きます。</p>
+                        </li>
+                        <li class="p_1">
+                            <p>［すでに別の場所で編集中です］ダイアログで、［強制的に開く］ボタンをクリックします。</p>
+                        </li>
+                        <li class="p_1">
+                            <p>プロジェクト計画を保存します。</p>
+                        </li>
+                        <li class="p_1">
+                            <p>TimeTracker FXを終了します。</p>
+                        </li>
+                    </ol>
+                </td>
+            </tr>
+        </table>
+        <ol start="9" class="ol_1">
+            <li class="p">
+                <p>数時間後に手順3から手順8を行います。</p>
+            </li>
+            <li class="p">
+                <p>［ProjectUpdater］の未処理件数が0件になることを確認します。</p>
+            </li>
+            <li class="p_warning_1">
+                <p class="warning">［編集中］以外の原因でサーバタスクが失敗している場合は、<a href="../Troubleshooting/TB061101_0A.htm">TimeTracker FX サポートチーム</a>までご連絡ください。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p class="title">サーバタスクログ診断ツールのダウンロード<a name="download" id="download"></a></p>
+        <p>サーバタスクログ診断ツールがダウンロードできます。</p>
+        <ul>
+            <li class="p_download">
+                <p class="download"><a href="../downloads/trouble/SvrTskChk.zip">SvrTskChk.zip</a>･･･ZIP（39.8KB）</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+    </body>
+</html>

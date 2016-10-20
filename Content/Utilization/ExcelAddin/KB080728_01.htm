@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="チュートリアル-Excel連携アドインでExcelにデータをインポート" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>Excel連携アドインでExcelにデータをインポートする</title>
+        <link rel="StyleSheet" href="../../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>Excel連携アドインを利用して、Excelで作成する週報に、TimeTracker FXのデータをインポートする具体的な使用方法をご紹介します。</p>
+        <p>&#160;</p>
+        <p class="title">このトピックの対象</p>
+        <p>TimeTracker FX 2.5.0以降のProfessional Edition</p>
+        <p>&#160;</p>
+        <p class="title">はじめに</p>
+        <p>例として、サンプルデータにある［S機器の開発 - プロジェクト管理の例］プロジェクトの、期間・計画工数・実績工数・進捗率データをExcelの週報にインポートします。</p>
+        <p>説明に使用するExcelの週報は、以下の帳票を使用します。</p>
+        <p>&#160;</p>
+        <p class="title">説明に使用する帳票の全体像</p>
+        <p>
+            <img src="../../Image/KB080728_01_6.png" alt="" width="500" height="298" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p class="title">週報を作成する<a name="method" id="method"></a></p>
+        <p>週報に、TimeTracker FXのデータをインポートします。</p>
+        <p>&#160;</p>
+        <p>【手順】</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>TimeTracker FXで［S機器の開発 - プロジェクト管理の例］プロジェクトを開きます。</p>
+            </li>
+            <li class="p">
+                <p>ノードの［名前］が、［S機器の開発 - プロジェクト管理の例］のノードを選択します。<br /><img src="../../Image/KB080728_01_1.png" alt="" width="374" height="162" border="0" class="img_1" /></p>
+            </li>
+            <li class="p">
+                <p>Excelで週報を開きます。</p>
+            </li>
+            <li class="p">
+                <p>週報で、TimeTracker FXのデータをインポートするセルをクリックします。<br />
+	説明用の帳票ではB8のセルをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［TimeTracker FXツールバー］の［表を選択］をクリックし、選択範囲をインポートする箇所全体に変更します。<br /><img src="../../Image/KB080728_01_11.png" alt="" width="254" height="39" border="0" class="img_1" /></p>
+            </li>
+        </ol>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">［表を選択］は表として選択するために、最上行と最左列に値が設定されている必要があります。</p>
+            </li>
+        </ul>
+        <ol start="6" class="ol_1">
+            <li class="p">
+                <p>選択範囲が、表の範囲に変更されたことを確認します。<br />
+	説明用の帳票では、B7:G8の範囲が選択されます。</p>
+            </li>
+        </ol>
+        <p class="p_2">
+            <img src="../../Image/KB080728_01_7.png" alt="" width="500" height="297" border="0" class="img_1" />
+        </p>
+        <ol start="7" class="ol_1">
+            <li class="p">
+                <p>［TimeTracker FXツールバー］の［選択ノードと関連付け］をクリックし、選択範囲にインポートするノードを設定します。<br /><img src="../../Image/KB080728_01_8.png" alt="" width="385" height="258" border="0" class="img_1" /></p>
+            </li>
+            <li class="p">
+                <p>［TimeTracker FXツールバー］の［TimeTracker FXからインポート］をクリックします。<br /><img src="../../Image/KB080728_01_9.png" alt="" width="271" height="36" border="0" class="img_1" /></p>
+            </li>
+            <li class="p">
+                <p>Excelの見出しと、TimeTracker FXのフィールドを関係付けるダイアログを表示します。</p>
+            </li>
+        </ol>
+        <p class="p_2">
+            <img src="../../Image/KB080728_01_5.png" alt="" width="339" height="344" border="0" class="img_1" />
+            <br />
+            <br />
+以下の表の対応となっていることを確認した後、［OK］をクリックします。</p>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 50.001%;" />
+            <col style="width: 49.999%;" />
+            <tr valign="top">
+                <td style="width: 50.001%;" bgcolor="#C0C0C0" class="td_1">
+                    <p>Excelの見出し</p>
+                </td>
+                <td style="width: 49.999%;" bgcolor="#C0C0C0" class="td_2">
+                    <p>TimeTracker FXのフィールド</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="width: 50.001%;" class="td_3">
+                    <p>最新情報</p>
+                </td>
+                <td style="width: 49.999%;" class="td_4">
+                    <p>（なし）</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="width: 50.001%;" class="td_3">
+                    <p>開始日</p>
+                </td>
+                <td style="width: 49.999%;" class="td_4">
+                    <p>開始日（PlannedStartDate）</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="width: 50.001%;" class="td_3">
+                    <p>終了日</p>
+                </td>
+                <td style="width: 49.999%;" class="td_4">
+                    <p>終了日（PlannedFinishDate）</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="width: 50.001%;" class="td_3">
+                    <p>計画工数</p>
+                </td>
+                <td style="width: 49.999%;" class="td_4">
+                    <p>計画工数（PlannedTime）</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="width: 50.001%;" class="td_3">
+                    <p>実績工数</p>
+                </td>
+                <td style="width: 49.999%;" class="td_4">
+                    <p>実績工数（ActualTime）</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="width: 50.001%;" class="td_3">
+                    <p>進捗率</p>
+                </td>
+                <td style="width: 49.999%;" class="td_4">
+                    <p>進捗率（Progress）</p>
+                </td>
+            </tr>
+        </table>
+        <ol start="10" class="ol_1">
+            <li class="p">
+                <p>選択範囲に、TimeTracker FXのデータがインポートされます。<br /><img src="../../Image/KB080728_01_10.png" alt="" width="500" height="297" border="0" class="img_1" /></p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p class="title">［選択ノードと関連付け］が設定済みの場合</p>
+        <p><a href="KB080728_01.htm#method">［週報を作成する］</a>の手順を一通り実施した後は、［選択ノードと関連付け］ができているため、手順1・2・7を省くことができます。</p>
+        <p>手順8を実施後、TimeTracker FXにログインしていない場合は、TimeTracker FXのログイン画面を表示します。<br />
+表示されるログイン画面で、ログインを行ってください。</p>
+        <p>手順8を実施後、該当プロジェクトを開いていない場合は、［プロジェクトのモード選択］ダイアログを表示します。<br />
+TimeTracker FXのデータをExcelの週報にインポートするのみの場合は、［閲覧モード］を選択します。<br /><img src="../../Image/KB080728_01_4.png" alt="" width="376" height="221" border="0" class="img_1" /></p>
+    </body>
+</html>

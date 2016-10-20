@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="タイムシートのオフラインファイルを、タイムゾーンの異なる端末で開くとシステムエラーが発生する" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.完了" MadCap:lastBlockDepth="5" MadCap:lastHeight="468" MadCap:lastWidth="906" MadCap:conditions="Primary.非公開">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>タイムシートのオフラインファイルを、タイムゾーンの異なる端末で開くとシステムエラーが発生する場合がある</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">問題の発生するバージョン</p>
+        <p>TimeTracker FX 2.0.0</p>
+        <p>TimeTracker FX 2.0.1</p>
+        <p>&#160;</p>
+        <p class="title">問題が修正されるバージョン</p>
+        <p>TimeTracker FX 2.0.2</p>
+        <p>&#160;</p>
+        <p class="title">内容</p>
+        <p>タイムシートでエクスポートした［オフラインファイル］を、タイムゾーンの異なる端末で開くとシステムエラーが発生します。</p>
+        <p>以下の条件の場合に発生します。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>オフラインファイルに計画期間を設定していないタスクが含まれる</p>
+            </li>
+            <li class="p">
+                <p>タイムゾーンがGMT+8時間以下</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">回避方法</p>
+        <p>TimeTracker FX 2.0.2をご利用ください。</p>
+        <p>
+            <MadCap:toggler targets="t1">こちら</MadCap:toggler>の方法でも回避できます。</p>
+        <div MadCap:targetName="t1">
+            <ul type="disc">
+                <li class="p">
+                    <p>オフラインファイルでエクスポート対象のタスクに、計画開始日・終了日を設定する</p>
+                </li>
+                <li class="p">
+                    <p>タイムゾーンを日本（GMT+9）に変更す</p>
+                </li>
+            </ul>
+        </div>
+        <p>&#160;</p>
+    </body>
+</html>

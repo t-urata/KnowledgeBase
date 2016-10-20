@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Default.Not Ready for Publish" MadCap:lastBlockDepth="6" MadCap:lastHeight="1614" MadCap:lastWidth="600">
+    <head>
+        <link href="../KBTable.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Web Editionへのログインに失敗します</title>
+        <link href="../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Article" />　Web Editionへのログインに失敗します</h1>
+        <table style="caption-side: top;margin-left: 0;margin-right: auto;mc-table-style: url('../KBTable.css');width: 350px;" summary="Article number, product name and version number" class="TableStyle-KBTable" cellspacing="0">
+            <col style="width: 150px;" class="Column-Column1" />
+            <col style="width: 200px;" class="Column-Column1" />
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>更新日:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">2014/7/1</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象バージョン:</b>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">3.7</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <br />
+        <p>TimeTracker FX Web Editionへのログイン時にエラーが発生し、ログインできない場合があります。<br />この時の対処方法を紹介します。</p>
+        <h2>症状</h2>
+        <p>TimeTracker FX Web Editionのログイン画面で以下のようなエラー画面が表示され、ログインができません。<br />画面に表示されるエラーの内容は、原因によって異なります。</p>
+        <p>
+            <img src="../Image/QA140630_02_1.png" />
+        </p>
+        <p>本現象は以下の場面で発生します。(必ず発生するわけではありません)
+            <ul><li>Web サーバにTimeTracker FX Web Editionをインストールして、クライアントPCからWeb Editionにアクセスする場合</li></ul></p>
+        <h2>原因と対策</h2>
+        <p>本現象が発生する主な原因を列挙します。<br />これらの内容が該当しないかご確認ください。
+            <ol><li><a href="#method1">Web.configの編集内容に誤りがある</a></li><li><a href="#method2">app.jsonに指定したURLに誤りがある</a></li><li><a href="#method3">MIMEの設定漏れ</a></li><li><a href="#method4">Web Editionのインストール漏れ</a></li></ol></p>
+        <p>これらの原因が該当しない場合は、ご利用中のサーバ・クライアントの環境(OSやIISの種類、ネットワーク環境など)を含む、<a href="../Inquiry/TB061101_01.htm">お問い合わせに必要な情報</a>を<a href="TB061101_02.htm">こちら</a>までご連絡ください。</p>
+        <h3><a name="method1"></a>1. Web.configの編集内容に誤りがある
+        </h3>
+        <table style="border-collapse: collapse;margin-left: 20px;margin-right: auto;width: 600px;" class="contents_table">
+            <col style="width: 300px;" />
+            <col />
+            <thead>
+                <tr>
+                    <th class="contents_table">原因</th>
+                    <th class="contents_table">対策</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Web.configは手動で編集するため、追記するべき個所が異なったり、タイプミスによる入力間違いが起こりやすく、間違って編集されたWeb.configでは、Web Editionを正常に利用できません。</td>
+                    <td>Web.configの設定内容を確認してください。<br />「<a href="../Server/SA140610_01.htm">Web.config編集ツール</a>」を使用すると、元のWeb.configファイルから確実に更新できます。</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h3><a name="method2"></a>2. app.jsonに指定したURLに誤りがある
+        </h3>
+        <table style="border-collapse: collapse;margin-left: 20px;margin-right: auto;width: 600px;" class="contents_table">
+            <col style="width: 300px;" />
+            <col />
+            <thead>
+                <tr>
+                    <th class="contents_table">原因</th>
+                    <th class="contents_table">対策</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Web Editionのインストールフォルダ内に存在するapp.jsonファイルにはWeb Editionが使用するWeb APIのサイト情報が含まれています。<br />このURL情報が正しくない場合、TimeTracker FXのアカウント情報が取得できず、ログインエラーが発生します。</td>
+                    <td>app.jsonファイルで設定するURLが適切か確認してください。<br />URLは以下の設定となります。<br /><br /><b>http://(サーバーマシン名)/(Web APIのアプリケーション名)/</b><br /><br />Web APIのアプリケーション名は、Web APIのインストール時に設定した名前となります。<br />TimeTracker FX 3.7の場合、初期設定の値は「TimeTrackerFX3.7.0」となります。<br />URLの末尾に必ず「/ (スラッシュ)」を付けてください。</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h3><a name="method3"></a>3. MIMEの設定漏れ
+        </h3>
+        <table style="border-collapse: collapse;margin-left: 20px;margin-right: auto;width: 600px;" class="contents_table">
+            <col style="width: 300px;" />
+            <col />
+            <thead>
+                <tr>
+                    <th class="contents_table">原因</th>
+                    <th class="contents_table">対策</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Web APIのサイト情報を記載したapp.jsonファイルを利用するために必要なMIMEの設定ができておらず、Webサーバーで拡張子「.json」のファイルが利用できないためにログインエラーが発生します。</td>
+                    <td>WebサーバーでMIMEの設定を行い、Web Editionで拡張子「.json」のファイルを利用できるようにしてください。<br />設定方法については、TimeTracker FX&#160;Web Edition セットアップガイドの「2.2 セットアップ手順詳細」をご確認ください。</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h3><a name="method4"></a>4. Web Editionのインストール漏れ
+        </h3>
+        <table style="border-collapse: collapse;margin-left: 20px;margin-right: auto;width: 600px;" class="contents_table">
+            <col style="width: 300px;" />
+            <col />
+            <thead>
+                <tr>
+                    <th class="contents_table">原因</th>
+                    <th class="contents_table">対策</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>インストーラー内にあるWeb Edition プログラムフォルダ内のファイルが一つでも欠けた場合、Web Editionを正常に利用できません。</td>
+                    <td>インストールCD内にあるWeb Edition プログラムフォルダをフォルダごとコピーして、すべてのファイルを上書きコピーしてください。</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+    </body>
+</html>

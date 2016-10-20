@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="3743" MadCap:lastWidth="1129">
+    <head>
+        <link href="../KBTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>TimeTracker FXをサイレントインストールする</title>
+        <link href="../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Article" />　TimeTracker FXをサイレントインストールする</h1>
+        <table style="caption-side: top;margin-left: 0;margin-right: auto;mc-table-style: url('../KBTable.css');width: 350px;" summary="Article number, product name and version number" class="TableStyle-KBTable" cellspacing="0">
+            <col style="width: 150px;" class="Column-Column1" />
+            <col style="width: 200px;" class="Column-Column1" />
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>更新日:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">2015/2/11</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象バージョン:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable" style="padding-top: 4px;">3.0以降</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象エディション:</b>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">Professional / Standard</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <p>TimeTracker FXの導入時やバージョンアップの際、沢山のPCに一台ずつインストールするのは大変手間がかかります。<br xmlns="http://www.w3.org/1999/xhtml" />そこで、ここでは複数のPCへのインストールを一括して行う方法をご紹介します。</p>
+        <h2>概要</h2>
+        <p>TimeTracker FXのインストーラとTimeTracker FXサーバ設定ファイルをサーバーの共有フォルダに置き、クライアントPCでインストールスクリプトを実行するだけです。</p>
+        <p>以下に手順を説明します。</p>
+        <ol>
+            <li>クライアントPCがアクセスできるサーバーの共有フォルダに共有サーバに以下のファイルを準備する。<ul xmlns="http://www.w3.org/1999/xhtml"><li xmlns="http://www.w3.org/1999/xhtml">TimeTracker FXサーバ設定ファイル（TimeTracker.config）</li><li xmlns="http://www.w3.org/1999/xhtml">TimeTracker FXインストーラ（TimeTrackerFXsetup.exe、vcredist_x86.exe）</li></ul></li>
+            <li xmlns="http://www.w3.org/1999/xhtml">インストールスクリプトをクライアントPCで実行する。</li>
+        </ol>
+        <p>これにより、クライアントPCに対するTimeTracker FXのインストールやバージョンアップが数分で完了します。</p>
+        <h2>共有フォルダの準備</h2>
+        <p>クライアントPCがアクセスできるサーバーの共有フォルダに、TimeTracker FXサーバ設定ファイル（TimeTrackerFX.config）及びTimeTracker 
+ FXインストーラを準備します。<br xmlns="http://www.w3.org/1999/xhtml" />以下の例では、コンピュータ名［TTFXServer］のサーバマシンのCドライブに共有フォルダ（C:\Apps）を作成し、サーバ設定ファイルおよびTimeTracker 
+ FXインストーラを置いている。</p>
+        <p>
+            <img src="../Image/KB100714_01_1.png" alt="" border="0" class="img_1" />
+        </p>
+        <ul>
+            <li class="p_information">図中に記載された「3.7.1.40930」は、インストールされるTimeTracker FXのバージョンに置き換えてください。</li>
+            <li class="p_information">TimeTracker FXのバージョンについては、リリースノートをご覧ください。</li>
+        </ul>
+        <h2>スクリプトについて</h2>
+        <p>サンプルスクリプト（<a href="#case1" xmlns="http://www.w3.org/1999/xhtml">SilentInstallScript.zip</a>）をご紹介します。<br xmlns="http://www.w3.org/1999/xhtml" />このスクリプトでインストールするとExcel連携アドインもインストールします。</p>
+        <p>※このスクリプトは以下の環境にて動作を確認しております。<br xmlns="http://www.w3.org/1999/xhtml" />&#160;&#160;&#160;異なる環境や、設定によっては正しく動作しない場合がございます。</p>
+        <ul type="disc">
+            <li>OS：Windows 7 Professional SP1</li>
+        </ul>&#160;<p>このサンプルスクリプトは、主に以下の処理を実施しています。</p><ul type="disc"><li>クライアントPCのレジストリにTimeTracker 
+	 FXサーバ設定ファイルの場所を保存する</li><li>TimeTracker 
+	 FXプログラムをサイレントインストールする</li></ul>&#160;<p>サンプルスクリプトをご利用時は以下に説明する箇所を貴社環境に合わせて修正してください。</p><ol class="ol_1"><li class="li_2">TimeTracker FXのバージョン設定<br xmlns="http://www.w3.org/1999/xhtml" />インストールするバージョンに変更する。<table style="border-collapse: collapse;margin-left: 0;margin-right: auto;width: 600px;" class="contents_table" xmlns="http://www.w3.org/1999/xhtml"><col style="width: 30px;" /><col /><thead><tr><th class="contents_table" style="text-align: center;">行</th><th class="contents_table">サンプルスクリプトのコード</th></tr></thead><tbody><tr><td style="text-align: center;">25</td><td>szTimeTrackerFXCurVer 
+		 = "3.7.1.40930"</td></tr></tbody></table></li></ol>&#160;<ol start="2" class="ol_1"><li class="li_2">サーバ設定ファイルのパス設定<br xmlns="http://www.w3.org/1999/xhtml" />"\\TTFXServer\Apps\TimeTrackerFX\cfg"を所定の共有フォルダに変更する。<ul start="2" xmlns="http://www.w3.org/1999/xhtml"><li class="p_information">共有フォルダの確認方法については、以下の［<a href="KB100714_01.htm#check_path" xmlns="http://www.w3.org/1999/xhtml">共有フォルダの確認方法</a>］をご覧ください。</li></ul><table style="border-collapse: collapse;margin-left: 0;margin-right: auto;width: 600px;" class="contents_table" xmlns="http://www.w3.org/1999/xhtml"><col style="width: 30px;" /><col /><thead><tr><th class="contents_table" style="text-align: center;">行</th><th class="contents_table">サンプルスクリプトのコード</th></tr></thead><tbody><tr><td style="text-align: center;">28</td><td>szTimeTrackerFXConfig 
+		 = "\\TTFXServer\Apps\TimeTrackerFX\cfg"</td></tr></tbody></table></li></ol>&#160;<ol start="3" class="ol_1"><li class="li_2">TimeTracker FXインストーラのパス設定<br xmlns="http://www.w3.org/1999/xhtml" />"\\TTFXServer\Apps\TimeTrackerFX\"を所定の共有フォルダに変更する。<ul start="3" xmlns="http://www.w3.org/1999/xhtml"><li class="p_warning">文字列の最後に、［\］を忘れないようご注意ください。</li><li class="p_information">共有フォルダの確認方法については、以下の［<a href="KB100714_01.htm#check_path" xmlns="http://www.w3.org/1999/xhtml">共有フォルダの確認方法</a>］をご覧ください。</li></ul><table style="border-collapse: collapse;margin-left: 0;margin-right: auto;width: 600px;" class="contents_table" xmlns="http://www.w3.org/1999/xhtml"><col style="width: 30px;" /><col /><thead><tr><th class="contents_table" style="text-align: center;">行</th><th class="contents_table">サンプルスクリプトのコード</th></tr></thead><tbody><tr><td style="text-align: center;">33</td><td>szTimeTrackerFXInstaller 
+		 = "\\TTFXServer\Apps\TimeTrackerFX\"</td></tr></tbody></table></li></ol>&#160;<ol start="4" class="ol_1"><li class="li_2">インストールするTimeTracker FX のEditionを指定<br xmlns="http://www.w3.org/1999/xhtml" />Standard Editionをインストールする場合は［0］を、Professional 
+ Editionをインストールする場合は［1］を指定する。<table style="border-collapse: collapse;margin-left: 0;margin-right: auto;width: 600px;" class="contents_table" xmlns="http://www.w3.org/1999/xhtml"><col style="width: 30px;" /><col /><thead><tr><th class="contents_table" style="text-align: center;">行</th><th class="contents_table">サンプルスクリプトのコード</th></tr></thead><tbody><tr><td style="text-align: center;">38</td><td>szInstallType 
+		 = 1</td></tr></tbody></table><ul type="disc"><li>0を指定した場合は、TimeTracker 
+	 FX、Administrator をインストールします。<br />	ServerManager と Excel連携アドインはインストールしません。</li><li>1を指定した場合は、TimeTracker 
+	 FX、Administrator、Excel連携アドインをインストールします。<br />	ServerManager はインストールしません。</li></ul></li></ol>&#160;<h2>共有フォルダの確認方法<a name="check_path" xmlns="http://www.w3.org/1999/xhtml"></a></h2><p>スクリプトの設定で共有フォルダのパスを設定する場合、以下の手順で設定するパスをご確認ください。</p><ol><li class="li_2">クライアントPCでエクスプローラーを開きます。</li><li class="li_2">エクスプローラーの左に表示されるツリーから、［ネットワーク］を選択します。</li><li class="li_2">共有フォルダのあるサーバを選択し、共有フォルダを選択します。</li><li class="li_2">共有フォルダを表示したエクスプローラーのアドレス欄に表示されるパス情報を確認します。</li></ol><p><img src="../Image/KB100714_01_4.png" alt="" border="0" /></p><p class="title">&#160;</p><h2>スクリプトの動作確認</h2><p>共有サーバの準備、スクリプトの編集が出来たら全体展開前に、数台のクライアントPCでインストールの動作確認をしましょう。</p><ol class="ol_1"><li class="li_2">任意のフォルダにスクリプトを置き、ダブルクリックし実行します。<br xmlns="http://www.w3.org/1999/xhtml" />また、「最新バージョンがインストール済み」、「サーバーOSに対するインストール」の場合はインストールを実行しません。<p class="p_2"><img src="../Image/KB100714_01_2.png" alt="" border="0" class="img_1" /></p></li></ol><p class="p_2">&#160;</p><ol start="2" class="ol_1"><li class="li_2">数分で自動的にインストールが完了します。<p class="p_2"><img src="../Image/KB100714_01_3.png" alt="" border="0" class="img_1" /></p></li></ol><h2>サンプルスクリプトの活用について</h2><p>本サンプルスクリプトを御社の業務にあわせて自由に編集できます。<br xmlns="http://www.w3.org/1999/xhtml" />編集方法についてのお問い合わせは受け付けておりません。</p><h2>ダウンロード</h2><ul><li class="download"><p><a href="../downloads/sample/SilentInstallScript.zip">SilentInstallScript.zip</a>･･･ZIP（1.76KB）<a name="case1"></a></p></li></ul><p>&#160;</p></body>
+</html>

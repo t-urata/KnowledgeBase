@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="評価目的で利用したデータベースを削除する方法(SQL_Server_2000)" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.完了" MadCap:conditions="Primary.非公開">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>評価目的で利用したデータベースを削除する方法(SQL Server 2000)</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">このトピックの対象</p>
+        <p>TimeTracker FX 2.0.0</p>
+        <p>TimeTracker FX 2.0.1</p>
+        <p>TimeTracker FX 2.0.2</p>
+        <p>&#160;</p>
+        <ul>
+            <li class="p_info_1">
+                <p>TimeTracker FX 2.5以降をご利用の方および、Server 
+	 Managerをご利用の方は、Server Managerからデータベースを削除してください。</p>
+            </li>
+            <li class="p_info_1">
+                <p>Server Managerでデータベースを削除する方法は、Server 
+	 Manager ヘルプの <a href="../newdoc/List_DeleteDatabase.htm" target="_blank" id="a2">［データベースを登録解除または削除する］</a>をご覧ください。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">内容</p>
+        <p>評価時に作成し、不要となったデータベースの削除方法をご紹介します。</p>
+        <ul>
+            <li class="p_warning_1">
+                <p class="warning">削除したデータベースは元に戻せません。</p>
+            </li>
+            <li class="p_warning_1">
+                <p class="warning">必要なデータベースを誤って削除しないように、十分ご注意ください。</p>
+            </li>
+            <li class="p_warning_1">
+                <p class="warning">本情報は、参考情報です。動作を保証するものではございませんので、予めご了承ください。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">削除手順</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>Windows［スタート］メニューから、［（すべての）プログラム］-［Microsoft SQL Server］を開きます。</p>
+            </li>
+            <li class="p">
+                <p>［Enterprise Manager］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>Enterprise Managerの［Microsoft SQL Servers］-［SQL Server 
+	 グループ］を開きます。</p>
+            </li>
+            <li class="p">
+                <p>対象のSQL Serverを選択して、［データベース］を開きます。</p>
+            </li>
+            <li class="p">
+                <p>TimeTracker FX評価版で作成したデータベースを選択して、右クリックの［削除］をクリックします。</p>
+            </li>
+        </ol>
+        <p class="p_2">
+            <img src="../Image/KB070212_01_1.png" alt="" width="368" height="270" border="0" class="img_1" />
+        </p>
+        <ol start="6" class="ol_1">
+            <li class="p">
+                <p>
+                    <MadCap:toggler targets="t1">［データベースの削除］ダイアログ</MadCap:toggler>で、［はい］をクリックします。</p>
+                <div MadCap:targetName="t1">
+                    <p>
+                        <img src="../Image/KB070212_01_2.png" alt="" width="438" height="144" border="0" class="img_1" />
+                    </p>
+                </div>
+            </li>
+            <li class="p">
+                <p>対象のSQL Serverを選択して、［セキュリティ］を開きます。</p>
+            </li>
+            <li class="p">
+                <p>［ログイン］をクリックします。</p>
+            </li>
+        </ol>
+        <p class="p_2">
+            <img src="../Image/KB070212_01_3.png" alt="" width="167" height="127" border="0" class="img_1" />
+        </p>
+        <ol start="9" class="ol_1">
+            <li class="p">
+                <p>TimeTracker FX評価版で作成したログインを選択して、右クリックの［削除］をクリックします。</p>
+            </li>
+        </ol>
+        <p class="p_2">
+            <img src="../Image/KB070212_01_4.png" alt="" width="307" height="150" border="0" class="img_1" />
+        </p>
+        <ol start="10" class="ol_1">
+            <li class="p">
+                <p>［Enterprise Manager］を終了します。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+    </body>
+</html>

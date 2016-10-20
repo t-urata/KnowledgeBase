@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.非公開" MadCap:id="osql_ユーティリティでSQL_Server（MSDE）に接続するには" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.完了">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>osqlユーティリティでデータベース（MSDE）に接続する方法</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>osql ユーティリティを利用して、データベース（MSDE2000）に接続する方法を説明します。</p>
+        <ul>
+            <li class="p_info">
+                <MadCap:toggler targets="t1">osqlユーティリティとは</MadCap:toggler>
+            </li>
+            <div MadCap:targetName="t1">
+                <p>ODBCを使用してデータベースサーバに接続し、Transact-SQL ステートメント、システム プロシージャなどを実行します。</p>
+                <p>osqlユーティリティを利用すると、データベースサーバに対して、様々な命令を行えます。</p>
+            </div>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">操作方法</p>
+        <ol start="1">
+            <li class="p">
+                <p>Windowsの［スタート］メニューから［ファイル名を指定して実行］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>以下のコマンドを入力して［OK］ボタンをクリックします。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <p>cmd</p>
+                </td>
+            </tr>
+        </table>
+        <ol start="3" class="ol_1">
+            <li class="p">
+                <p>コマンドプロンプトが開きます。</p>
+            </li>
+            <li class="p">
+                <p>コマンドプロンプトに以下のコマンドを入力し、MSDE2000に接続します。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <p>osql -S サーバ名 -U 管理者権限のあるユーザ -P パスワード</p>
+                </td>
+            </tr>
+        </table>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">サーバ名は、［サーバマシン名 + \ + 
+	 インスタンス名］です。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">実行例</p>
+        <p>以下の環境の場合の実行例です。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>サーバマシン名･･･TT-SVR</p>
+            </li>
+            <li class="p">
+                <p>SQL Server（MSDE） インスタンス名･･･TimeTracker</p>
+            </li>
+            <li class="p">
+                <p>SQL Server（MSDE） saアカウントのパスワード･･･admin</p>
+            </li>
+            <li class="p">
+                <p>入力するコマンドの例</p>
+            </li>
+        </ul>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" bgcolor="#C0C0C0" class="td_1">
+                    <p>C:\&gt;<span class="span_1">osql 
+		 -S TT-SVR\TimeTracker -U sa -P admin</span></p>
+                    <p>1&gt;</p>
+                </td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+    </body>
+</html>

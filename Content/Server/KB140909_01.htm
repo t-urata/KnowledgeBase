@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Default.Not Ready for Publish" MadCap:lastBlockDepth="6" MadCap:lastHeight="1113" MadCap:lastWidth="1102">
+    <head>
+        <link href="../KBTable.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Windows 8やWindows Server 2012で.NET Framework 2.0を利用できるようにする</title>
+        <link href="../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Article" />　Windows 8やWindows Server 2012で.NET Framework 2.0を利用できるようにする</h1>
+        <table style="caption-side: top;margin-left: 0;margin-right: auto;mc-table-style: url('../KBTable.css');width: 350px;" summary="Article number, product name and version number" class="TableStyle-KBTable" cellspacing="0">
+            <col style="width: 150px;" class="Column-Column1" />
+            <col style="width: 200px;" class="Column-Column1" />
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>更新日:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">2016/6/26</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象バージョン:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable" style="padding-top: 4px;">3.7, 3.8</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象エディション:</b>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">Professional / Standard</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <p>TimeTracker FXには.NET Framework 2.0が必要ですが、Windows 8やWindows Server 2012では.NET Framework 2.0が利用できない状態になっていることがあります。<br />このトピックでは、これらのOSで.NET Framework 2.0を利用できる状態にするための方法を紹介します。</p>
+        <h2>対象OS</h2>
+        <p>本トピックが対象とするOSは以下のとおりです。</p>
+        <ul>
+            <li>サーバーOS： Windows Server 2012, 2012 R2</li>
+            <li>クライアントOS： Windows 8, 8.1</li>
+        </ul>
+        <h2>設定方法</h2>
+        <p>対象OSで.NET Framework 2.0を利用できる状態にするには、以下の2つの方法があります。<br /></p>
+        <ul>
+            <li><a href="#method1" target="_self">コントロールパネルから.NET Framework 2.0を利用できるようにする</a>
+                <br />通常はこちらの方法を実施してください。<br />マウス操作のみで設定でき、特殊な操作は不要です。<br /></li>
+        </ul>
+        <ul>
+            <li><![CDATA[        ]]><a href="#method2" target="_self">コマンドプロンプトから.NET Framework 2.0を利用できるようにする</a><br />Microsoft Updateに接続できないなど、上記操作で設定できなかった場合に実施する方法です。<br />この操作では対象OSのインストールディスクが必要です。</li>
+        </ul>
+        <p>&#160;</p>
+        <h3><a name="method1"></a>コントロールパネルから.NET Framework 2.0を利用できるようにする</h3>
+        <ol>
+            <li>コントロールパネルの[プログラム]-[Windowsの機能の有効化または無効化]を選択します。</li>
+            <li>[Windowsの機能]ダイアログにて[.NET Framework 3.5(.NET 2.0および3.0を含む)]にチェックします。</li>
+            <li>[OK]をクリックし、ダイアログを閉じます。<br /><img src="../Image/KB140909_01_1.png" /></li>
+        </ol>
+        <p>&#160;</p>
+        <h3><a name="method2"></a>コマンドプロンプトから.NET Framework 2.0を利用できるようにする
+        </h3>
+        <ol>
+            <li>対象OSのインストールディスクを用意します。</li>
+            <li>インストールディスクをディスクドライブに入れます。</li>
+            <li>コマンドプロンプトで以下のコマンドを入力します。<br />※コマンドはディスクドライブがDドライブの場合を想定しています。環境に合わせて"d:"の箇所を変更してください。</li>
+        </ol>
+        <p class="p5">DISM /Online /Enable-Feature /FeatureName:NetFx3 /All /LimitAccess /Source:<b><i>d:</i></b>\sources\sxs</p>
+    </body>
+</html>

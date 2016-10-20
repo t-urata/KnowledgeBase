@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="TimeTrackr_FXがデータベースに接続できません" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中" MadCap:lastBlockDepth="5" MadCap:lastHeight="749" MadCap:lastWidth="971">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>SQL Server Expressのインストール時にSQL Server Native Clientのインストールに失敗する</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title" xmlns="http://www.w3.org/1999/xhtml">このトピックの対象</p>
+        <p>TimeTracker FX 評価版</p>
+        <p>TimeTracker FX 3以降の製品版</p>
+        <p>&#160;</p>
+        <p class="title">症状</p>
+        <p>SQL Server Express インストール中に以下のダイアログが表示され、インストールに失敗してしまう。</p>
+        <p>
+            <img src="../Image/QA121218_01_1.png" xmlns="http://www.w3.org/1999/xhtml" />
+        </p>
+        <p>&#160;</p>
+        <p class="title">原因</p>
+        <p>本現象は、SQL Server Native Clientが既にインストールされていることが原因で発生します。</p>
+        <p>※SQL Server Expressのインストーラは、SQL Server Native Clientのインストールも含めたパッケージとなっているため、</p>
+        <p>SQL Server Native Clientのインストールに失敗することで、SQL Server Express本体のインストールも失敗します。</p>
+        <p>&#160;</p>
+        <p class="title" xmlns="http://www.w3.org/1999/xhtml">回避方法 </p>
+        <p>既にインストールされているSQL Server Native Clientをアンイストールすることで、回避することができます。</p>
+        <p>
+            <img src="../Image/QA121218_01_2.png" xmlns="http://www.w3.org/1999/xhtml" />
+        </p>
+        <p>SQL Server Native Clientをアンイストール後に、再度SQL Server Expressのインストールを実施してください。</p>
+        <p>&#160;</p>
+    </body>
+</html>
