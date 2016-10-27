@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1345" MadCap:lastWidth="999">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>タイムシートのタスクツリーを表示するのに時間がかかります</title>
+        <link href="../../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>タイムシートの起動までの時間や、タスクツリーが展開されるまでの時間は、表示に必要なデータ取得量に依存します。<br xmlns="http://www.w3.org/1999/xhtml" />以下の方法をご利用いただくことで、表示速度の改善を行っていただくことができます。</p>
+        <h2>【改善方法】</h2>
+        <ul type="disc">
+            <li class="P"><a href="QA090629_02.htm#case1">入力・閲覧範囲を短くする</a>
+            </li>
+            <li class="P"><a href="QA090629_02.htm#case2">マイプロジェクトを使用する</a>
+            </li>
+            <li class="P"><a href="QA090629_02.htm#case3">タスクに適切なリソースを割り当てる</a>
+            </li>
+            <li class="P"><a href="QA090629_02.htm#case4">完了したプロジェクトを終了状態にする</a>
+            </li>
+            <li class="P"><a href="QA090629_02.htm#case5">実績を入力し終わったタスクに［実績入力のロック］をする</a>
+            </li>
+            <li class="P"><a href="QA090629_02.htm#case6">サーバのメモリを増設する</a>
+            </li>
+        </ul>
+        <h3>入力・閲覧範囲を短くする<a name="case1" xmlns="http://www.w3.org/1999/xhtml"></a></h3>
+        <h4>【方法】</h4>
+        <p class="p3">タイムシートのメニューにある、［ツール］－［オプション］を使用して、タイムシートに読み込む実績データを制限します。<br xmlns="http://www.w3.org/1999/xhtml" />［一般］タブの［実績入力・閲覧範囲の指定］を変更してください。</p>
+        <ul class="ul3">
+            <li class="p_information">設定方法の詳細については、<a href="../../newdoc/basic_option.htm" target="_blank">こちら</a>をご覧ください。</li>
+        </ul>
+        <h4>【効果】</h4>
+        <p class="p3">タイムシートの起動時に取得するデータが制限されるため、タイムシートの起動から表示されるまでの時間が改善されます。</p>
+        <h3>マイプロジェクトを使用する<a name="case2" xmlns="http://www.w3.org/1999/xhtml"></a></h3>
+        <h4>【方法】</h4>
+        <p class="p3">タイムシートのメニューにある、［ファイル］－［マイプロジェクト］を使用して、［タスクツリー］に読み込むプロジェクトを制限します。</p>
+        <ul class="ul3">
+            <li class="p3_information">設定方法の詳細については、<a href="../../newdoc/myproject.htm" target="_blank">こちら</a>をご覧ください。</li>
+        </ul>
+        <h4>【効果】</h4>
+        <p class="p3">実績の入力に不必要なプロジェクトを［タスクツリー］に読み込まないようにします。</p>
+        <ul class="ul3">
+            <li class="p3_warning">新規追加のプロジェクトは、選択を追加しないと［タスクツリー］に表示されません。</li>
+        </ul>
+        <p>&#160;</p>
+        <h3>タスクに適切なリソースを割り当てる<a name="case3" xmlns="http://www.w3.org/1999/xhtml"></a></h3>
+        <h4>【方法】</h4>
+        <p class="p3">プランナーでタスクに割り当てるリソースを必要に応じて割り当てます。</p>
+        <h4>【効果】</h4>
+        <p class="p3">実績の入力に不要なタスクを、タスクツリーに読み込まないようにします。<br xmlns="http://www.w3.org/1999/xhtml" />また、この操作を行うことで、プランナーでプロジェクトを開く際の処理時間も向上します。</p>
+        <h3>完了したプロジェクトを終了状態にする<a name="case4" xmlns="http://www.w3.org/1999/xhtml"></a></h3>
+        <h4>【方法】</h4>
+        <p class="p3">完了しているプロジェクトを、プランナーの［プロジェクトの設定］で、終了状態に設定します。</p>
+        <ul class="ul3">
+            <li class="p3_information">設定方法の詳細については、<a href="../../newdoc/SetProject_General.htm" target="_blank">こちら</a>をご覧ください。</li>
+        </ul>
+        <h4>【効果】</h4>
+        <p class="p3">実績入力の対象外となったプロジェクトを［タスクツリー］に読み込まないようにします。</p>
+        <h3>実績を入力し終わったタスクに［実績入力のロック］をする<a name="case5" xmlns="http://www.w3.org/1999/xhtml"></a></h3>
+        <h4>【方法】</h4>
+        <p class="p3">既に実績を入力済みで、作業を完了したタスクに対して、プランナーで［実績入力のロック］を設定します。</p>
+        <ul class="ul3">
+            <li class="p3_information">設定方法の詳細については、<a href="../../newdoc/LockInputtingActualTime.htm" target="_blank">こちら</a>をご覧ください。</li>
+        </ul>
+        <h4>【効果】</h4>
+        <p class="p3">今後実績が入力されることのないタスクを、［タスクツリー］に読み込まないようにします。<br xmlns="http://www.w3.org/1999/xhtml" />また、この操作を行うことで、以下2つの利点がございます。</p>
+        <ul type="disc" class="ul3">
+            <li class="P">該当タスクへの、実績の追加や、入力済みの実績が変更できなくなるので、誤入力を防ぐことができます。</li>
+            <li class="P">［タスクツリー］に表示されるタスクが、作業中または今後作業が必要なタスクのみとなるので、担当者が作業すべきタスクの視認性を向上できます。</li>
+        </ul>
+        <h3>サーバのメモリを増設する<a name="case6" xmlns="http://www.w3.org/1999/xhtml"></a></h3>
+        <h4>【方法】</h4>
+        <p class="p3">サーバマシンのメモリを、増設します。</p>
+        <ul class="ul3">
+            <li class="p3_information">メモリの増設方法などにつきましては、システム管理者にご相談ください。</li>
+        </ul>
+        <h4>【効果】</h4>
+        <p class="p3">データベースからデータを取得する速度は、メモリに依存することが多くあります。<br xmlns="http://www.w3.org/1999/xhtml" />サーバマシンのメモリを増設することで、TimeTracker FXがデータベースからデータを取得する処理速度そのものが改善されます。</p>
+        <p class="p_5">&#160;</p>
+    </body>
+</html>

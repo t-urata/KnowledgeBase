@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1056" MadCap:lastWidth="875">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>実績工数がリソース負荷の実績データに正しく反映されない</title>
+        <link href="../FX_KB_alert.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <h3>問題の発生するバージョン</h3>
+        <p class="p2">TimeTracker FX 3.6</p>
+        <p xmlns="http://www.w3.org/1999/xhtml" class="p2">＜お詫び＞<br xmlns="http://www.w3.org/1999/xhtml" />当初は「TimeTracker FX 3.6 Professional Editionでのみ発生する」と記載しておりましたが、誤りがございました。<br xmlns="http://www.w3.org/1999/xhtml" />正しくはTimeTracker FX 3.6 Professional EditionおよびStandard Editionで発生します。<br xmlns="http://www.w3.org/1999/xhtml" />ご迷惑をおかけし大変申し訳ございませんでした。</p>
+        <h3>問題が修正されるバージョン</h3>
+        <p class="p2">TimeTracker FX 3.6.1</p>
+        <h2>内容</h2>
+        <p>実績工数に基づいたリソース負荷の実績データが正常に集計されない場合があります。<br xmlns="http://www.w3.org/1999/xhtml" />プロジェクト単位で以下の条件を満たす場合、そのプロジェクトに対してリソース負荷の実績データに実績工数が反映されません。</p>
+        <p>【条件】</p>
+        <ol class="ol_1">
+            <li class="p"> 計画工数が設定されている（値が0でない）ノードが1つもない</li>
+            <li class="p"> 1つ以上のノードに計画工数が設定されている場合、実績工数の日付を含む期間が設定されているノードが1つもない</li>
+        </ol>
+        <h2>対象</h2>
+        <p>本現象は以下の機能で発生します。</p>
+        <table cellspacing="0" width="500">
+            <col style="width: 111px;" />
+            <col style="width: 292px;" />
+            <tr valign="top">
+                <td bgcolor="#C0C0C0" class="td_1">
+                    <p class="p8">機能名</p>
+                </td>
+                <td bgcolor="#C0C0C0" class="td_2">
+                    <p class="p8">対象</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td class="td_3">
+                    <p class="p8" xmlns="http://www.w3.org/1999/xhtml">プランナー</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">［リソース負荷］ドッキングウィンドウ　※</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td class="td_3" rowspan="2">
+                    <p class="p8" xmlns="http://www.w3.org/1999/xhtml">アナリスト</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">［リソースサマリ］ビュー</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td class="td_4">
+                    <p class="p8">［リソース負荷］ビュー</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td class="td_3">
+                    <p class="p8">ピボット分析</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">［リソース負荷］テーブルを利用した分析ビュー</p>
+                </td>
+            </tr>
+        </table>
+        <p>※ 他プロジェクトを集計対象に含める場合のみ、他プロジェクトのリソース負荷データで発生します。</p>
+        <h2>回避方法</h2>
+        <p>以下の2つの作業を実施することで、この問題を解消できます。</p>
+        <ol class="ol_1" xmlns="http://www.w3.org/1999/xhtml">
+            <li class="p"> サーバ側のTimeTracker FXのプログラムをTimeTracker FX 3.6.1に更新する<br xmlns="http://www.w3.org/1999/xhtml" />※プログラム更新手順は<a href="http://www.timetracker.jp/support/documents/36/WebHelp/SetupGuide/Guide/pdct_fx_upgrade.htm" target="_blank" xmlns="http://www.w3.org/1999/xhtml">こちら</a>の「手順1.利用者に利用停止を案内する」から<br xmlns="http://www.w3.org/1999/xhtml" />　「手順5.サーバマシンでTimeTracker FXを起動する」を実施してください。<br xmlns="http://www.w3.org/1999/xhtml" />※プロダクトIDおよびライセンスキーはFX3.6のものをお使いください。<br xmlns="http://www.w3.org/1999/xhtml" />※クライアントのプログラム更新は不要です。&#160;</li>
+            <li class="p"> 不具合修正スクリプトにてリソース負荷データを修正する<br xmlns="http://www.w3.org/1999/xhtml" />※この作業はサーバ側で実施します。<br xmlns="http://www.w3.org/1999/xhtml" />※データ修正手順は<a href="../downloads/document/resourceload_update_v361.pdf" target="_blank" xmlns="http://www.w3.org/1999/xhtml">こちら</a>を参考にしてください。</li>
+        </ol>&#160;<h2 xmlns="http://www.w3.org/1999/xhtml">ダウンロード</h2><p xmlns="http://www.w3.org/1999/xhtml">TimeTracker FX 3.6.1プログラムおよび不具合修正スクリプト(sqlファイル)は以下からダウンロードできます。<br xmlns="http://www.w3.org/1999/xhtml" />※ダウンロードにはご購入後にご案内しておりますIDとパスワードが必要です。<br xmlns="http://www.w3.org/1999/xhtml" />※IDやパスワードをお忘れの場合はTimeTracker FX サポートチーム（ttsupport@dcinc.co.jp）までお問い合わせください。</p><h3>TimeTracker FX 3.6.1プログラム</h3><ul xmlns="http://www.w3.org/1999/xhtml"><li class="p_download"><a href="http://www.timetracker.jp/support/auth_user/downloads/36/TimeTrackerFXSetup.zip" xmlns="http://www.w3.org/1999/xhtml">TimeTrackerFXSetup</a>･･･ZIP（323MB）<a name="download" id="download" xmlns="http://www.w3.org/1999/xhtml"></a></li></ul><h3 xmlns="http://www.w3.org/1999/xhtml">不具合修正スクリプト</h3><ul xmlns="http://www.w3.org/1999/xhtml"><li class="p_download"><a href="http://www.timetracker.jp/support/auth_user/downloads/36/resourceload_update_v361.zip" xmlns="http://www.w3.org/1999/xhtml">resourceload_update_v361</a>･･･ZIP（840Byte）<a name="download" id="download" xmlns="http://www.w3.org/1999/xhtml"></a></li></ul><p xmlns="http://www.w3.org/1999/xhtml">※ご使用時は圧縮ファイル(ZIP形式)を解凍してお使いください。</p><p xmlns="">&#160;</p></body>
+</html>

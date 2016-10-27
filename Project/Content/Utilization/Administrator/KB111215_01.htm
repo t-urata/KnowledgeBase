@@ -1,0 +1,290 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="5611" MadCap:lastWidth="795" MadCap:conditions="Primary.非公開">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+        <meta http_equiv="Content-Language" content="ja-JP" /><title>組織の階層化と組織Lvの活用方法について</title>
+        <link rel="StyleSheet" href="../../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>［組織の定義］の［組織Lv］と［役割の定義］の［権限範囲］を活用することで、TimeTracker FXにて確認できる情報をメンバの職位や役割（部門長やリーダー、DB管理者など）にあわせて制限する方法をご紹介します。</p>
+        <p>&#160;</p>
+        <p class="title">このトピックの対象</p>
+        <p>TimeTracker FX 3以降</p>
+        <p>&#160;</p>
+        <p class="title">はじめに</p>
+        <ul type="disc">
+            <li class="P">
+                <p class="title">［組織Lv］とは</p>
+            </li>
+        </ul>
+        <p class="p_2">メンバが所属する組織を階層構造にて構築する際に、構成する階層数を指定する機能です。</p>
+        <p>&#160;</p>
+        <ul type="disc">
+            <li class="P">
+                <p class="title">［権限範囲］とは</p>
+            </li>
+        </ul>
+        <p class="p_2">役割に付与された［計画作成］や［分析］などの権限が適応される範囲を指定する機能です。</p>
+        <p class="p_2">組織の階層（組織Lv）単位での指定が可能です。</p>
+        <p>&#160;</p>
+        <p class="p_5">これらの機能を組み合わせてご利用いただくことで、</p>
+        <p class="p_5">メンバの職位や役割に応じて情報を確認できる範囲を制限できます。</p>
+        <p>&#160;</p>
+        <p class="title_4">&lt;事例&gt;</p>
+        <ul type="disc">
+            <li>
+                <p><a href="#case1">TimeTracker 
+	 FXの推進担当やデータベース管理者は、所属する組織に関係なく情報を確認できるようにしたい</a>
+                </p>
+            </li>
+            <li class="P">
+                <p><a href="#case2">部門長（部長や課長）は、事業部全体のプロジェクトの情報を確認できるようにしたい</a>
+                </p>
+            </li>
+            <li class="P">
+                <p><a href="#case3">マネージャは、自部門のプロジェクト情報をいつでも確認できるようにしたい</a>
+                </p>
+            </li>
+            <li class="P">
+                <p><a href="#case4">リーダーやメンバは、自分たちが担当するプロジェクトのみ情報を確認できるようにしたい</a>
+                </p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">組織を階層化し、権限の適応範囲を設定する</p>
+        <p class="title_3">【設定①】　組織体系から階層化した［組織］を設定する。</p>
+        <p class="p_2">以下の手順にて会社組織体系に合わせて、TimeTracker FXの［組織］を階層化します。 
+ </p>
+        <p>&#160;</p>
+        <p class="p_2">【手順】 </p>
+        <ol>
+            <ol>
+                <li class="P">
+                    <p>Administratorツールを起動します。</p>
+                </li>
+                <li class="P">
+                    <p>アカウントグループ－［組織の定義］をクリックします。</p>
+                </li>
+                <li class="P">
+                    <p>［次の組織レベルまで利用する］にて階層構造の階層数を指定します。</p>
+                </li>
+            </ol>
+        </ol>
+        <ul>
+            <li class="p_info">
+                <p>3階層の階層構造を作成する場合は、［組織名］に上位2階層を追加するため、「組織Lv2」を指定します。</p>
+            </li>
+        </ul>
+        <ol>
+            <ol start="4">
+                <li class="P">
+                    <p>各組織Lvに名称を設定し、組織体系に合わせて組織を定義します。</p>
+                </li>
+            </ol>
+        </ol>
+        <p>&#160;</p>
+        <p class="p_4">
+            <img src="../../Image/KB111215_01_1.png" alt="" width="795" height="247" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p class="title_3">【設定②】　権限が適応される範囲を指定する</p>
+        <p class="p_2">以下の手順にて、［役割］ごとに付与された権限が階層化した［組織］のどの範囲に適応されるかを指定します。</p>
+        <p>&#160;</p>
+        <p class="p_2">【手順】</p>
+        <ol>
+            <ol>
+                <li class="P">
+                    <p>アカウントグループ－［役割の定義］をクリックします。</p>
+                </li>
+                <li class="P">
+                    <p>［権限範囲］フィールドにて各役割に付与された権限の適応範囲を指定します。</p>
+                </li>
+            </ol>
+        </ol>
+        <ol>
+            <ul>
+                <li class="p_info">権限を適応する範囲は、組織階層（組織Lv）にて指定します。<br />		権限の適応範囲についての詳細は、「事例」をご参照ください。</li>
+            </ul>
+        </ol>
+        <p>&#160;</p>
+        <p class="p_4">
+            <img src="../../Image/KB111215_01_2.png" alt="" width="752" height="230" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <ul>
+            <li class="p_warning">
+                <p>［DB管理］権限は、Administratorツールを利用してTimeTracker FXのシステム設定を行う権限となるため、<br />	本設定による［権限範囲］の設定が適応されません。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">権限範囲設定の事例</p>
+        <p class="title_3">（1） DB(データベース)管理者<a name="case1" id="a4"></a></p>
+        <table style="height: 37px;" cellspacing="0" width="513" class="table_13">
+            <col width="70" />
+            <col width="600" />
+            <tr>
+                <td>
+                    <p align="center">
+                        <img src="../../Image/KB111215_01_3.png" alt="" width="35" height="41" border="0" class="img_1" />
+                    </p>
+                </td>
+                <td>
+                    <p>DB管理者はデータベース管理のため、</p>
+                    <p>所属する部門に関係なく全ての情報に対してアクセスする権限を与えたい。</p>
+                </td>
+            </tr>
+        </table>
+        <p class="title">&#160;</p>
+        <p class="title_4">【適応する権限範囲のイメージ】</p>
+        <p>&#160;</p>
+        <p class="p_4">
+            <img src="../../Image/KB111215_01_6.png" alt="" width="363" height="176" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p class="title_4">【TimeTracker FXの設定】</p>
+        <p class="p_4">［役割］にて「DB管理者」の権限範囲を［すべて］に設定します。</p>
+        <p>&#160;</p>
+        <p class="p_4">
+            <img src="../../Image/KB111215_01_10.png" alt="" width="528" height="150" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p class="p_4">「DB管理者」は、アカウントが所属する組織に関係なく、TimeTracker FXのすべてのデータに対して付与された権限が適応されます。</p>
+        <p>&#160;</p>
+        <p class="title_4">【例】　［プロジェクトを開く］の場合</p>
+        <p class="p_4">［役割］にて［計画閲覧］権限を付与した場合、［計画閲覧］権限が［組織Lv1］に属する［組織］に対して適応されるため、<br /><span class="span_12">［組織Lv1］に属する［組織］のプロジェクトの情報を閲覧することができます。</span></p>
+        <p>&#160;</p>
+        <p class="p_4">
+            <img src="../../Image/KB111215_01_14.png" alt="" width="664" height="311" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p class="title_3">（2） 部門長などの職制（上級管理者）<a name="case2" id="a1"></a></p>
+        <table style="height: 37px;" cellspacing="0" width="513" class="table_13">
+            <col width="70" />
+            <col width="600" />
+            <tr>
+                <td>
+                    <p align="center">
+                        <img src="../../Image/KB111215_01_4.png" alt="" width="35" height="42" border="0" class="img_1" />
+                    </p>
+                </td>
+                <td>
+                    <p>部門長などの職制（上級管理者）には</p>
+                    <p>事業部全体の情報を確認できるようにしたい。</p>
+                </td>
+            </tr>
+        </table>
+        <ol>
+            <ul>
+                <li class="p_info">下記では、「開発1課」に所属する部門長を例にご説明いたします。</li>
+            </ul>
+        </ol>
+        <p>&#160;</p>
+        <p class="title_4">【適応する権限範囲のイメージ】</p>
+        <p>&#160;</p>
+        <p class="p_4">
+            <img src="../../Image/KB111215_01_7.png" alt="" width="365" height="178" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p class="title_4">【TimeTracker FXの設定】</p>
+        <p class="p_4">［役割］にて「部長」「課長」の権限範囲を［組織Lv1］に設定します。</p>
+        <p>&#160;</p>
+        <p class="p_4">
+            <img src="../../Image/KB111215_01_11.png" alt="" width="528" height="150" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p class="title_4">【例】　［プロジェクトを開く］の場合</p>
+        <p class="p_4">［役割］にて［計画閲覧］権限を付与した場合、［計画閲覧］権限がデータベース内のすべての情報に対して適応されるため、</p>
+        <p class="p_4">所属する［組織］などに関係なく、すべてのプロジェクトの情報を閲覧することができます。</p>
+        <p>&#160;</p>
+        <p class="p_4">
+            <img src="../../Image/KB111215_01_15.png" alt="" width="723" height="311" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p class="title_3">（3） マネージャ<a name="case3" id="a2"></a></p>
+        <table style="height: 37px;" cellspacing="0" width="513" class="table_13">
+            <col width="70" />
+            <col width="600" />
+            <tr>
+                <td>
+                    <p align="center">
+                        <img src="../../Image/KB111215_01_4.png" alt="" width="35" height="42" border="0" class="img_1" />
+                    </p>
+                </td>
+                <td>
+                    <p>マネージャには自部門の情報のみ確認できるようにしたい。</p>
+                </td>
+            </tr>
+        </table>
+        <ol>
+            <ul>
+                <li class="p_info">下記では、「開発1課」に所属するマネージャを例にご説明いたします。</li>
+            </ul>
+        </ol>
+        <p>&#160;</p>
+        <p class="title_4">【適応する権限範囲のイメージ】</p>
+        <p>&#160;</p>
+        <p class="p_4">
+            <img src="../../Image/KB111215_01_8.png" alt="" width="364" height="178" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p class="title_4">【TimeTracker FXの設定】</p>
+        <p class="p_4">［役割］にて「マネージャ」の権限範囲を［組織Lv2］に設定します。</p>
+        <p>&#160;</p>
+        <p class="p_4">
+            <img src="../../Image/KB111215_01_12.png" alt="" width="528" height="149" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p class="title_4">【例】　［プロジェクトを開く］の場合</p>
+        <p class="p_4">［役割］にて［計画閲覧］権限を付与した場合、［計画閲覧］権限が［組織Lv2］に属する［組織］に対して適応されるため、</p>
+        <p class="p_4">［組織Lv2］に属する［組織］のプロジェクトの情報を閲覧することができます。</p>
+        <p>&#160;</p>
+        <p class="p_4">
+            <img src="../../Image/KB111215_01_16.png" alt="" width="696" height="316" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p class="title_3">（4） リーダー、メンバ<a name="case4" id="a3"></a></p>
+        <table style="height: 37px;" cellspacing="0" width="513" class="table_13">
+            <col width="70" />
+            <col width="600" />
+            <tr>
+                <td>
+                    <p align="center">
+                        <img src="../../Image/KB111215_01_5.png" alt="" width="59" height="42" border="0" class="img_1" />
+                    </p>
+                </td>
+                <td>
+                    <p>リーダー、メンバには業務に関係のない情報が見えないようにしたい。</p>
+                </td>
+            </tr>
+        </table>
+        <ol>
+            <ul>
+                <li class="p_info">下記では、「開発1課」に所属するリーダー、メンバを例にご説明いたします。</li>
+            </ul>
+        </ol>
+        <p>&#160;</p>
+        <p class="title_4">【適応する権限範囲のイメージ】</p>
+        <p>&#160;</p>
+        <p class="p_4">
+            <img src="../../Image/KB111215_01_9.png" alt="" width="364" height="176" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p class="title_4">【TimeTracker FXの設定】</p>
+        <p class="p_4">［役割］にて「リーダー」、「担当」、「外部スタッフ」、「ゲスト」の権限範囲を［組織］に設定します。</p>
+        <p>&#160;</p>
+        <p class="p_4">
+            <img src="../../Image/KB111215_01_13.png" alt="" width="522" height="145" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p class="title_4">【例】　［プロジェクトを開く］の場合</p>
+        <p class="p_4">［役割］にて［計画閲覧］権限を付与した場合、［計画閲覧］権限がアカウントの所属する［組織］にのみ適応されるため、</p>
+        <p class="p_4">アカウントが所属する［組織］のプロジェクトの情報のみを閲覧することができます。</p>
+        <p>&#160;</p>
+        <p class="p_4">
+            <img src="../../Image/KB111215_01_17.png" alt="" width="616" height="316" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+    </body>
+</html>

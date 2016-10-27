@@ -1,0 +1,442 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.非公開" MadCap:id="V1シリーズのデータをMSDEに移行して、FXを評価するには" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.レビュー可能">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>MSDEで構築したFX評価環境を移行するには</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>TimeTracker FX評価版（データベースサーバとしてMSDE2000を利用）した環境を、別のサーバマシンへ移行する方法を説明します。</p>
+        <ul>
+            <li class="p_warning_1">
+                <p class="warning">本手順は、TimeTracker 
+	 FX サポートチームより案内があった場合に行ってください。</p>
+            </li>
+            <li class="p_warning_1">
+                <p class="warning">本手順を実施するには、現在の評価環境を停止する必要があります。</p>
+            </li>
+            <li class="p_warning_1">
+                <p class="warning">標準的な環境での操作方法をご紹介します。ご利用の環境では、一部操作が異なる可能性がございます。</p>
+            </li>
+            <li class="p_warning_1">
+                <p class="warning">これらの動作についてすべてを保証するものではございませんので、予めご了承ください。</p>
+            </li>
+        </ul>
+        <ul>
+            <li class="p_info_1">
+                <p>評価環境のデータベースサーバがSQL 
+	 Server の場合は、<a href="../../20/downloads/DBMigrationGuide.pdf" target="_blank">［TimeTracker 
+	 FX データベース移行ガイド］</a>をご覧ください。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">はじめに</p>
+        <p>データの移行手順概要をご説明します。</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>移行先サーバマシンの準備<br />
+	MSDE2000及びTimeTracker FXをインストールします。</p>
+            </li>
+            <li class="p">
+                <p>データベースのコピー<br />
+	データベースを停止させ、新しいサーバにデータファイルをコピーします。</p>
+            </li>
+            <li class="p">
+                <p>移行先データベースサーバの設定<br />
+	データファイルを取り込み、ログインとユーザの設定を行います。</p>
+            </li>
+            <li class="p">
+                <p>TimeTracker FXの環境設定<br />
+	サーバ設定ファイルや、サーバタスクの設定を行います。</p>
+            </li>
+        </ol>
+        <ul>
+            <li class="p_warning_1">
+                <p class="warning">全ての操作は、管理者権限を持ったアカウントで作業してください。</p>
+            </li>
+            <li class="p_warning_1">
+                <p class="warning">トラブル時の対応のため、入力したコマンドと結果を控えておくことを推奨します。</p>
+            </li>
+            <li class="p_warning_1">
+                <p class="warning">事前に、<a href="KB070108_05.htm">必要な情報</a>をまとめた上で作業を行ってください。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">移行先サーバマシンの準備</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>MSDE2000をインストールします。</p>
+            </li>
+        </ol>
+        <p class="p_2">［<a href="../../../auth_eval/downloads/20/MSDESetupForTimeTrackerFX.zip" target="_blank">MSDESetupForTimeTrackerFX</a>］を利用すると便利です。</p>
+        <ol start="2" class="ol_1">
+            <li class="p">
+                <p>TimeTracker FXをインストールします。</p>
+            </li>
+            <li class="p_info">
+                <p>インストール方法は、［TimeTracker FXインストールガイド］をご覧ください。</p>
+            </li>
+            <li class="p_info">
+                <p>［データベース作成ウィザード］でデータベースを作成する必要はありません。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p class="title">データベースのコピー</p>
+        <ul>
+            <li class="p_warning_1">
+                <p class="warning">本手順を行うと、TimeTracker 
+	 FXは利用できなくなります。</p>
+            </li>
+        </ul>
+        <ul>
+            <li class="p_info_1">事前に、利用者へTimeTracker FXのサービス停止の案内を連絡しておいてください。</li>
+        </ul>
+        <p>&#160;</p>
+        <ul type="disc">
+            <li class="p_1">
+                <p>データベースをデタッチ（取り出し）します</p>
+            </li>
+        </ul>
+        <ol start="1" class="ol_1">
+            <li class="p">
+                <p>osqlユーティリティで、MSDE2000に接続します。方法は<a href="KB070108_03.htm">こちら</a>をご覧ください。</p>
+            </li>
+            <li class="p">
+                <p>osqlユーティリティに、以下のコマンドを入力します。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <p>EXEC sp_detach_db '対象データベース名'</p>
+                    <p>go</p>
+                </td>
+            </tr>
+        </table>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">入力するコマンドの例（データベース名が［TimeTrackerFX］の場合）</p>
+            </li>
+        </ul>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" bgcolor="#C0C0C0" class="td_1">
+                    <p>1&gt; <span class="span_1">EXEC 
+		 sp_detach_db 'TimeTrackerFX'</span></p>
+                    <p>2&gt; <span class="span_1">go</span></p>
+                    <p>1&gt;</p>
+                </td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <ul type="disc">
+            <li class="p_1">
+                <p>取り出したデータファイルを、移行先サーバマシンへコピーします。</p>
+            </li>
+        </ul>
+        <ol start="1" class="ol_1">
+            <li class="p">
+                <p>データファイルが格納されているフォルダを開きます。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <p>C:\Program Files\Microsoft SQL Server\MSSQL$インスタンス名\Data</p>
+                </td>
+            </tr>
+        </table>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">フォルダの例</p>
+            </li>
+        </ul>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" bgcolor="#C0C0C0" class="td_1">
+                    <ul type="disc">
+                        <li class="p_1">
+                            <p class="p_14">既定のインスタンスの場合</p>
+                        </li>
+                    </ul>
+                    <p class="p_5"><span class="span_4">C:\Program 
+		 Files\Microsoft SQL Server\MSSQL\Data</span>
+                    </p>
+                    <ul type="disc">
+                        <li class="p_1">
+                            <p class="p_14">名前付きインスタンスの場合（インスタンス名がTIMETRACKERの場合）</p>
+                        </li>
+                    </ul>
+                    <p class="p_5"><span class="span_4">C:\Program 
+		 Files\Microsoft SQL Server\MSSQL$TIMETRACKER\Data</span>
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <ol start="2" class="ol_1">
+            <li class="p">
+                <p>以下の2つのファイルを、移行先サーバマシンから参照できる場所へコピーします。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <ul type="disc">
+                        <li class="p_1">
+                            <p>データベース名.MDF　（または、データベース名_Data.MDF）</p>
+                        </li>
+                        <li class="p_1">
+                            <p>データベース名.LDF （または、データベース名_Log.LDF）</p>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <ol start="3" class="ol_1">
+            <li class="p">
+                <p>データファイルを、移行先サーバマシンの下記のフォルダへコピーします。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <p>C:\Program Files\Microsoft SQL Server\MSSQL$インスタンス名\Data</p>
+                </td>
+            </tr>
+        </table>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">フォルダの例</p>
+            </li>
+        </ul>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr style="height: 68px;" valign="top">
+                <td style="width: 100%;" bgcolor="#C0C0C0" class="td_1">
+                    <ul type="disc">
+                        <li class="p_1">
+                            <p class="p_14">既定のインスタンスの場合</p>
+                        </li>
+                    </ul>
+                    <p class="p_5"><span class="span_4">C:\Program 
+		 Files\Microsoft SQL Server\MSSQL\Data</span>
+                    </p>
+                    <ul type="disc">
+                        <li class="p_1">
+                            <p class="p_14">名前付きインスタンスの場合（インスタンス名がTIMETRACKERの場合）</p>
+                        </li>
+                    </ul>
+                    <p class="p_5"><span class="span_4">C:\Program 
+		 Files\Microsoft SQL Server\MSSQL$TIMETRACKER\Data</span>
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <ul>
+            <li class="p_warning">
+                <p class="warning">移動ではなく、コピーを行ってください。データファイルを移動すると、問題が発生した場合に復旧できません。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">移行先データベースサーバの設定</p>
+        <ul type="disc">
+            <li class="p_1">
+                <p>データベースをアタッチ（取り付け）します。</p>
+            </li>
+        </ul>
+        <ol start="1" class="ol_1">
+            <li class="p">
+                <p>osqlユーティリティで、MSDE2000に接続します。方法は<a href="KB070108_03.htm">こちら</a>をご覧ください。</p>
+            </li>
+            <li class="p">
+                <p>osqlユーティリティに、以下のコマンドを入力します。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <p>EXEC sp_attach_db '新しいデータベース名',(カンマ)</p>
+                    <p>'データファイル名（.mdf）',(カンマ)</p>
+                    <p>'データファイル名（.ldf）'</p>
+                    <p>go</p>
+                </td>
+            </tr>
+        </table>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">入力するコマンドの例（データベース名を［TimeTrackerFX］のまま変更しない場合）</p>
+            </li>
+        </ul>
+        <table cellspacing="0" width="700" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" bgcolor="#C0C0C0" class="td_1">
+                    <p>1&gt; <span class="span_1">EXEC 
+		 sp_attach_db 'TimeTrackerFX',</span></p>
+                    <p>2&gt; <span class="span_1">'C:\Program Files\Microsoft 
+		 SQL Server\MSSQL$TIMETRACKERFX\Data\TimeTrackerFX.mdf',</span></p>
+                    <p>3&gt; <span class="span_1">'C:\Program Files\Microsoft 
+		 SQL Server\MSSQL$TIMETRACKERFX\Data\TimeTrackerFX_log.LDF'</span></p>
+                    <p>4&gt; <span class="span_1">go</span></p>
+                    <p>1&gt;</p>
+                </td>
+            </tr>
+        </table>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">データファイル名は、絶対パスで指定してください。長い場合は、途中で改行することも可能です。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <ul>
+            <li class="p_1">
+                <p>アタッチしたデータベースの不要なユーザの削除</p>
+            </li>
+        </ul>
+        <ol start="1" class="ol_1">
+            <li class="p">
+                <p>osqlユーティリティに、以下のコマンドを入力します。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <p>use &#160;新しいデータベース名</p>
+                    <p>go</p>
+                    <p>EXEC sp_revokedbaccess 移行元データベースのログイン名</p>
+                    <p>go</p>
+                </td>
+            </tr>
+        </table>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">入力するコマンドの例（データベース名が［TimeTrackerFX］、ログイン名が［fxuser］の場合）</p>
+            </li>
+        </ul>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" bgcolor="#C0C0C0" class="td_1">
+                    <p>1&gt; <span class="span_1">use 
+		 TimeTrackerFX</span></p>
+                    <p>2&gt; <span class="span_1">go</span></p>
+                    <p>1&gt; <span class="span_1">EXEC sp_revokedbaccess 
+		 fxuser</span></p>
+                    <p>2&gt; <span class="span_1">go</span></p>
+                    <p>1&gt;</p>
+                </td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <ul type="disc">
+            <li class="p_1">
+                <p>ログインとユーザの作成</p>
+            </li>
+        </ul>
+        <ol start="1" class="ol_1">
+            <li class="p">
+                <p>osqlユーティリティに、以下のコマンドを入力します。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <p>EXEC sp_addlogin '新しいログイン名', '新しいパスワード', 
+		 &#160;'新しいデータベース名'</p>
+                    <p>go</p>
+                    <p>use 新しいデータベース名</p>
+                    <p>go</p>
+                    <p>EXEC sp_grantdbaccess '新しいログイン名'</p>
+                    <p>go</p>
+                </td>
+            </tr>
+        </table>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">入力するコマンドの例（データベース名が［TimeTrackerFX］、ログイン名が［fxuser］、パスワードが［fxuserpwd］の場合）</p>
+            </li>
+        </ul>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" bgcolor="#C0C0C0" class="td_1">
+                    <p>1&gt; <span class="span_1">EXEC 
+		 sp_addlogin 'fxuser', 'fxuserpwd', &#160;'TimeTrackerFX'</span></p>
+                    <p>2&gt; <span class="span_1">go</span></p>
+                    <p>1&gt; <span class="span_1">use TimeTrackerFX</span></p>
+                    <p>2&gt; <span class="span_1">go</span></p>
+                    <p>1&gt; <span class="span_1">EXEC sp_grantdbaccess 
+		 'fxuser'</span></p>
+                    <p>2&gt; <span class="span_1">go</span></p>
+                    <p><span>1&gt;</span>
+                    </p>
+                </td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <p class="title">TimeTracker FXの環境設定</p>
+        <ul type="disc">
+            <li class="p_1">
+                <p>移行先サーバの設定に応じたサーバ設定ファイルを作成します。</p>
+            </li>
+        </ul>
+        <ol class="ol_1">
+            <li class="p">
+                <p>Windowsの［スタート］メニューから［TimeTracker FX］を開きます。</p>
+            </li>
+            <li class="p">
+                <p>［管理ツール］→［サーバ設定ファイル作成ツール］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>サーバ情報を入力して［生成］ボタンをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>生成した［サーバ設定ファイル］の場所を、クライアントユーザーに伝えます。</p>
+            </li>
+            <li class="p_info">
+                <p class="p_5">詳細は、［TimeTracker FX 
+	 セットアップガイド］の［付録］をご覧ください。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <ul type="disc">
+            <li class="p_1">
+                <p>クライアントPCが、移行先サーバに接続できるようにします。</p>
+            </li>
+        </ul>
+        <ol class="ol_1">
+            <li class="p">
+                <p>TimeTracker FXのログイン時に、上記手順で作成した［サーバ設定ファイル］を指定します。</p>
+            </li>
+            <li class="p_info">
+                <p class="p_5">詳細は、［TimeTracker FX 
+	 セットアップガイド］の［クライアントセットアップ］をご覧ください。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <ul type="disc">
+            <li class="p_1">
+                <p>サーバタスクを設定します。</p>
+            </li>
+        </ul>
+        <ol class="ol_1">
+            <li class="p">
+                <p>サーバタスクを設定します。設定方法は<a href="KB070108_04.htm">こちら</a>をご覧ください。</p>
+            </li>
+            <li class="p">
+                <p>サーバタスクが正常に実行されていることを確認します。確認方法は、<a href="../Tips/KB070108_02.htm">こちら</a>をご覧ください。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+    </body>
+</html>

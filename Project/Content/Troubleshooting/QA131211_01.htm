@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Default.Not Ready for Publish" MadCap:lastBlockDepth="6" MadCap:lastHeight="1029" MadCap:lastWidth="1383">
+    <head>
+        <link href="../KBTable.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>タスクパッケージからの実績入力に失敗することがある</title>
+        <link href="../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Article" />　タスクパッケージからの実績入力に失敗することがある</h1>
+        <table style="caption-side: top;margin-left: 0;margin-right: auto;mc-table-style: url('../KBTable.css');width: 350px;" summary="Article number, product name and version number" class="TableStyle-KBTable" cellspacing="0">
+            <col style="width: 150px;" class="Column-Column1" />
+            <col style="width: 200px;" class="Column-Column1" />
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>更新日:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">2013/12/11</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象バージョン:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">3以降</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象エディション:</b>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">Professional / Standard</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>症状</h2>
+        <p>タイムシートのタスクツリーからタスクパッケージをドラッグ＆ドロップすることで、タスクを実績入力できます。</p>
+        <p>
+            <img src="../Image/QA131211_01_1.png" />
+        </p>
+        <p>このとき上記のようにメニューが表示されずエラーが発生し、実績入力できないことがあります。</p>
+        <p>
+            <img src="../Image/QA131211_01_2.png" />
+        </p>
+        <h2>原因と対策</h2>
+        <p>原因：</p>
+        <p class="p2">ドラッグ＆ドロップするタスクパッケージ名の先頭または末尾に空白文字（全角スペース・半角スペース）が存在する場合、本症状が発生します。</p>
+        <p class="p2">&#160;</p>
+        <p>対策：</p>
+        <p class="p2">タスクパッケージ名の先頭または末尾に存在する空白文字（全角スペース・半角スペース）を削除することで解消します。</p>
+        <p>&#160;</p>
+    </body>
+</html>

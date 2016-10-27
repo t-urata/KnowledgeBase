@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="703" MadCap:lastWidth="496">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>[アカウント名]に全角スペースを使用している場合、Excelなどの計画書からWBS構造を自動作成するとリソースが設定されない</title>
+        <link rel="StyleSheet" href="..\fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">問題の発生するバージョン</p>
+        <p>TimeTracker FX 3</p>
+        <p>&#160;</p>
+        <p class="title">問題が修正されるバージョン</p>
+        <p>未定</p>
+        <p>&#160;</p>
+        <p class="title">内容</p>
+        <p>Excel、テキストファイルで作成したWBSを利用してプロジェクトを新規作成する際に、以下の2つの条件を満たすとプロジェクトの［リソース名］が設定されません。</p>
+        <ul type="disc">
+            <li class="P">
+                <p>スペースで階層化した形式でWBS構造を作成</p>
+            </li>
+            <li class="P">
+                <p>［アカウント名］に全角スペースを使用</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">回避方法</p>
+        <p>以下のいずれかの方法にてご対応ください。 </p>
+        <p>&#160;</p>
+        <ul type="disc">
+            <li class="P">
+                <p>Excel、テキストファイルでWBSを作成する際に、タブ（セル）で階層化した形式にて作成する。 </p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <ul type="disc">
+            <li class="P">
+                <p>ExcelのWBSの［リソース名］を全角スペースの前までの文字で作成する。 </p>
+            </li>
+        </ul>
+        <p class="p_2">名字と名前の間に全角スペースを使用されている場合には、プロジェクトメンバに同じ名字のメンバが存在する可能性があります。 
+ </p>
+        <p class="p_2">その場合には、[アカウントコード]が小さい[アカウント名]が認識されます。 </p>
+        <p class="p_2">プロジェクト作成後に、手動にて再設定してください。 </p>
+        <p>&#160;</p>
+        <ul type="disc">
+            <li class="P">
+                <p>［アカウント名］の全角スペースを半角スペースに置き換えする。 </p>
+            </li>
+        </ul>
+        <p>　　　　　※［アカウント名］]に半角スペースをご利用いただく場合には、プロジェクト作成時にデータベースの［アカウント名］と正しく照合されます。 
+ </p>
+        <ul>
+            <li class="p_warning">
+                <p class="p_13">他のシステムにてマスター情報を管理されている場合、本手順の対応にはご注意ください。 
+	 </p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <ul>
+            <ul>
+                <li class="p_info">
+                    <p>Administratorツールの［アカウントの編集］では、アカウント情報をCSV形式のファイルにてインポート・エクスポートすることができます。 
+		 </p>
+                </li>
+            </ul>
+        </ul>
+        <p class="p_3">操作方法につきましては、<a href="http://www.timetracker.jp/support/documents/KB/Content/Tips/KB110617_01.htm">こちら</a>をご参照ください。 
+ </p>
+    </body>
+</html>

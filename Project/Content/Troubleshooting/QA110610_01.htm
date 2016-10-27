@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="1692" MadCap:lastWidth="545">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+        <meta http_equiv="Content-Language" content="ja-JP" /><title>SQL Server Expressのインストール時にエラーが発生する場合がある</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">このトピックの対象</p>
+        <p>TimeTracker FX 評価版</p>
+        <p>TimeTracker FX 3以降の製品版</p>
+        <p>&#160;</p>
+        <p class="title">症状</p>
+        <p>［autorun.exe］または、TimeTracker FXに同梱される［SQLEXPR_JPN.EXE］よりMicrosoft SQL 
+ Server Expressをインストールすると、</p>
+        <p>以下のエラーが発生し、SQL Server Expressのインストールに失敗する場合があります。</p>
+        <p>&#160;</p>
+        <ul type="disc">
+            <li class="P-title">
+                <p class="title">［autorun.exe］の場合</p>
+            </li>
+        </ul>
+        <p class="p_2">
+            <img src="../Image/QA110610_01_1.png" alt="" width="400" height="172" border="0" class="img_1" />
+        </p>
+        <ol>
+            <li class="li_1">
+                <ul>
+                    <li class="p_info">
+                        <p>エラーの詳細は <MadCap:toggler targets="t1">こちら</MadCap:toggler>をご参照ください。</p>
+                        <div MadCap:targetName="t1">
+                            <p>
+                                <img src="../Image/QA110610_01_2.png" alt="" width="400" height="232" border="0" class="img_1" />
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <ul type="disc">
+            <li class="P-title">
+                <p class="title">［SQLEXPR_JPN.EXE］の場合</p>
+            </li>
+        </ul>
+        <p class="p_2">
+            <img src="../Image/QA110610_01_3.png" alt="" width="450" height="331" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p class="title">原因と対策</p>
+        <p>本現象は、SQL Server Expressのインストールを実施したマシンに、［MSXML6 SP2］がインストールされていることで、</p>
+        <p>SQL Server Expressのインストールパッケージに含まれる［MSXML6］のインストールに失敗し、</p>
+        <p>［SQL Server データベースサービス］のインストールが中断されてしまいます。</p>
+        <p>&#160;</p>
+        <p>本現象は、Microsoft社の修正モジュール（MSXMLFix.EXE）にて修正を実施することで、回避することができます。</p>
+        <p>以下の手順にてご対応ください。</p>
+        <p>&#160;</p>
+        <p class="p_2">【手順】</p>
+        <ol>
+            <li class="li_1">
+                <ol>
+                    <li class="P">
+                        <p>以下のMicrosoft社のサイトから修正モジュール（MSXMLFix.EXE）をダウンロードします。</p>
+                    </li>
+                </ol>
+            </li>
+        </ol>
+        <p class="p_3"><a href="http://support.microsoft.com/kb/968749/ja" target="_blank">http://support.microsoft.com/kb/968749/ja</a>
+        </p>
+        <ol>
+            <li class="li_1">
+                <ol start="2">
+                    <li class="P">ダウンロードしたモジュールを展開し、MSXMLFix.EXE を実行すると、使用許諾を求められるので 
+		 [Yes] をクリックします。<br />		Winzip が起動されますので、任意のフォルダへ展開します。(例: c:\temp)</li>
+                    <li class="P">MSXML6.MSP と MSXML_FIX.VBS が同じフォルダへ展開されたことを確認します。</li>
+                    <li class="P">コマンド プロンプトを起動します。</li>
+                    <li class="P">ファイルを展開したフォルダへ移動します。(例: cd c:\temp)</li>
+                    <li class="P">以下のコマンドを入力し、スクリプトを実行します。<br />		コマンド：cscript MSXML_FIX.VBS</li>
+                    <li class="P">SQL Server Express のインストールを実行します。</li>
+                </ol>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>上記の対処方法にて現象が解消しない場合は、<a href="../Inquiry/TB061101_01.htm">お問い合わせに必要な情報</a>を添えて、<a href="TB061101_02.htm" target="_blank">こちら</a>までご連絡ください。</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

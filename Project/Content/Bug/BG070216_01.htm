@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="MSPインポートで、達成率のあるタスクの進捗率が0_になることがある" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.完了" MadCap:lastBlockDepth="6" MadCap:lastHeight="705" MadCap:lastWidth="893" MadCap:conditions="Primary.非公開">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>Microsoft Projectインポートで、達成率のあるタスクの進捗率が0%になる場合がある</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">問題の発生するバージョン</p>
+        <p>TimeTracker FX 2.0.0 Standard Edition</p>
+        <p>TimeTracker FX 2.0.1 Standard Edition</p>
+        <p>TimeTracker FX 2.0.0 Professional Edition</p>
+        <p>TimeTracker FX 2.0.1 Professional Edition</p>
+        <p>&#160;</p>
+        <p class="title">問題が修正されるバージョン</p>
+        <p>TimeTracker FX 2.0.2</p>
+        <p>&#160;</p>
+        <p class="title">内容</p>
+        <p>以下の条件をすべて満たすタスクを、Microsoft Projectからインポートすると、達成率が0%になります。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>リソースが割り当てられていない場合</p>
+            </li>
+            <li class="p">
+                <p>達成率が、1～99%の場合</p>
+            </li>
+        </ul>
+        <p>具体例は次の通りです。</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>Microsoft Projectで以下のタスクを作成します。</p>
+                <ul type="disc">
+                    <li class="p">
+                        <p>タスクA･･･リソースなし、達成率25%</p>
+                    </li>
+                    <li class="p">
+                        <p>タスクB･･･リソースあり、達成率25%</p>
+                    </li>
+                    <li class="p">
+                        <p>タスクC･･･リソースなし、達成率50%</p>
+                    </li>
+                    <li class="p">
+                        <p>タスクD･･･リソースなし、達成率100%</p>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <ol start="2" class="ol_1">
+            <li class="p">
+                <p>TimeTracker FXで、手順1で作成したMicrosoft Projectのプロジェクトファイルをインポートします。</p>
+            </li>
+            <li class="p">
+                <p>インポートしたタスクの進捗率が以下の通りとなります。</p>
+            </li>
+        </ol>
+        <ul type="disc">
+            <li class="li_1">
+                <ul type="disc">
+                    <li class="p">
+                        <p>タスクA･･･リソースなし、進捗率0%　<img src="../Image/notice.gif" alt="" width="20" height="14" border="0" class="img_1" /></p>
+                    </li>
+                    <li class="p">
+                        <p>タスクB･･･リソースあり、進捗率5%</p>
+                    </li>
+                    <li class="p">
+                        <p>タスクC･･･リソースなし、進捗率0%　<img src="../Image/notice.gif" alt="" width="20" height="14" border="0" class="img_1" /></p>
+                    </li>
+                    <li class="p">
+                        <p>タスクD･･･リソースなし、進捗率100%</p>
+                    </li>
+                </ul>
+            </li>
+            <li class="p_warning">
+                <p class="p_5">タスクAとタスクCの進捗率が0%となります。</p>
+            </li>
+        </ul>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">インポートしたタスクの進捗率のフィールド値の決定方法は、［ユーザ入力値］となります。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">回避方法</p>
+        <p>TimeTracker FX 2.0.2をご利用ください。</p>
+        <p>
+            <MadCap:toggler targets="t1">こちら</MadCap:toggler>の方法でも回避できます。</p>
+        <div MadCap:targetName="t1">
+            <p>TimeTracker FXにインポートする前に、Microsoft Projectで達成率が設定されたタスクにはリソースを割り当てます。</p>
+        </div>
+        <p>&#160;</p>
+    </body>
+</html>

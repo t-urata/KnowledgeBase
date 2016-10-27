@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.非公開">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>条件式で［完了予定日］フィールドが表示値と一致しない</title>
+        <link rel="StyleSheet" href="..\fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">問題の発生するバージョン</p>
+        <p>TimeTracker FX 2.0.0以降</p>
+        <p>&#160;</p>
+        <p class="title">問題が修正されるバージョン</p>
+        <p>TimeTracker FX 2.7.0</p>
+        <p>&#160;</p>
+        <p class="title">内容</p>
+        <p>プランナーの以下の機能で、対象にしたいタスクが［未完了］の場合、［完了予定日］を利用した条件式が正しく動作しません。</p>
+        <ul type="disc">
+            <li class="P">
+                <p>ガントテーブル書式 </p>
+            </li>
+            <li class="P">
+                <p>ガントバー書式 </p>
+            </li>
+            <li class="P">
+                <p>カスタムフィルタ </p>
+            </li>
+            <li class="P">
+                <p>オートフィルタ</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">回避方法</p>
+        <p>以下の機能は、<a href="BG090629_01.htm#Create1">条件式を作成</a>することで回避できます。</p>
+        <ul type="disc">
+            <li class="P">
+                <p>ガントテーブル書式 </p>
+            </li>
+            <li class="P">
+                <p>ガントバー書式 </p>
+            </li>
+            <li class="P">
+                <p>カスタムフィルタ </p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p>また、オートフィルタは、<a href="BG090629_01.htm#Create2">［オプション］にて条件を設定</a>することで回避できます。</p>
+        <p>&#160;</p>
+        <p class="title">条件式の作成手順<a name="Create1"></a></p>
+        <p>【完了予定日が、終了日より大きい場合】</p>
+        <ol>
+            <li class="P" type="1">
+                <p>条件式の作成にて、以下の条件を作成します。</p>
+            </li>
+            <ul type="disc">
+                <li class="P">
+                    <p>フィールド　：（複数条件）</p>
+                </li>
+                <li class="P">
+                    <p>書式の対象　：任意</p>
+                </li>
+                <li class="P">
+                    <p>書式　：任意</p>
+                </li>
+            </ul>
+            <li class="P" type="1">
+                <p>&#160;"（複数の条件）"と表示されている［条件］内の、白いボタンをクリックし、［複数の条件］ダイアログを表示します。</p>
+            </li>
+            <li class="P" type="1">
+                <p>以下の条件を追加します。</p>
+            </li>
+        </ol>
+        <p class="p_2">
+            <img src="../Image/BG090629_01_1.png" alt="" width="650" height="241" border="0" class="img_1" />
+        </p>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">2行目の条件式の詳細は、<MadCap:toggler targets="t2">こちら</MadCap:toggler>。</p>
+                <div MadCap:targetName="t2">
+                    <p class="p_5">(UserPlannedFinishDate - #1#) &gt;= 
+		 (PlannedFinishDate)</p>
+                    <p class="p_5">この条件式の内容は、<span class="span_1">（［完了予定日］ 
+		 - 1日） &gt;= ［終了日］</span>です。</p>
+                </div>
+            </li>
+        </ul>
+        <ol start="4" class="ol_1">
+            <li class="P">
+                <p>［OK］をクリックします。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p>【完了予定日が、終了日と等しい場合】</p>
+        <ol>
+            <li class="P" type="1">
+                <p>条件式の作成にて、以下の条件を作成します。</p>
+            </li>
+            <ul type="disc">
+                <li class="P">
+                    <p>フィールド　：（複数条件）</p>
+                </li>
+                <li class="P">
+                    <p>書式の対象　：任意</p>
+                </li>
+                <li class="P">
+                    <p>書式　：任意</p>
+                </li>
+            </ul>
+            <li class="P" type="1">
+                <p>&#160;"（複数の条件）"と表示されている［条件］内の、白いボタンをクリックし、［複数の条件］ダイアログを表示します。</p>
+            </li>
+            <li class="P" type="1">
+                <p>以下の条件を追加します。</p>
+            </li>
+        </ol>
+        <p class="p_2">
+            <img src="../Image/BG090629_01_2.png" alt="" width="650" height="241" border="0" class="img_1" />
+        </p>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">2行目の条件式の詳細は、<MadCap:toggler targets="t1">こちら</MadCap:toggler>。</p>
+                <div MadCap:targetName="t1">
+                    <p class="p_5">(UserPlannedFinishDate - #1#) &lt; 
+		 (PlannedFinishDate)</p>
+                    <p class="p_5">この条件式の内容は、<span class="span_1">（［完了予定日］ 
+		 - 1日） &lt; ［終了日］</span>です。</p>
+                </div>
+            </li>
+        </ul>
+        <ol start="4" class="ol_1">
+            <li class="P">
+                <p>［OK］をクリックします。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p class="title">［オプション］の設定手順<a name="Create2"></a></p>
+        <p>以下の条件を設定することで、指定日（1日）を絞り込めます。</p>
+        <ul type="disc">
+            <li class="P">
+                <p>例： 2009/07/01を絞り込む場合</p>
+            </li>
+        </ul>
+        <p class="p_2">
+            <img src="../Image/BG090629_01_3.png" alt="" width="616" height="229" border="0" class="img_1" />
+        </p>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">［値1］には、絞り込みたい日付を設定してください。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+    </body>
+</html>

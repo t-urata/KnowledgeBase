@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Default.Not Ready for Publish" MadCap:lastBlockDepth="6" MadCap:lastHeight="968" MadCap:lastWidth="1570">
+    <head>
+        <link href="../KBTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <link href="../FX_KB_alert.css" rel="stylesheet" type="text/css" /><title>リソース負荷ビューにプロジェクト期間外の計画工数が表示されない場合がある</title>
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Article" />　リソース負荷ビューにプロジェクト期間外の計画工数が表示されない場合がある</h1>
+        <table style="caption-side: top;margin-left: 0;margin-right: auto;mc-table-style: url('../KBTable.css');width: 350px;" summary="Article number, product name and version number" class="TableStyle-KBTable" cellspacing="0">
+            <col style="width: 150px;" class="Column-Column1" />
+            <col style="width: 200px;" class="Column-Column1" />
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>更新日:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">2014/1/21</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象バージョン:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">3.5以降</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象エディション:</b>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">Professional</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>現象</h2>
+        <p>プロジェクト期間外に計画工数が存在する場合、アナリストのリソース負荷ビューでその計画工数が表示されない場合があります。</p>
+        <p>
+            <img src="../Image/BG140121_01_1.png" />
+        </p>
+        <h2>発生条件</h2>
+        <p>以下の条件をすべて満たす場合に本現象が発生します。</p>
+        <ul>
+            <li>プロジェクトの実績工数が「0」である。</li>
+            <li>プロジェクトの期間を超える期間が設定されたノードが存在し、そのノードに計画工数が設定されている。</li>
+        </ul>
+        <h2>回避方法</h2>
+        <p>以下の方法のいずれかを行うことで、タスクに設定した計画工数がリソース負荷ビューで正常に表示されます。</p>
+        <ul>
+            <li>ノードの計画期間を調整し、プロジェクトの計画期間に収まるようにする。</li>
+            <li>プロジェクトの計画期間を調整し、すべてのノードの計画期間が含まれるようにする。</li>
+        </ul>
+        <p>&#160;</p>
+    </body>
+</html>

@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="サーバ設定ファイル配布のテクニック" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.完了" MadCap:lastBlockDepth="8" MadCap:lastHeight="1134" MadCap:lastWidth="657">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>サーバ設定ファイル展開のテクニック</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>［サーバ設定ファイル］を集中管理するためのテクニックをご紹介します。</p>
+        <p>&#160;</p>
+        <p class="title">はじめに</p>
+        <p>多数のクライアントPCにTimeTracker FXを展開する際に有用です。</p>
+        <p>［サーバ設定ファイル］を共有フォルダなど利用者全員から参照できる場所にコピーして、</p>
+        <p>その場所を記載したレジストリファイルを配布することで、各利用者が［サーバ設定ファイル］の場所を指定する手間が省けます。</p>
+        <ul>
+            <li class="p_warning">
+                <p>本情報は、TimeTracker 
+	 FXの動作に必須な内容ではありません。</p>
+            </li>
+            <li class="p_warning">
+                <p>レジストリエディタでの操作を誤るとシステムに重大な障害を与える可能性があります。</p>
+            </li>
+            <li class="p_warning">
+                <p>本情報に記載した操作を行ったことによる影響や損失については、当社は一切の責任を負いません。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">サーバ設定ファイルとレジストリ</p>
+        <p>TimeTracker FXは、各クライアントPCのレジストリに［サーバ設定ファイル］の場所を保存しています。</p>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 18.4%;" />
+            <col style="width: 81.6%;" />
+            <tr valign="top">
+                <td style="width: 18.4%;" valign="middle" bgcolor="#C0C0C0" class="td_25">
+                    <p align="center">キー名</p>
+                </td>
+                <td style="width: 81.6%;" class="td_26">
+                    <p>HKEY_CURRENT_USER\</p>
+                    <p>　　　　Software\</p>
+                    <p>　　　　　　　　DENSO CREATE\</p>
+                    <p>　　　　　　　　　　　　Miles\</p>
+                    <p>　　　　　　　　　　　　　　　　Settings\</p>
+                    <p>　　　　　　　　　　　　　　　　　　　　Workspace\</p>
+                    <p>　　　　　　　　　　　　　　　　　　　　　　　　ConfigFolder</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="width: 18.4%;" valign="middle" bgcolor="#C0C0C0" class="td_27">
+                    <p align="center">値</p>
+                </td>
+                <td style="width: 81.6%;" class="td_28">
+                    <p>［サーバ設定ファイル］のパス</p>
+                </td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <p class="title">サーバ設定ファイル展開例</p>
+        <p>レジストリファイルを使った［サーバ設定ファイル］の展開方法をご紹介します。</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>サーバ管理者が利用するクライアントPCに、TimeTracker FXをインストールします。</p>
+            </li>
+            <li class="p">
+                <p>Windows［スタート］メニューから［ファイル名を指定して実行］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［名前］に以下のコマンドを入力して、［OK］ボタンをクリックします。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="41.492%" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <p>regedit</p>
+                </td>
+            </tr>
+        </table>
+        <ol start="4" class="ol_1">
+            <li class="p">
+                <p>レジストリエディタのツリーを展開して、 <MadCap:toggler targets="t1">［Workspace］キー</MadCap:toggler>を選択します。</p>
+                <div MadCap:targetName="t1">
+                    <table cellspacing="0" width="41.492%">
+                        <col style="width: 100%;" />
+                        <tr valign="top">
+                            <td style="width: 100%;" class="td_1">
+                                <p>HKEY_CURRENT_USER\</p>
+                                <p>　　　　Software\</p>
+                                <p>　　　　　　　　DENSO CREATE\</p>
+                                <p>　　　　　　　　　　　　Miles\</p>
+                                <p>　　　　　　　　　　　　　　　　Settings\</p>
+                                <p>　　　　　　　　　　　　　　　　　　　　Workspace\</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+            <li class="p">
+                <p>［Workspace］キーを右クリックして、［エクスポート］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［TimeTracker FXレジストリバックアップ］などの名前を入力して、［保存］ボタンをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>メモ帳などのテキストエディタに、以下の内容を入力します。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <p>Windows Registry Editor Version 5.00</p>
+                    <p>&#160;</p>
+                    <p>[HKEY_CURRENT_USER\Software\Denso Create\Miles\Settings\Workspace]</p>
+                    <p>"ConfigFolder"="\\\\共有サーバ名\\フォルダ名1\\フォルダ名2"</p>
+                </td>
+            </tr>
+        </table>
+        <ul>
+            <li class="p_info">
+                <p>［共有サーバ名］や［フォルダ名］を、ご利用の環境にあわせて修正してください。</p>
+            </li>
+            <li class="p_info">
+                <p>エクスプローラ等の操作と異なり、［\］が2個必要です。</p>
+            </li>
+        </ul>
+        <ol start="8">
+            <li class="p" type="1">
+                <p>名前を付けて保存します。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="41.492%" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <p>TimeTracker.reg</p>
+                </td>
+            </tr>
+        </table>
+        <ul>
+            <li class="p_info">
+                <p>拡張子を、［.reg］と設定して保存します。</p>
+            </li>
+        </ul>
+        <ol start="9">
+            <li class="p" type="1">
+                <p>手順8で保存したレジストリファイルをダブルクリックします。</p>
+            </li>
+            <li class="p" type="1">
+                <p>［レジストリエディタ］ダイアログで、［はい］ボタンをクリックします。</p>
+            </li>
+            <li class="p" type="1">
+                <p>TimeTracker FXを起動して、ログインできることを確認します。</p>
+            </li>
+        </ol>
+        <p class="p_2">問題なくログインできる場合は、手順6で保存したファイルを削除します。</p>
+        <ol start="12">
+            <li class="p" type="1">
+                <p>各クライアントPCで、レジストリファイルを実行します。</p>
+            </li>
+            <li class="p" type="1">
+                <p>レジストリファイルの配布には、Active Drectoryや資産管理ソフトウェアなどを用いると便利です<span class="span_3">。</span></p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p class="title">サンプルレジストリファイルのダウンロード</p>
+        <p>サンプルレジストリファイルをダウンロードできます。</p>
+        <ul>
+            <li class="p_download">
+                <p><a href="../downloads/trouble/TimeTrackerREG.zip">TimeTrackerREG.zip</a>
+                </p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+    </body>
+</html>

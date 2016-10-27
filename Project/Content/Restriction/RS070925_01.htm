@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="V1シリーズからアップグレードするとき、メモが長いとエラーが発生することがある" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.完了" MadCap:conditions="Primary.非公開">
+    <head><title>V1シリーズからアップグレードするとき、作業実績のメモが長いとエラーが発生する場合がある</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">内容</p>
+        <p>［データベース作成ウィザード］で、TimeTracker V1.xのデータベースをアップグレードすると次のエラーが発生する場合があります。</p>
+        <p class="p_2">
+            <img src="../Image/RS070925_01.png" alt="" width="239" height="309" border="0" class="img_1" />
+        </p>
+        <p>このエラーは、TimeTracker V1.xのタイムシートで、作業実績に全角で512文字を超えるメモを入力している場合に発生します。</p>
+        <p>TimeTracker V1.xとTimeTracker FXで扱えるメモの文字数が異なることが原因です。</p>
+        <p>&#160;</p>
+        <p class="title">回避方法</p>
+        <p>作業実績のメモを
+
+<MadCap:toggler targets="t1">全角512文字</MadCap:toggler>以下に変更して、［データベース作成ウィザード］を再度実行してください。</p>
+        <div MadCap:targetName="t1">
+            <ul>
+                <li class="p_info_1">
+                    <p class="info">半角文字の場合は、1024文字以下に変更してください。</p>
+                </li>
+            </ul>
+        </div>
+        <p>本現象が発生した場合は、<a href="../Troubleshooting/TB061101_0A.htm">こちら</a>までお問い合わせください。</p>
+        <p>&#160;</p>
+    </body>
+</html>

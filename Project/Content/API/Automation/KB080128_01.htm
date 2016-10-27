@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.非公開" MadCap:id="解説 - 指定した日の作業実績を取得する" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中">
+    <head><title>解説 - 指定した日の作業実績を取得する</title>
+        <link rel="StyleSheet" href="../../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>オートメーションAPIを利用し指定した日の作業実績を取得する<a href="SA071225_01.htm">［サンプルスクリプト - 
+ 指定した日の作業実績を取得する］</a>について解説します。</p>
+        <p>本解説は［サンプルスクリプト - 指定した日の作業実績を取得する］のコードと一緒にご覧ください。</p>
+        <p>&#160;</p>
+        <p class="title">説明するメソッド</p>
+        <p>本解説では、以下のメソッドについて説明します。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>LoginUser･･･TimeTracker FXにログインしているユーザの情報を取得する</p>
+            </li>
+            <li class="p">
+                <p>Load･･･指定期間の実績をタイムシートに表示する</p>
+            </li>
+            <li class="p">
+                <p>GetActualTimes･･･タイムシートから実績を取得する</p>
+            </li>
+        </ul>
+        <p>その他に使用しているメソッドは［サンプルスクリプト - スケルトンコード］で説明しています。</p>
+        <p>&#160;</p>
+        <p class="title">アカウント名を取得する</p>
+        <p>スクリプト実行時に指定したログイン名を使い、アカウント名を取得します。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>
+                    <MadCap:toggler targets="t4">サンプルスクリプト（抜粋）</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t4">
+                    <table cellspacing="0" width="500">
+                        <col style="width: 16.476%;" />
+                        <col style="width: 83.524%;" />
+                        <tr>
+                            <td style="width: 16.476%;" bgcolor="#C0C0C0" class="td_5">
+                                <p>行</p>
+                            </td>
+                            <td style="width: 83.524%;" bgcolor="#C0C0C0" class="td_2">
+                                <p>サンプルスクリプトのコード</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 16.476%;" class="td_6">
+                                <p>84</p>
+                                <p>85</p>
+                            </td>
+                            <td style="width: 83.524%;" class="td_4">
+                                <p>'ログインユーザの情報を取得します。</p>
+                                <p>Set loginUser = app.LoginUser()</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">データベースから作業実績を取得する</p>
+        <p>データベースから作業実績を取得し、タイムシートに表示します。</p>
+        <p>サンプルスクリプトでは、スクリプトの起動時に指定した日付の実績を取得します。</p>
+        <ul>
+            <li class="p_info_1">
+                <p class="info">Loadメソッドを使うと、 
+	 <a href="../../../27/WebHelp/TimeTracker/HelpButton/load_range.htm" target="_blank" id="a3">［実績入力･閲覧範囲の指定］</a>で指定できない範囲の実績を表示できます。</p>
+            </li>
+        </ul>
+        <ul type="disc">
+            <li class="p">
+                <p>
+                    <MadCap:toggler targets="t3">サンプルスクリプト（抜粋）</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t3">
+                    <table cellspacing="0" width="500">
+                        <col style="width: 16.476%;" />
+                        <col style="width: 83.524%;" />
+                        <tr>
+                            <td style="width: 16.476%;" bgcolor="#C0C0C0" class="td_5">
+                                <p>行</p>
+                            </td>
+                            <td style="width: 83.524%;" bgcolor="#C0C0C0" class="td_2">
+                                <p>サンプルスクリプトのコード</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 16.476%;" class="td_6">
+                                <p>91</p>
+                                <p>92</p>
+                            </td>
+                            <td style="width: 83.524%;" class="td_4">
+                                <p>'作業実績を読み込みます。</p>
+                                <p>Call app.Load(strDate, strDate)</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">タイムシートから実績を取得する</p>
+        <p>タイムシートに表示した作業実績のコレクションを取得します。</p>
+        <p>取得した値は、それぞれの作業実績にインデックスを割り当てたリストです。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>
+                    <MadCap:toggler targets="t2">サンプルスクリプト（抜粋）</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t2">
+                    <table cellspacing="0" width="500">
+                        <col style="width: 16.476%;" />
+                        <col style="width: 83.524%;" />
+                        <tr>
+                            <td style="width: 16.476%;" bgcolor="#C0C0C0" class="td_5">
+                                <p>行</p>
+                            </td>
+                            <td style="width: 83.524%;" bgcolor="#C0C0C0" class="td_2">
+                                <p>サンプルスクリプトのコード</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 16.476%;" class="td_6">
+                                <p>94</p>
+                                <p>95</p>
+                            </td>
+                            <td style="width: 83.524%;" class="td_4">
+                                <p>'作業実績を取得します。</p>
+                                <p>Set actulaTimeList = app.GetActualTimes</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">作業実績を出力する</p>
+        <p>指定した日付の作業実績の情報を取得します。</p>
+        <p>作業実績のコレクションのメンバをループ処理で取得して、標準出力に出力します。</p>
+        <ul>
+            <li class="p_info_1">
+                <p class="info">作業時間（Timeプロパティ）の単位は分です。サンプルスクリプトでは、時間（H）に変換しています。</p>
+            </li>
+        </ul>
+        <ul type="disc">
+            <li class="p">
+                <p>
+                    <MadCap:toggler targets="t1">サンプルスクリプト（抜粋）</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t1">
+                    <table cellspacing="0" width="500">
+                        <col style="width: 16.476%;" />
+                        <col style="width: 83.524%;" />
+                        <tr>
+                            <td style="width: 16.476%;" bgcolor="#C0C0C0" class="td_5">
+                                <p>行</p>
+                            </td>
+                            <td style="width: 83.524%;" bgcolor="#C0C0C0" class="td_2">
+                                <p>サンプルスクリプトのコード</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 16.476%;" class="td_6">
+                                <p>97</p>
+                                <p>98</p>
+                                <p>99</p>
+                                <p>100</p>
+                                <p>101</p>
+                                <p>102</p>
+                                <p>103</p>
+                                <p>104</p>
+                                <p>105</p>
+                            </td>
+                            <td style="width: 83.524%;" class="td_4">
+                                <p>'作業実績の情報を出力します。</p>
+                                <p>For Each actualTime In actulaTimeList</p>
+                                <p class="p_2">WScript.Echo actualTime.ProjectName 
+				 &amp; "," &amp;_</p>
+                                <p class="p_2">actualTime.TaskName &amp; 
+				 "," &amp;_</p>
+                                <p class="p_2">FormatDateTime(actualTime.Start, 
+				 4) &amp; "," &amp;_</p>
+                                <p class="p_2">FormatDateTime(actualTime.Finish, 
+				 4) &amp; "," &amp;_</p>
+                                <p class="p_2">FormatNumber((actualTime.Time/60), 
+				 2) &amp; "," &amp;_</p>
+                                <p class="p_2">actualTime.Memo</p>
+                                <p>Next</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ul>
+        <p>&#160;</p>
+    </body>
+</html>

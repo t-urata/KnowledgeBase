@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="7" MadCap:lastHeight="3158" MadCap:lastWidth="650">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+        <meta http_equiv="Content-Language" content="ja-JP" /><title>サーバメンテナンス中にクライアントPCからのアクセスを制限する</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>&#160;</p>
+        <p class="title">目的</p>
+        <p>データベースのバージョンアップやメンテナンス実施中にクライアントPCからサーバへのアクセスによって</p>
+        <p>予期せぬ障害が発生しないようにアクセスを制限したいことはありませんか。</p>
+        <p>&#160;</p>
+        <p>SQL Serverのシングルユーザモードを活用することで</p>
+        <p>サーバのメンテナンス中にデータベースへのアクセスを制限し、予期せぬ障害の発生を防止します。</p>
+        <p>&#160;</p>
+        <p class="title">詳細説明</p>
+        <p>ここでは、TimeTracker FXのバージョンアップ作業時にSQL Serverのシングルユーザモードを利用して</p>
+        <p>クライアントPCからのアクセスを制限する方法をご紹介いたします。</p>
+        <p>以下の手順をご確認ください。</p>
+        <ul>
+            <li class="p_info">
+                <p>本手順では「SQL Server 2008」を使用しております。 
+	 <br />	SQL Server 2005など別のバージョンでは機能名称や操作画面が若干異なる場合がございます。 </p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <ol>
+            <li class="P">
+                <p>TimeTracker FXの利用ユーザへ、メンテナンス実施のアナウンスを行います。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <ol start="2">
+            <li class="P">
+                <p>メンテナンス実施時刻になりましたらSQL Server Management Studioを起動して<br />	「利用状況モニタ」からサーバマシンに接続中のクライアントPCを確認し、PC利用者へ利用中断の連絡を行います。</p>
+            </li>
+        </ol>
+        <p class="p_2">
+            <img src="../Image/KB110628_01_1.png" alt="" width="650" height="244" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <ol start="3">
+            <li class="P">
+                <p>TimeTracker FXのデータベースをシングルユーザモードに設定します。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <ul type="circle">
+            <li class="P">
+                <p>SQL Server シングルユーザモード設定方法 
+	 </p>
+            </li>
+        </ul>
+        <ol>
+            <ol>
+                <li class="P">
+                    <p>SQL Server Management Studioを起動します。</p>
+                </li>
+            </ol>
+        </ol>
+        <ol>
+            <ul>
+                <li class="p_info">
+                    <p>SQL Server Expressには、SQL 
+		 Server Management Studioは同封されておりません。</p>
+                </li>
+            </ul>
+        </ol>
+        <p>&#160;</p>
+        <ol>
+            <ol start="2">
+                <li class="P">
+                    <p>オブジェクトエクスプローラにて、TimeTracker FXのデータベースを選択し、マウス右クリック-［プロパティ］を開きます。</p>
+                </li>
+            </ol>
+        </ol>
+        <p class="p_3">
+            <img src="../Image/KB110628_01_2.png" alt="" width="300" height="324" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <ol>
+            <ol start="3">
+                <li class="P">
+                    <p>［データベースのプロパティ］ダイアログボックスにて［オプション］ページを開きます。</p>
+                </li>
+            </ol>
+        </ol>
+        <p class="p_3">
+            <img src="../Image/KB110628_01_3.png" alt="" width="300" height="179" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <ol>
+            <ol start="4">
+                <li class="P">
+                    <p>［状態］-［アクセスの制限］にて［SINGLE_USER］を選択します。</p>
+                </li>
+            </ol>
+        </ol>
+        <p class="p_3">
+            <img src="../Image/KB110628_01_4.png" alt="" width="600" height="210" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <ol>
+            <ol start="5">
+                <li class="P">
+                    <p>他のユーザがデータベースに接続している場合には、全ての接続（セッション）を切断後、シングルユーザモードに設定されます。</p>
+                </li>
+            </ol>
+        </ol>
+        <ol>
+            <ul>
+                <li class="p_info">
+                    <p>データベースがシングルユーザモードに設定された状態にてクライアントPCからアクセスを実施するとエラーが発生します。 
+		 </p>
+                </li>
+            </ul>
+        </ol>
+        <p class="p_3">
+            <img src="../Image/KB110628_01_5.png" alt="" width="350" height="165" border="0" class="img_1" />
+        </p>
+        <ol>
+            <ol>
+                <ul>
+                    <li class="p_info">
+                        <p>エラーの詳細については<MadCap:toggler targets="t1">こちら</MadCap:toggler>をご参照ください。</p>
+                        <div MadCap:targetName="t1">
+                            <p>
+                                <img src="../Image/KB110628_01_6.png" alt="" width="400" height="297" border="0" class="img_1" />
+                            </p>
+                        </div>
+                    </li>
+                </ul>
+            </ol>
+        </ol>
+        <p>&#160;</p>
+        <ol start="4">
+            <li class="P">
+                <p>サーバマシンのTimeTracker FXをアップグレードします。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <ol start="5">
+            <li class="P">［コントロールパネル］－［管理ツール］－［サービス］を開き、以下のサービスを停止します。</li>
+        </ol>
+        <ul>
+            <li class="p_info">
+                <p>サービスを停止しないとデータベースへアクセスすることができません。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <ul type="circle">
+            <li class="P">
+                <p class="p_5">停止するサービス</p>
+            </li>
+        </ul>
+        <ul type="disc">
+            <ul type="disc">
+                <li class="P">
+                    <p>SQL Server Agent</p>
+                </li>
+                <li class="P">
+                    <p>TimeTracker FX ServerTask</p>
+                </li>
+            </ul>
+        </ul>
+        <p class="p_4">
+            <img src="../Image/KB110628_01_7.png" alt="" width="500" height="288" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <ol start="6">
+            <li class="P">
+                <p>［Server Manager］を起動し、TimeTracker FXのデータベースをアップグレードします。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <ol start="7">
+            <li class="P">
+                <p>［サービス］よりデータベースのアップグレード処理によって起動した［TimeTracker FX ServerTask］サービスを停止します。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <ol start="8">
+            <li class="P">
+                <p>SQL Server Management Studioを起動し、TimeTracker FXのデータベースを［SINGLE_USER］から［MULTI_USER］に変更します。</p>
+            </li>
+        </ol>
+        <p class="p_2">
+            <img src="../Image/KB110628_01_8.png" alt="" width="600" height="210" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <ol start="9">
+            <li class="P">
+                <p>［サービス］より手順5、7にて停止した各サービスを再開します。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <ol start="10">
+            <li class="P">
+                <p>TimeTracker FXを起動し、動作を確認します。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <ol start="11">
+            <li class="P">
+                <p>TimeTracker FXの利用ユーザへ、メンテナンス終了のアナウンスを行います。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

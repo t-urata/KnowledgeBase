@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="オートメーションでアプリケーションを非表示のままタイムシートを開くと、アプリケーションを表示時にタイムシートが表示されない" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中" MadCap:conditions="Primary.非公開">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>オートメーションで非表示のままログインをすると、表示設定を変更してもタイムシートは非表示のままになる</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">問題の発生するバージョン</p>
+        <p>TimeTracker FX 2.0.0以降</p>
+        <p>&#160;</p>
+        <p class="title">問題が修正されるバージョン</p>
+        <p>TimeTracker FX 2.5.0</p>
+        <p>&#160;</p>
+        <p class="title">内容</p>
+        <p>以下の手順でオートメーションを利用すると、タイムシートが表示されません。</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>オートメーションでタイムシートを指定して、アプリケーションオブジェクトを作成します。</p>
+            </li>
+            <li class="p">
+                <p>Application.Visibleで、アプリケーションを非表示にします。</p>
+            </li>
+            <li class="p">
+                <p>Loginメソッドでログインします。</p>
+            </li>
+            <li class="p">
+                <p>Application.Visibleで、アプリケーションを表示します。</p>
+            </li>
+            <li class="p">
+                <p>タイムシートは非表示のままになります。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p class="title">回避方法</p>
+        <p>Loginメソッドでログインしてから、アプリケーションを非表示にしてください。</p>
+        <p>&#160;</p>
+    </body>
+</html>

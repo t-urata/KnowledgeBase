@@ -1,0 +1,421 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Default.Not Ready for Publish" MadCap:lastBlockDepth="10" MadCap:lastHeight="6904" MadCap:lastWidth="1476">
+    <head>
+        <link href="../KBTable.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>Web APIが利用できない</title>
+        <link href="../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Article" />　Web APIが利用できない</h1>
+        <table style="caption-side: top;margin-left: 0;margin-right: auto;mc-table-style: url('../KBTable.css');width: 350px;" summary="Article number, product name and version number" class="TableStyle-KBTable" cellspacing="0">
+            <col style="width: 150px;" class="Column-Column1" />
+            <col style="width: 200px;" class="Column-Column1" />
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>更新日:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">2014/12/2</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象バージョン:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">TimeTracker FX 3.7以降</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象エディション:</b>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">Professional / Standard</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <p>TimeTracker FX  Web API（以降Web API）が利用できない場合の対処方法を紹介します。</p>
+        <h2>症状</h2>
+        <p>ブラウザ（Internet Explorerなど）のアドレスバーにWeb APIのURLを入力して実行しても、エラーとなりWeb APIを実行できない。<br />エラーの内容によって、画面の表示は異なります。</p>
+        <p>
+            <img src="../Image/QA141121_03_1.png" />
+        </p>
+        <p style="margin-bottom: 12pt;">本現象は以下の場面で発生します。(必ず発生するわけではありません)
+</p>
+        <ul>
+            <li>Web サーバにTimeTracker FX Web APIをインストールして、ブラウザのアドレスバーやプログラム上からWeb APIを実行する場合</li>
+        </ul>
+        <p>&#160;</p>
+        <h2>原因と対策</h2>
+        <p>本現象が発生する主な原因を列挙します。<br />これらの内容が該当しないかご確認ください。</p>
+        <ol>
+            <li><a href="#method1">動作保証外の環境を利用している</a>
+            </li>
+            <li><a href="#method2">URLの入力ミス</a>
+            </li>
+        </ol>
+        <p>これらの原因が該当しない場合は、本ページ末尾の内容をご確認いただき、お問い合わせに必要な情報を添えて、サポートチームまでご連絡ください。</p>
+        <h3><a name="method1"></a>1. 動作保証外の環境を利用している</h3>
+        <div style="margin-left: 20px;">
+            <p style="margin-bottom: 5px;"><b>【確認内容】</b>
+            </p>
+            <div style="margin-left: 20px;">
+                <p>ご利用の環境がWeb APIの動作を保証する環境か確認します。<br /></p>
+            </div>
+            <p style="margin-bottom: 5px;"><b>【確認方法】</b>
+            </p>
+            <ol style="list-style-type: lower-roman;margin-bottom: 12px;">
+                <li><a href="../Server/kb110323_01.htm" target="_self">TimeTracker FXのバージョン別動作環境</a>を開きます。</li>
+                <li>ご利用のTimeTracker FXのバージョンを選択し、「Web API」の動作保証環境を確認します。</li>
+                <li>ご利用の環境と比較します。</li>
+            </ol>
+            <p style="margin-bottom: 5px;"><b>【確認結果と対処方法】</b>
+            </p>
+            <ul style="margin-bottom: 6px;">
+                <li><b>動作保証の環境内の場合</b>
+                </li>
+            </ul>
+            <div style="margin-left: 40px;">
+                <p>「2. URLの入力ミス」の内容をご確認ください。</p>
+            </div>
+            <ul style="margin-bottom: 6px;">
+                <li><b>動作保証の環境外の場合</b>
+                </li>
+            </ul>
+            <div style="margin-left: 40px;">
+                <p>動作保証の環境にてWeb APIをインストールして、Web APIの動作をご確認ください。</p>
+            </div>
+        </div>
+        <h3><a name="method2"></a>2. URLの入力ミス
+</h3>
+        <div style="margin-left: 20px;">
+            <p style="margin-bottom: 5px;">URLの入力に誤りがないか、URLの内容を順番に確認します。<br />本項目の各内容を順番にWeb APIがインストールされたWebサーバ上で確認し、それぞれの対処方法を実施してください。<br />なお、本項目では、以下のWeb APIのURLを実行してアカウント一覧を取得することを目的とした場合を例にして、説明します。<br /></p>
+            <div style="margin-left: 20px;">
+                <p style="margin-bottom: 5pt;">&lt;URL&gt;</p>
+                <div style="margin-left: 20px;">
+                    <p>http://（マシン名）/（Webサイト名）/（データ形式）/system/accounts</p>
+                    <p>例）http://WebServer/TimeTrackerFX3.7.1/xmlWebService.svc/system/accounts</p>
+                </div>
+            </div>
+        </div>
+        <div style="margin-left: 20px;">
+            <p style="margin-bottom: 5pt;">2.1 <MadCap:toggler targets="2.1" style="text-decoration: underline;">Webサーバのマシン名の確認</MadCap:toggler></p>
+            <div style="margin-left: 20px;" MadCap:targetName="2.1">
+                <p style="margin-bottom: 5px;"><b>【確認内容】</b>
+                </p>
+                <div style="margin-left: 20px;">
+                    <p>URLに入力したWebサーバの「マシン名」を確認します。<br /></p>
+                </div>
+                <p style="margin-bottom: 5px;"><b>【確認方法】</b>
+                </p>
+                <ol style="list-style-type: lower-roman;margin-bottom: 5px;">
+                    <li>Windows［スタート］メニュー－［管理ツール］－［インターネット インフォメーション サービス（IIS） マネージャ］から<br />IISマネージャを起動し、表示されるWebサーバの「マシン名」を確認します。</li>
+                </ol>
+                <div style="margin-left: 40px;">
+                    <ul>
+                        <li class="p_information">Windowsのバージョンによって、IISマネージャの起動方法や操作方法が若干異なる場合があります。</li>
+                    </ul>
+                    <p style="margin-bottom: 5pt;">
+                        <img src="../Image/QA141121_03_2.png" />
+                    </p>
+                    <ul>
+                        <li class="p_warning">IISマネージャが存在しない場合には、IISがインストールされていない可能性があります。IISをインストールしてください。</li>
+                    </ul>
+                </div>
+                <ol style="list-style-type: lower-roman;" start="2">
+                    <li>以下のURLをご利用のInternet Explorerに入力し、表示される情報を確認します。<br /></li>
+                </ol>
+                <div style="margin-left: 40px;">
+                    <p style="margin-bottom: 5pt;">&lt;URL&gt;</p>
+                    <div style="margin-left: 20px;">
+                        <p>http://（マシン名）/</p>
+                        <p>例）http://WebServer/</p>
+                    </div>
+                </div>
+                <p style="margin-bottom: 5px;"><b>【確認結果と対処方法】</b>
+                </p>
+                <ul style="margin-bottom: 6px;">
+                    <li><b>IISのウェルカムページが表示される場合</b>
+                    </li>
+                </ul>
+                <div style="margin-left: 40px;">
+                    <p style="margin-bottom: 5pt;">IISのウェルカムページが表示される場合には、<br />指定した「マシン名」にてIISに接続し、Webサーバの利用が可能な状態です。</p>
+                    <p>
+                        <img src="../Image/QA141121_03_3.png" />
+                    </p>
+                    <p>確認した「マシン名」で、再度Web APIのURLの実行をお試しください。<br />現象が解消されない場合には、「2.2 Webサイト名の確認」を実施してください。<br /></p>
+                </div>
+                <ul style="margin-bottom: 6px;">
+                    <li><b>「このページは表示できません」と表示される場合</b>
+                    </li>
+                </ul>
+                <div style="margin-left: 40px;">
+                    <p style="margin-bottom: 5pt;">以下のようなメッセージが表示される場合には、URLに入力された「マシン名」に何らかの問題があります。</p>
+                    <p>
+                        <img src="../Image/QA141121_03_4.png" />
+                    </p>
+                    <p style="margin-bottom: 5pt;">以下のような原因が考えられます。それぞれの内容をご確認ください。<br /></p>
+                    <ul style="margin-bottom: 6px;list-style-type: circle;">
+                        <li>マシン名に誤りがある</li>
+                    </ul>
+                    <div style="margin-left: 40px;">
+                        <p>IISマネージャよりマシン名をご確認いただき、再度、「2.1 Webサーバのマシン名の確認」を実施してください。</p>
+                    </div>
+                    <ul style="margin-bottom: 6px;list-style-type: circle;">
+                        <li>Web サーバやWeb サイトが停止している</li>
+                    </ul>
+                    <div style="margin-left: 40px;">
+                        <p>IISマネージャよりWeb サーバとWeb サイトを開始し、再度、「2.1 Webサーバのマシン名の確認」を実施してください。</p>
+                    </div>
+                    <ul style="margin-bottom: 6px;list-style-type: circle;">
+                        <li>DNSによりマシン名からの名前解決ができない</li>
+                    </ul>
+                    <div style="margin-left: 40px;">
+                        <p>DNSの設定につきましては、貴社のサーバ管理者様にお問い合わせください。<br />名前解決できない場合には、マシン名をWebサーバのIPアドレスに置き換えて、再度、「2.1 Webサーバのマシン名の確認」を実施してください。</p>
+                    </div>
+                </div>
+            </div>
+            <p style="margin-bottom: 5pt;">2.2 <MadCap:toggler targets="2.2" style="text-decoration: underline;">Webサイト名の確認</MadCap:toggler></p>
+            <div style="margin-left: 20px;" MadCap:targetName="2.2">
+                <p style="margin-bottom: 5px;"><b>【確認内容】</b>
+                </p>
+                <div style="margin-left: 20px;">
+                    <p>URLに入力した「Webサイト名」を確認します。<br /></p>
+                </div>
+                <p style="margin-bottom: 5px;"><b>【確認方法】</b>
+                </p>
+                <ol style="list-style-type: lower-roman;margin-bottom: 5px;">
+                    <li>IISマネージャを起動し、表示されるWebサイト名を確認します。</li>
+                </ol>
+                <div style="margin-left: 40px;">
+                    <p style="margin-bottom: 5pt;">
+                        <img src="../Image/QA141121_03_5.png" />
+                    </p>
+                    <ul>
+                        <li class="p_warning">Webサイト名が存在しない場合には、Web APIがインストールされていません。Web APIをインストールしてください。</li>
+                    </ul>
+                </div>
+                <ol style="list-style-type: lower-roman;" start="2">
+                    <li>以下のURLをご利用のInternet Explorerに入力し、表示される情報を確認します。<br /></li>
+                </ol>
+                <div style="margin-left: 40px;">
+                    <p style="margin-bottom: 5pt;">&lt;URL&gt;</p>
+                    <div style="margin-left: 20px;">
+                        <p>http://（マシン名）/（Webサイト名）/</p>
+                        <p>例）http://WebServer/TimeTrackerFX3.7.1/</p>
+                    </div>
+                </div>
+                <p style="margin-bottom: 5px;"><b>【確認結果と対処方法】</b>
+                </p>
+                <ul style="margin-bottom: 6px;">
+                    <li><b>403エラーが発生する場合</b>
+                    </li>
+                </ul>
+                <div style="margin-left: 40px;">
+                    <p style="margin-bottom: 5pt;">以下のような画面が表示される場合は、指定したWeb サイト名が利用可能な状態です。<br /></p>
+                    <p>
+                        <img src="../Image/QA141121_03_6.png" />
+                    </p>
+                    <p>確認した「Web サイト名」で、再度Web APIのURLの実行をお試しください。<br />現象が解消されない場合には、「2.3 データ形式の確認」を実施してください。</p>
+                </div>
+                <ul style="margin-bottom: 6px;">
+                    <li><b>403以外のエラーが発生する場合</b>
+                    </li>
+                </ul>
+                <div style="margin-left: 40px;">
+                    <p style="margin-bottom: 5pt;">以下のように403以外のエラーが発生する場合は、入力した「Webサイト名」に誤りがある可能性があります。</p>
+                    <p>
+                        <img src="../Image/QA141121_03_7.png" />
+                    </p>
+                    <p style="margin-bottom: 12pt;">再度、「2.2 Webサイト名の確認」を実施してください。<br /></p>
+                </div>
+            </div>
+            <p style="margin-bottom: 5pt;">2.3 <MadCap:toggler targets="2.3" style="text-decoration: underline;">データ形式の確認</MadCap:toggler></p>
+            <div style="margin-left: 20px;" MadCap:targetName="2.3">
+                <p style="margin-bottom: 5px;"><b>【確認内容】</b>
+                </p>
+                <div style="margin-left: 20px;">
+                    <p>URLに入力したデータ形式に誤りがないか確認します。<br /></p>
+                </div>
+                <p style="margin-bottom: 5px;"><b>【確認方法】</b>
+                </p>
+                <div style="margin-left: 20px;">
+                    <p>以下のURLをご利用のInternet Explorerに入力し、表示される情報を確認します。</p>
+                    <p style="margin-bottom: 5pt;">&lt;URL&gt;</p>
+                    <div style="margin-left: 20px;">
+                        <p style="margin-bottom: 1pt;">http://（マシン名）/（Webサイト名）/（データ形式）<br />※URLの末尾にスラッシュ（/）は不要です。<br />※<MadCap:toggler targets="2.3Data_Format" style="text-decoration: underline;">「データ形式」に入力する文字列</MadCap:toggler>は、Web APIで扱うデータ形式によって異なります。</p>
+                        <div style="margin-left: 20px;margin-bottom: 5px;" MadCap:targetName="2.3Data_Format">
+                            <table style="height: 64px;" cellspacing="0" border="1" class="table_12" xmlns="http://www.w3.org/1999/xhtml">
+                                <col style="width: 40px;" />
+                                <col style="width: 100px;" />
+                                <col style="width: 150px;" />
+                                <tr>
+                                    <td bgcolor="#B3D6AC" style="background-color: #c0c0c0;color: #000000;text-align: center;">No.</td>
+                                    <td style="background-color: #c0c0c0;color: #000000;text-align: center;" xmlns="">データ形式</td>
+                                    <td xmlns="" style="background-color: #c0c0c0;color: #000000;text-align: center;">入力文字列</td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#B3D6AC" style="background-color: #c0c0c0;color: #000000;text-align: center;">1</td>
+                                    <td style="color: #000000;text-align: center;">XML形式</td>
+                                    <td xmlns="" style="color: #000000;text-align: center;">xmlWebService.svc</td>
+                                </tr>
+                                <tr>
+                                    <td bgcolor="#B3D6AC" style="background-color: #c0c0c0;color: #000000;text-align: center;">2</td>
+                                    <td style="color: #000000;text-align: center;">JSON形式</td>
+                                    <td xmlns="" style="color: #000000;text-align: center;">jsonWebService.svc</td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p style="margin-top: 12pt;">例）http://WebServer/TimeTrackerFX3.7.1/xmlWebService.svc</p>
+                    </div>
+                </div>
+                <p style="margin-bottom: 5px;"><b>【確認結果と対処方法】</b>
+                </p>
+                <ul style="margin-bottom: 6px;">
+                    <li><b>サービスに関するメッセージが表示される場合</b>
+                    </li>
+                </ul>
+                <div style="margin-left: 40px;">
+                    <p style="margin-bottom: 5pt;">以下のようなサービスに関するメッセージが記載されたページが表示された場合は、<br />URLのデータ形式までの入力に問題はありません。<br /></p>
+                    <p>
+                        <img src="../Image/QA141121_03_8.png" />
+                    </p>
+                    <p>確認した「データ形式」で、再度Web APIのURLの実行をお試しください。<br />現象が解消されない場合には、「2.4 Web APIのメソッドの確認」を実施してください。</p>
+                </div>
+                <ul style="margin-bottom: 6px;">
+                    <li><b>サーバーエラーが発生する場合</b>
+                    </li>
+                </ul>
+                <div style="margin-left: 40px;">
+                    <p style="margin-bottom: 5pt;">以下のようなエラーが発生する場合は、入力したURLのデータ形式に誤りがあります。</p>
+                    <p>
+                        <img src="../Image/QA141121_03_9.png" />
+                    </p>
+                    <p style="margin-bottom: 12pt;">再度、「2.3 データ形式の確認」を実施してください。<br /></p>
+                </div>
+            </div>
+            <p style="margin-bottom: 5pt;">2.4 <MadCap:toggler targets="2.4" style="text-decoration: underline;">Web APIのメソッドの確認</MadCap:toggler></p>
+            <div style="margin-left: 20px;" MadCap:targetName="2.4">
+                <p style="margin-bottom: 5px;"><b>【確認内容】</b>
+                </p>
+                <div style="margin-left: 20px;">
+                    <p>URLに入力したWeb APIのメソッドを確認します。<br /></p>
+                </div>
+                <p style="margin-bottom: 5px;"><b>【確認方法】</b>
+                </p>
+                <div style="margin-left: 20px;">
+                    <p>以下のURLをご利用のInternet Explorerに入力し、表示される情報を確認します。</p>
+                    <p style="margin-bottom: 5pt;">&lt;URL&gt;</p>
+                    <div style="margin-left: 20px;">
+                        <p style="margin-bottom: 12pt;">http://（マシン名）/（Webサイト名）/（データ形式）/system/accounts<br />※URLの末尾にスラッシュ（/）は不要です。<br /></p>
+                        <p>例）http://WebServer/TimeTrackerFX3.7.1/xmlWebService.svc/system/accounts</p>
+                    </div>
+                </div>
+                <p style="margin-bottom: 5px;"><b>【確認結果と対処方法】</b>
+                </p>
+                <ul style="margin-bottom: 6px;">
+                    <li><b>情報が取得できる場合</b>
+                    </li>
+                </ul>
+                <div style="margin-left: 40px;">
+                    <p style="margin-bottom: 5pt;">以下のような情報がInternet Explorer上に表示される場合は、Web APIが利用できる状態です。<br /></p>
+                    <p>
+                        <img src="../Image/QA141121_03_10.png" />
+                    </p>
+                </div>
+                <ul style="margin-bottom: 6px;">
+                    <li><b>ログインエラーが発生する場合</b>
+                    </li>
+                </ul>
+                <div style="margin-left: 40px;">
+                    <p style="margin-bottom: 5pt;">以下のようなログインエラーが発生する場合は、ログイン情報に誤りがあります。</p>
+                    <p>
+                        <img src="../Image/QA141121_03_11.png" />
+                    </p>
+                    <p style="margin-bottom: 12pt;">TimeTracker FX デスクトップ版にログインできるログイン名・パスワードで、<br />再度、「2.4 Web APIのメソッドの確認」を実施してください。</p>
+                    <p style="margin-bottom: 12pt;">デスクトップ版でもログインできない場合には、<br />Administratorツールにて、対象アカウントの有無やログイン名の正誤を確認してください。<br />また、パスワードがわからない場合には、パスワードの再設定を実施してください。<br /></p>
+                </div>
+                <ul style="margin-bottom: 6px;">
+                    <li><b>「エンドポイントが見つかりません。」と表示される場合</b>
+                    </li>
+                </ul>
+                <div style="margin-left: 40px;">
+                    <p style="margin-bottom: 5pt;">以下のように「エンドポイントが見つかりません。」と表示される場合には、<br />入力したURLのWeb APIの内容に誤りがあります。<br /></p>
+                    <p>
+                        <img src="../Image/QA141121_03_12.png" />
+                    </p>
+                    <p style="margin-bottom: 12pt;">再度、「2.4 Web APIのメソッドの確認」を実施してください。<br /></p>
+                </div>
+                <ul style="margin-bottom: 6px;">
+                    <li><b>サーバーエラーが発生する場合</b>
+                    </li>
+                </ul>
+                <div style="margin-left: 40px;">
+                    <p style="margin-bottom: 5pt;">以下のようなエラーが発生し、Web APIのインストールフォルダの「web.config」に関する記述がある場合は、<br />Web.configファイルの内容が誤って編集された可能性があります。<br /></p>
+                    <ul>
+                        <li class="p_information">Web.configファイルの編集は、TimeTracker FX Web Editionのインストール時に実施します。<br />Web APIのみご利用の場合には、Web.confgファイルを編集する必要はありません。<br /></li>
+                    </ul>
+                    <p>
+                        <img src="../Image/QA141121_03_13.png" />
+                        <br />
+                        <img src="../Image/QA141121_03_14.png" />
+                    </p>
+                    <p style="margin-bottom: 12pt;">編集前のWeb.configファイルがある場合には、以下のリンク先のツールにて、編集前のWeb.configファイルから<br />新たにWeb Editionに利用するためのWeb.configファイルを作成してください。<br /></p>
+                    <ul style="list-style-type: circle;">
+                        <li><a href="../Server/SA140610_01.htm" target="_self">Web.configファイルの編集を自動化する</a>
+                        </li>
+                    </ul>
+                    <p style="margin-bottom: 12pt;">編集前のWeb.configファイルがない場合には、Web APIをアンインストール後、再インストールを実施し、<br />IISを再起動後、あらためて「2.4 Web APIのメソッドの確認」を実施してください。<br /></p>
+                </div>
+                <ul style="margin-bottom: 6px;">
+                    <li><b>要求エラーが発生する場合</b>
+                    </li>
+                </ul>
+                <div style="margin-left: 40px;">
+                    <p style="margin-bottom: 5pt;">以下のような要求エラーが発生する場合は、Web APIが利用するサーバ設定ファイルに誤りがある可能性があります。<br /></p>
+                    <p>
+                        <img src="../Image/QA141121_03_15.png" />
+                    </p>
+                    <p style="margin-bottom: 12pt;">デスクトップ版で利用しているサーバ設定ファイル「TimeTracker.config」をコピーして<br />以下のWeb APIのインストールフォルダ内にあるWeb APIが利用するサーバ設定ファイルを上書きし、<br />IISを再起動後、あらためて「2.4 Web APIのメソッドの確認」を実施してください。</p>
+                    <p style="margin-bottom: 0pt;">&lt;Web APIのインストールフォルダ&gt;</p>
+                    <div style="margin-left: 20px;">
+                        <p style="margin-bottom: 12pt;">C:\inetpub\wwwroot\TimeTrackerFXWebAPIx.x.x<br />※末尾の「x.x.x」は、バージョン番号です。<br /></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2>現象が解消しない場合</h2>
+        <p>本ページの内容で現象が解消しない場合には、以下の情報を添えて<a href="https://www.timetracker.jp/inquiry/" target="_blank">TimeTracker FX サポートチーム</a>までご連絡ください。</p>
+        <ul style="margin-bottom: 0px;">
+            <li>本ページの確認内容ごとの確認結果</li>
+            <li>
+                <MadCap:toggler targets="WebAPI_InstallFolder" style="text-decoration: underline;">Web APIのインストールフォルダ</MadCap:toggler>のWeb.configファイル</li>
+        </ul>
+        <div style="margin-left: 40px;" MadCap:targetName="WebAPI_InstallFolder">
+            <p style="margin-bottom: 12pt;">C:\inetpub\wwwroot\TimeTrackerFXWebAPIx.x.x<br />※末尾の「x.x.x」は、バージョン番号です。<br /></p>
+        </div>
+        <ul>
+            <li>TimeTracker FXのサーバとWeb APIのWebサーバは同一のマシン上で構築しているか</li>
+            <li>TimeTracker FXのサーバとWeb APIのWeb サーバのそれぞれの<MadCap:toggler targets="System" style="text-decoration: underline;">環境情報</MadCap:toggler></li>
+        </ul>
+        <div style="margin-left: 40px;" MadCap:targetName="System">
+            <p style="margin-bottom: 0pt;">&lt;記載する環境情報&gt;</p>
+            <ul style="list-style-type: circle;">
+                <li>TimeTracker FXとWeb APIのバージョン</li>
+                <li>OS（エディションやサービスパックおよび32or64bitも含む）</li>
+                <li>CPU</li>
+                <li>メモリ</li>
+                <li>ハードディスク容量（システムディスクの空き容量も含む）</li>
+                <li>SQL Serverのバージョン（エディションやサービスパックおよび32or64bitも含む）</li>
+            </ul>
+        </div>
+        <p>&#160;</p>
+    </body>
+</html>

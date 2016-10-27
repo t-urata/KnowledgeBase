@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.EVM" MadCap:id="コスト指標（CPI）" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.完了">
+    <head><title>コスト指標（CPI）</title>
+        <link rel="StyleSheet" href="../../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>コスト指標（CPI）は、コスト効率を表します。</p>
+        <p>&#160;</p>
+        <p class="title">説明</p>
+        <p>現時点の進捗を、計画したコストに対して何倍コストを発生させずに進んでいるかを表します。</p>
+        <table cellspacing="0" width="500">
+            <col style="width: 28.816%;" />
+            <col style="width: 71.184%;" />
+            <tr valign="top">
+                <td style="width: 28.816%;" bgcolor="#C0C0C0" class="td_1">
+                    <p>CPIの値</p>
+                </td>
+                <td style="width: 71.184%;" bgcolor="#C0C0C0" class="td_2">
+                    <p>内容</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="width: 28.816%;" class="td_3">
+                    <p>1.0より小さい</p>
+                </td>
+                <td style="width: 71.184%;" class="td_4">
+                    <p>計画よりコストが発生しています。</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="width: 28.816%;" class="td_3">
+                    <p>1.0と等しい</p>
+                </td>
+                <td style="width: 71.184%;" class="td_4">
+                    <p>計画通りです。</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td style="width: 28.816%;" class="td_3">
+                    <p>1.0より大きい</p>
+                </td>
+                <td style="width: 71.184%;" class="td_4">
+                    <p>計画よりコストが発生してません。</p>
+                </td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <p class="title">計算式</p>
+        <p>コスト指標（CPI）は、以下の計算式で算出します。</p>
+        <table cellspacing="0" width="500">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <p>コスト指標（CPI） = ［実績獲得コスト］ / ［実績コスト］</p>
+                    <ul>
+                        <li class="p_info_1">
+                            <p class="info">［実績獲得コスト］ 
+			 = ［計画コスト］ * <MadCap:toggler targets="t2">［実績進捗率］</MadCap:toggler></p>
+                            <div MadCap:targetName="t2">
+                                <p>［実績進捗率］ = <MadCap:toggler targets="t1">［進捗率］</MadCap:toggler></p>
+                                <div MadCap:targetName="t1">
+                                    <p>進捗率の決定方法により、計算方法が異なります。</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="p_info_1">
+                            <p class="info">［実績コスト］ 
+			 = （実績工数 * コスト単価）　+ マイルストーンの実績コスト</p>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <p class="title">コスト指標（CPI）を使う</p>
+        <p>コスト指標（CPI）を使ってプロジェクトの進捗を管理します。</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>以下のフィールドを適切に設定します。</p>
+            </li>
+        </ol>
+        <ul type="disc">
+            <li class="p">
+                <p class="p_5">［進捗率］</p>
+            </li>
+            <li class="p">
+                <p class="p_5">［計画コスト］と［実績コスト］</p>
+            </li>
+        </ul>
+        <ol start="2" class="ol_1">
+            <li class="p">
+                <p>コスト指標（CPI）の値の推移をモニタリングします。</p>
+            </li>
+            <li class="p">
+                <p>必要に応じて計画コストの変更などの対応を行います。</p>
+            </li>
+        </ol>
+        <ul type="disc">
+            <li class="p">
+                <p class="p_5">CPIの値が1.0から大きく異なる場合は、計画コストを見直します。</p>
+            </li>
+            <li class="p">
+                <p class="p_5">［最終予測コスト］は、計画コストを見直す参考値として活用できます。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+    </body>
+</html>

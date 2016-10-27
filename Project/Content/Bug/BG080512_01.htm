@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="VistaでExcel連携アドインの構成を変更すると、変更内容が反映されない場合がある" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>VistaでExcel連携アドインのインストール構成を変更しても、反映されない場合がある</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">問題の発生するバージョン</p>
+        <p>TimeTracker FX 2.5.0</p>
+        <p>&#160;</p>
+        <p class="title">問題が修正されるバージョン</p>
+        <p>未定</p>
+        <p>&#160;</p>
+        <p class="title">内容</p>
+        <p>Windows Vistaで、ユーザーアクセス制御を有効にした状態で、[プログラムの追加と削除]からExcel連携アドインのインストール構成を変更すると、Excelのツールバーに変更後の内容が反映されない。</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>Vistaで、ユーザーアクセス制御を有効にする。</p>
+            </li>
+            <li class="p">
+                <p>TimeTracekr FXをExcel連携アドインも含めてインストールする。</p>
+            </li>
+            <li class="p">
+                <p>コントロールパネルの［プログラムの追加と削除］から、TimeTracker FXを選択し、［変更］をクリックする。</p>
+            </li>
+            <li class="p">
+                <p>［プログラムの保守］画面で［変更］を選択し、Excel連携アドインのみ削除する。</p>
+            </li>
+            <li class="p">
+                <p>Excelを起動する。</p>
+            </li>
+            <li class="p">
+                <p>Excelのツールバーに、［TimeTracker FX］ツールバーを表示したままとなっている。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p class="title">回避方法</p>
+        <p>コントロールパネルの［プログラムの追加と削除］からは変更せずに、TimeTrackerFXSetup.exeを実行し、［プログラムの保守］画面でExcel連携アドインの構成を変更してください。</p>
+        <p>&#160;</p>
+    </body>
+</html>

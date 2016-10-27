@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CatapultTarget
+  Version="2"
+  Comment="MadCap HTML5 Target"
+  Type="WebHelp2"
+  Destinations=""
+  GlossaryTermConversion="marked"
+  BrowseSequence="/Project/Advanced/FX_KB.flbrs"
+  MasterToc="/Project/TOCs/FX_KB.fltoc"
+  Skin="/Project/Skins/HTML5.flskn"
+  MasterPage="/Content/Resources/MasterPages/MasterPage.flmsp"
+  MakeFileLowerCase="false"
+  ReplaceSpacesWithUnderscores="true"
+  ConditionTagExpression="exclude[Primary.非公開] "
+  OutputFile="index.htm">
+  <PrintedOutput
+    CollapseMargins="true" />
+</CatapultTarget>

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.非公開" MadCap:id="解説_-_「割り当てられたタスク」ツリーを取得する" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中">
+    <head><title>解説 - 「割り当てられたタスク」のタスクIDを取得する</title>
+        <link rel="StyleSheet" href="../../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>オートメーションAPIを利用しデータベースから［割り当てられたタスク］のタスクIDを取得する<a href="SA080225_02.htm">［サンプルスクリプト -「割り当てられたタスク」のタスクIDを取得する］</a>について解説します。</p>
+        <p>本解説は［サンプルスクリプト - 「割り当てられたタスク」のタスクIDを取得する］のコードと一緒にご覧ください。</p>
+        <p>&#160;</p>
+        <p class="title">説明するメソッド</p>
+        <p>本解説では、以下のメソッドについて説明します。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>GetProjects･･･タスクツリーから、プロジェクトの一覧を取得します。</p>
+            </li>
+            <li class="p">
+                <p>GetTaskTree･･･指定されたプロジェクトのタスクツリーの情報（タスクとタスクパッケージの情報一覧）を取得します。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">タスクツリーからプロジェクトの一覧を取得する</p>
+        <p>タスクツリーからプロジェクトの一覧を取得します。</p>
+        <p>引数に0を渡すことで、フィルタの「割り当てられたタスク」で表示されるタスクを対象にしています。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>
+                    <MadCap:toggler targets="t2">サンプルスクリプト（抜粋）</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t2">
+                    <table cellspacing="0" width="500">
+                        <col style="width: 16.476%;" />
+                        <col style="width: 83.524%;" />
+                        <tr valign="top">
+                            <td style="width: 16.476%;" bgcolor="#C0C0C0" class="td_5">
+                                <p>行</p>
+                            </td>
+                            <td style="width: 83.524%;" bgcolor="#C0C0C0" class="td_2">
+                                <p>サンプルスクリプトのコード</p>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td style="width: 16.476%;" class="td_6">
+                                <p>78</p>
+                                <p>79</p>
+                                <p>80</p>
+                                <p>81</p>
+                            </td>
+                            <td style="width: 83.524%;" class="td_4">
+                                <p>' ------ 対象プロジェクトID取得 ------</p>
+                                <p>' 「割り当てられたタスク」ツリーからプロジェクト一覧を取得します。</p>
+                                <p>taskTreeType = 0</p>
+                                <p>Set projectPropertyList = app.GetProjects(taskTreeType)</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">データベースからタスクツリーの情報を取得する</p>
+        <p>データベースからタスクツリーの情報を取得します。</p>
+        <p>指定されたプロジェクトでリソースとして割り当たったタスクを含むタスクツリーの情報を取得します。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>
+                    <MadCap:toggler targets="t1">サンプルスクリプト（抜粋）</MadCap:toggler>
+                </p>
+                <div MadCap:targetName="t1">
+                    <table cellspacing="0" width="511">
+                        <col style="width: 16.12%;" />
+                        <col style="width: 83.88%;" />
+                        <tr valign="top">
+                            <td style="width: 16.12%;" bgcolor="#C0C0C0" class="td_5">
+                                <p>行</p>
+                            </td>
+                            <td style="width: 83.88%;" bgcolor="#C0C0C0" class="td_2">
+                                <p>サンプルスクリプトのコード</p>
+                            </td>
+                        </tr>
+                        <tr valign="top">
+                            <td style="width: 16.12%;" class="td_6">
+                                <p>89</p>
+                                <p>90</p>
+                                <p>91</p>
+                            </td>
+                            <td style="width: 83.88%;" class="td_4">
+                                <p>' ------ 対象タスクID取得 ------</p>
+                                <p>' タスクツリーのタスク一覧を取得します。</p>
+                                <p>Set taskTreeList = app.GetTaskTree(taskTreeType, projectProperty.ID)</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ul>
+        <p>&#160;</p>
+    </body>
+</html>

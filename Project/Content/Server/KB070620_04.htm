@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="SSISとSQL_Server_Agentを利用する" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.完了">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>SSISとSQL Server Agentを利用する（SQL Server 2005）</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">このトピックの対象</p>
+        <p>TimeTracker FX 2.0.0</p>
+        <p>TimeTracker FX 2.0.1</p>
+        <p>TimeTracker FX 2.0.2</p>
+        <p>※TimeTracker FX 2.5以降でServer Managerをご利用の方は、Server Managerを利用して定期バックアップを行えます。</p>
+        <p>　詳細は、ServerManagerヘルプの <a href="../newdoc/backup_schedule.htm" target="_blank">［定期的にバックアップする］</a>をご覧ください。</p>
+        <p>&#160;</p>
+        <p class="title">内容</p>
+        <p>SQL Server 2005 Integration Services （以下SSIS）とSQL Server Agentの実行方法をご説明します。</p>
+        <ul>
+            <li class="p_info_1">
+                <p>SSISとSQL Server Agentは［メンテナンス 
+	 プラン］を利用するために必要です。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">はじめに</p>
+        <ul>
+            <li class="p_warning_1">
+                <p class="warning">本手順は、十分な検証を行っておりません。</p>
+            </li>
+            <li class="p_warning_1">
+                <p class="warning">本手順で発生する問題等については免責と致します。</p>
+            </li>
+            <li class="p_warning_1">
+                <p class="warning">ユーザ様ご自身で十分な検証を行い、ユーザ様の責任において実施してください。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">SSISをインストールする</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>SQL Server 2005のメディアからインストーラを起動します。</p>
+            </li>
+            <li class="p">
+                <p>インストールするオペレーティングシステムをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［サーバー コンポーネント、ツール、Books Online、およびサンプル］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>使用許諾書に同意して、［次へ］ボタンをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>必要なコンポーネントのインストールが完了後に［次へ］ボタンをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［SQL Serverインストールウィザード］が開始するので、以下の画面が表示されるまで［次へ］ボタンをクリックします。</p>
+            </li>
+        </ol>
+        <p class="p_2">
+            <img src="../Image/KB070620_04_1.png" alt="" width="389" height="354" border="0" class="img_1" />
+        </p>
+        <ol start="7" class="ol_1">
+            <li class="p">
+                <p>［Integration Services］をチェックして、［次へ］ボタンをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>画面の指示に従い、インストールを継続してください。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p class="title">SSISとSQL Server Agentを開始する</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>Windows［スタート］メニューから、［（すべてのプログラム）］-［構成ツール］を開きます。</p>
+            </li>
+            <li class="p">
+                <p>［SQL Server Configuration Manager］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［SQL Server 2005］のサービスをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［SQL Server Integration Services］を右クリックして、［プロパティ］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［サービスの実行状態］を確認して、［停止中］であれば［開始］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［サービス］タグをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［開始モード］を自動に設定します。</p>
+            </li>
+            <li class="p">
+                <p>［OK］ボタンをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［SQL Server Agent］を右クリックして、［プロパティ］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［サービスの実行状態］を確認して、［停止中］であれば［開始］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［サービス］タグをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［開始モード］を自動に設定します。</p>
+            </li>
+            <li class="p">
+                <p>［OK］ボタンをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［SQL Server Configuration Manager］が以下の通り設定されたことを確認します。<br /><img src="../Image/KB070620_04_2.jpg" alt="" width="518" height="92" border="0" class="img_1" /></p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

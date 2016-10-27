@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="サーバタスクの設定方法" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.レビュー可能">
+    <head><title>サーバタスクの設定をするには</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>サーバマシンの移行、サーバタスクが動作に問題があった場合に、サーバタスクを手動で設定する方法を説明します。</p>
+        <ul>
+            <li class="p_warning_1">
+                <p class="warning">本手順は、TimeTracker 
+	 FX サポートチームより案内があった場合に行ってください。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">設定方法</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>TimeTracker FXをインストールしたフォルダの［Config］フォルダを開きます。</p>
+            </li>
+        </ol>
+        <p class="p_2">通常は［C:\Program Files\Denso Create\TimeTracker 
+ FX\Config］です。</p>
+        <ol start="2" class="ol_1">
+            <li class="p">
+                <p>フォルダを作成します。フォルダ名の規則は以下の通りです。</p>
+            </li>
+        </ol>
+        <p class="p_2">［サーバーマシン名 + .（ドット） + インスタンス名 + .（ドット） + データベース名］</p>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">作成するフォルダの例</p>
+            </li>
+        </ul>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr style="height: 70px;" valign="top">
+                <td style="width: 100%;" bgcolor="#C0C0C0" class="td_1">
+                    <p>サーバーマシン名･･･FX-SERVER</p>
+                    <p>インスタンス名 ･･･無し（既定のインスタンス）</p>
+                    <p>データベース名 ･･･TimeTrackerFX</p>
+                    <p>作成するフォルダ名 ･･･<span class="span_1">FX-SERVER..TimeTrackerFX</span></p>
+                </td>
+            </tr>
+        </table>
+        <ol start="3" class="ol_1">
+            <li class="p">
+                <p>上記フォルダに、新しく作成した［サーバ設定ファイル］をコピーします。</p>
+            </li>
+            <li class="p">
+                <p>Windows［スタート］メニューから、［ファイル名を指定して実行］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>services.msc と入力し、［OK］ボタンをクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［名前］の一覧から、［TimeTrackerサーバタスク］を探して選択します。</p>
+            </li>
+            <li class="p">
+                <p>［TimeTrackerサーバタスク］の［状態］を確認します。</p>
+            </li>
+            <li class="p">
+                <p>［状態］が［開始］であれば、右クリックの［再起動］を行います。</p>
+            </li>
+        </ol>
+        <p class="p_2">［状態］が［開始］以外であれば、右クリックの［開始］を行います。</p>
+        <p class="p_2">
+            <img src="../Image/KB070108_01.png" alt="" width="508" height="147" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+    </body>
+</html>

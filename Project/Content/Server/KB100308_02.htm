@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="4" MadCap:lastHeight="1059" MadCap:lastWidth="452">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>通信ポートの固定方法－SQL Server 2005以降、Express－</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">このトピックの対象</p>
+        <p>SQL Server 2005以降、およびSQL Server 2005以降のExpress</p>
+        <p>&#160;</p>
+        <p class="title">内容</p>
+        <p>名前付きインスタンスを利用している場合に、通信ポートを固定する方法を説明します。</p>
+        <ul>
+            <li class="p_warning">
+                <p>既定のインスタンスと名前付きインスタンスが共存している環境では、本手順を行わないでください。</p>
+            </li>
+        </ul>
+        <ul>
+            <li class="p_info">
+                <p>本手順は、既定のインスタンスで動作している場合は必要ありません。</p>
+            </li>
+            <li class="p_info">
+                <p>TimeTracker FX 2.5以降の評価版でautorunからSQL 
+	 Server Expressをインストールした場合は、必ず行ってください。</p>
+            </li>
+            <li class="p_info">
+                <p>本手順はSQL Server 2005で説明しますが、SQL 
+	 Server 2008以降の場合も手順は同様です。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">設定手順</p>
+        <p>&#160;</p>
+        <ol>
+            <li class="P">
+                <p>Windowsスタートメニューの［すべてのプログラム］－［Microsoft SQL Server 
+	 2005］－［構成ツール］－［SQL Server 構成マネージャ］を選択します。</p>
+            </li>
+            <li class="P">
+                <p>［SQL Server 構成マネージャ］－［SQL Server 2005 ネットワークの構成］－［（インスタンス名）のプロトコル］を選択します。<br />	インスタンス名は、TimeTracker FXのデータベースが接続されたインスタンスの名前になります。</p>
+            </li>
+        </ol>
+        <ul>
+            <li class="p_info">
+                <p>TimeTracker FX 2.5以降の評価版でautorunからSQL Server Expressをインストールした場合は、インスタンス名は「TIMETRACKERFX」です。</p>
+            </li>
+        </ul>
+        <ol start="3">
+            <li class="P">
+                <p>［プロトコル名］の［TCP/IP］をクリックします。</p>
+            </li>
+            <li class="P">
+                <p>ツールバーの［プロパティ］ボタンをクリックします。</p>
+            </li>
+        </ol>
+        <p class="p_2">
+            <img src="../Image/KB061204_01_5.png" alt="" width="300" height="121" border="0" class="img_1" />
+        </p>
+        <ol start="5">
+            <li class="P">
+                <p>［TCP/IPのプロパティ］ダイアログで［IP アドレス］タブを選択します。</p>
+            </li>
+            <li class="P">
+                <p>［IP1］の［TCPポート］に、［1433］と入力します。</p>
+            </li>
+            <li class="P">
+                <p>［IP1］の［TCP動的ポート］の値を削除します。</p>
+            </li>
+        </ol>
+        <p class="p_2">
+            <img src="../Image/KB061204_01_6.png" alt="" width="313" height="153" border="0" class="img_1" />
+        </p>
+        <ol start="8">
+            <li class="P">
+                <p>各ダイアログにて、［OK］ボタンをクリックして、画面を閉じます。</p>
+            </li>
+            <li class="P">
+                <p>［SQL Server 構成マネージャ］－［SQL Server 2005 のサービス］を選択します。</p>
+            </li>
+            <li class="P">
+                <p>［SQL Server （インスタンス名）］を選択し、ツールバーの［サービスの再起動］ボタンをクリックします。<br />	インスタンス名は、TimeTracker FXのデータベースが接続されたインスタンスの名前になります。</p>
+            </li>
+        </ol>
+        <ul>
+            <li class="p_info">
+                <p>TimeTracker FX 2.5以降の評価版でautorunからSQL Server Expressをインストールした場合は、インスタンス名は「TIMETRACKERFX」です。 
+	 </p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+    </body>
+</html>

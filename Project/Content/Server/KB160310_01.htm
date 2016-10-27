@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Default.Not Ready for Publish" MadCap:lastBlockDepth="6" MadCap:lastHeight="572" MadCap:lastWidth="1303" MadCap:ignoredWords="理由と移行手順;TimeTracker;Server;SQL;2005上でTimeTracker;FXのデータベースの移行に必要な設定や手順については;以下の２つの条件を満たす場合;Microsoft;2005を利用中の場合は;Serverをバージョンアップすることをお奨めします;以下;FX;データベース移行;SQLServer2005MigrationGuide;pdf">
+    <head>
+        <link href="../KBTable.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>TimeTracker FXのサーバの変更に伴うWeb APIの再設定</title>
+        <link href="../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Article" />　SQL Server 2005からバージョンアップする際の注意点</h1>
+        <table style="caption-side: top;margin-left: 0;margin-right: auto;mc-table-style: url('../KBTable.css');width: 350px;" summary="Article number, product name and version number" class="TableStyle-KBTable" cellspacing="0">
+            <col style="width: 150px;" class="Column-Column1" />
+            <col style="width: 200px;" class="Column-Column1" />
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>更新日:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">2016/3/11</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象バージョン:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable" style="padding-top: 4px;">3.5以前</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象エディション:</b>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">Professional / Standard</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <h2>概要</h2>
+        <p>2016年4月12日に、Microsoft SQL Server 2005（以下「SQL Server 2005」）のサポートが終了します。<br />SQL Server 2005を利用中の場合は サポート終了を機に、SQL Serverをバージョンアップすることをお奨めします。</p>
+        <p>TimeTracker FXのデータベースの移行に必要な設定や手順については、「TimeTracker FX データベース移行・復旧ガイド」でご紹介していますが、<br />以下の２つの条件を満たす場合、ガイドでご紹介している手順で移行することができません。</p>
+        <ul>
+            <li>SQL Server 2005上でTimeTracker FX 3.5以前のバージョンを利用している</li>
+            <li>SQL Server 2012以降へバージョンアップする</li>
+        </ul>
+        <p>ここでは、TimeTracker FX 3.5以前のバージョンのデータベースを、SQL Server 2012以降で利用するために必要な設定や手順をご紹介します。</p>
+        <h2>理由と移行手順</h2>
+        <p>TimeTracker FX 3.5以前では、SQL Serverの互換性レベル 80のデータベースを作成します。<br />SQL Server 2012以降のデータベースは互換性レベル 80をサポートしていないため、TimeTracker FX をご利用になれません。<br /></p>
+        <p>データベースの互換性レベルを、SQL Server 2012以降のデータベースが対応しているレベルに上げる必要があります。<br />TimeTracker FX 3.8にアップグレードすることで、SQL Server　2012以降で利用可能な互換性レベルとなります。</p>
+        <p>手順の詳細は[SQLServer2005MigrationGuide.pdf]をご覧ください。</p>
+        <h2>ダウンロード</h2>
+        <ul>
+            <li class="download"><a href="../downloads/document/SQLServer2005MigrationGuide.pdf" target="_blank">SQLServer2005MigrationGuide.pdf</a> (398KB)</li>
+        </ul>
+        <p>&#160;</p>
+    </body>
+</html>

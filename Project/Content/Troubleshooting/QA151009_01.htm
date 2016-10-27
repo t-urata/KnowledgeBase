@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Default.Not Ready for Publish" MadCap:lastBlockDepth="6" MadCap:lastHeight="600" MadCap:lastWidth="1120">
+    <head>
+        <link href="../KBTable.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>TimeTracker FXのインストールに失敗する</title>
+        <link href="../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Article" />　TimeTracker FXのインストールに失敗する</h1>
+        <table style="caption-side: top;margin-left: 0;margin-right: auto;mc-table-style: url('../KBTable.css');width: 350px;" summary="Article number, product name and version number" class="TableStyle-KBTable" cellspacing="0">
+            <col style="width: 150px;" class="Column-Column1" />
+            <col style="width: 200px;" class="Column-Column1" />
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>更新日:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">2015/10/9</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象バージョン:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">2.5以降</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象エディション:</b>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">Professional / Standard</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h2>症状</h2>
+        <p>TimeTracker FXのインストール中に以下のダイアログが表示され、インストールが中断します。</p>
+        <img src="../Image/QA151009_01_1.png" />
+        <h2>原因と対策</h2>
+        <p>この現象は、オートランの実行ファイル(autorun.exe)がTimeTracker FXのインストーラ(TimeTrackerFXSetup.exe)の呼び出しに失敗しているのが原因です。<br />(オートランは「Installer」フォルダ内にあるインストーラを呼び出し、インストールを実行します。)<br /></p>
+        <p>以下のような場合にエラーとなり、ダイアログが表示されます。</p>
+        <table style="border-collapse: collapse;margin-left: 0;margin-right: auto;width: 700px;" class="contents_table">
+            <col>
+            </col>
+            <col>
+            </col>
+            <col>
+            </col>
+            <thead>
+                <tr>
+                    <th class="contents_table" style="text-align: center;padding-left: 4px;padding-top: 2px;border-left-style: solid;border-left-width: 1px;border-left-color: #808080;border-right-style: solid;border-right-width: 1px;border-right-color: #808080;border-top-style: solid;border-top-width: 1px;border-top-color: #808080;border-bottom-style: solid;border-bottom-width: 1px;border-bottom-color: #808080;">No.</th>
+                    <th class="contents_table">原因</th>
+                    <th class="contents_table">対策</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="text-align: center;">1</td>
+                    <td>zipファイルを直接開いた状態(未解凍の状態)で、autorun.exeを実行している</td>
+                    <td>インストール実行時には、zipファイル内のすべてのファイルを解凍する</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">2</td>
+                    <td>「Installer」フォルダ以下のファイルにアクセス権がない</td>
+                    <td>「Installer」フォルダ以下にあるファイルにアクセス権を付与する</td>
+                </tr>
+                <tr>
+                    <td style="text-align: center;">3</td>
+                    <td>「Installer」フォルダが存在しない</td>
+                    <td>オートランの実行ファイルと同じフォルダに「Installer」フォルダを格納する</td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+    </body>
+</html>

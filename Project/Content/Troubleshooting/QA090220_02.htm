@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="TimeTracker FX起動時に、システムエラーが発生する" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中" MadCap:lastBlockDepth="6" MadCap:lastHeight="1504" MadCap:lastWidth="1102">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>TimeTracker FX起動時に、システムエラーが発生する</title>
+        <link href="../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <h3>このトピックの対象</h3>
+        <p>TimeTracker FX 2.5.0以降</p>
+        <h2>症状</h2>
+        <p>TimeTracker FXを起動すると、システムエラーが発生する。</p>
+        <h2>原因と対策</h2>
+        <p>本現象が起こる可能性の高い原因を列挙します。<br xmlns="http://www.w3.org/1999/xhtml" />各原因が該当しないかご確認ください。<br xmlns="http://www.w3.org/1999/xhtml" />また、各原因についての対応方法は以降に記載しております。</p>
+        <h4>【ログイン画面が表示される前に発生】</h4>
+        <ul type="disc" class="ul3">
+            <li class="p"><a href="QA090220_02.htm#case1">インストールされている.NET 
+	 Frameworkに異常がある</a>
+            </li>
+            <li class="p"><a href="QA090220_02.htm#case2">レジストリへの書き込み権限が不足している</a>
+            </li>
+        </ul>
+        <h4>【ログイン実行後に発生】</h4>
+        <ul type="disc" class="ul3">
+            <li class="P"><a href="QA090220_02.htm#case3">サーバ設定ファイルにアクセス権がない</a>
+            </li>
+        </ul>
+        <p>これらの原因が該当しない場合は、<a href="../Inquiry/TB061101_01.htm">お問い合わせに必要な情報</a>を添えて、<a href="TB061101_02.htm" target="_blank">こちら</a>までご連絡ください。</p>
+        <h3>インストールされている.NET Frameworkに異常がある<a name="case1" id="case1" xmlns="http://www.w3.org/1999/xhtml"></a></h3>
+        <h4>【原因】</h4>
+        <p class="p3">TimeTracker FXは、.NET Framework のインストールされている環境で動作します。<br xmlns="http://www.w3.org/1999/xhtml" />そのため、何らかの原因により.NET Frameworkに異常がある場合、正常に起動できません。<br xmlns="http://www.w3.org/1999/xhtml" />TimeTracker FXが利用する.NET Frameworkのバージョンは、<a href="../Server/QA061101_01.htm" xmlns="http://www.w3.org/1999/xhtml">こちら</a>でご確認ください。</p>
+        <h4>【対策】</h4>
+        <p class="p3">以下の手順により、.NET Framework とTimeTracker FXの再インストールを行ってください。</p>
+        <ol class="ol3">
+            <li class="p">Windows［スタート］から［コントロールパネル］を選択し、［プログラムの追加と削除］を選択します。</li>
+            <li class="p">［TimeTracker FX］を選択し、［削除］を実行します。</li>
+            <li class="p">コントロール パネルの [プログラムの追加と削除] 
+	 を使用して ［Microsoft .NET Framework ］と名前の付くプログラム(対象バージョンのみ)全てに、［削除］を実行します。</li>
+            <li class="p">Microsoft社のサイトから、.NET Framework 
+	 の、以下の２つのファイルをダウンロードし、実行してインストールします。</li>
+            <p xmlns="http://www.w3.org/1999/xhtml" style="margin-bottom: 2pt;">［.NET Framework Version 
+		 2.0 の場合］</p>
+            <ul type="disc">
+                <li>Microsoft .NET Framework Version 
+		 2.0 再頒布可能パッケージ (x86)<br xmlns="http://www.w3.org/1999/xhtml" />		ダウンロードは<a href="../downloads/trouble/dotnetfx.zip" xmlns="http://www.w3.org/1999/xhtml">こちら</a>。</li>
+                <li>Microsoft .NET Framework 2.0 
+		 日本語 Language Pack (x86)<br xmlns="http://www.w3.org/1999/xhtml" />		ダウンロードは<a href="http://www.microsoft.com/downloads/details.aspx?familyid=39C8B63B-F64B-4B68-A774-B64ED0C32AE7&amp;displaylang=ja" target="_blank" xmlns="http://www.w3.org/1999/xhtml">こちら</a>。</li>
+            </ul>
+            <p xmlns="http://www.w3.org/1999/xhtml" style="margin-bottom: 2pt;">［.NET Framework Version 
+	 4.5 の場合］</p>
+            <ul type="disc" xmlns="http://www.w3.org/1999/xhtml">
+                <li>Microsoft .NET Framework 4.5<br xmlns="http://www.w3.org/1999/xhtml" />		ダウンロードは<a href="https://www.microsoft.com/ja-jp/download/details.aspx?id=30653" target="_blank" xmlns="http://www.w3.org/1999/xhtml">こちら</a>。</li>
+            </ul>
+            <li class="p">autorun.exeより、［TimeTracker 
+	 FXをインストールする］をクリックし、TimeTracker FXをインストールします。</li>
+        </ol>
+        <p class="p3">対策を行っても状況が改善されない場合は、次の原因をご確認ください。</p>
+        <h3>レジストリへの書き込み権限が不足している<a name="case2" id="case2" xmlns="http://www.w3.org/1999/xhtml"></a></h3>
+        <h4>【原因】</h4>
+        <p class="p3">TimeTracker FXは起動時に、TimeTracker FXのレジストリを格納している、以下のレジストリファイルに対して操作情報を書き込みます。</p>
+        <ul type="disc" class="ul3">
+            <li class="p">［HKEY_CURRENT_USER］－［Software］－［DENSO 
+	 CREATE］</li>
+        </ul>
+        <p class="p3">しかしセキュリティ対策ソフトなどで特別な制限を行っている場合、レジストリファイルへのアクセスができず正常に起動できません。</p>
+        <h4>【対策】</h4>
+        <p class="p3">以下の手順により、Windowsログインユーザが該当のレジストリファイルへアクセスできるよう、設定してください。</p>
+        <h5>［OSがWindows XPの場合］</h5>
+        <ul class="ul4">
+            <li class="p" xmlns="http://www.w3.org/1999/xhtml">&#160;Windows［スタート］－［ファイル名を指定して実行］を選択します。</li>
+            <li class="p" xmlns="http://www.w3.org/1999/xhtml">［名前］に regedit と入力し、［OK］をクリックします。</li>
+            <li class="p" xmlns="http://www.w3.org/1999/xhtml">［マイ コンピュータ］－［HKEY_CURRENT_USER］－［Software］－［DENSO 
+	 CREATE］を右クリックし、［アクセス許可］を選択します。</li>
+            <li class="p" xmlns="http://www.w3.org/1999/xhtml">表示されるダイアログでWindowsログインユーザを選択し、［フルコントロール］の［許可］にチェックを入れ、［OK］をクリックします。</li>
+        </ul>
+        <h5>［OSがWindows Vistaの場合］</h5>
+        <ul class="ul4">
+            <li class="p" xmlns="http://www.w3.org/1999/xhtml">&#160;Windows［スタート］－［すべてのプログラム］－［アクセサリ］－［ファイル名を指定して実行］を選択します。</li>
+            <li class="p" xmlns="http://www.w3.org/1999/xhtml">［名前］に regedit と入力し、［OK］をクリックします。</li>
+            <li class="p" xmlns="http://www.w3.org/1999/xhtml">［マイ コンピュータ］－［HKEY_CURRENT_USER］－［Software］－［DENSO 
+	 CREATE］を右クリックし、［アクセス許可］を選択します。</li>
+            <li class="p" xmlns="http://www.w3.org/1999/xhtml">表示されるダイアログでWindowsログインユーザを選択し、［フルコントロール］の［許可］にチェックを入れ、［OK］をクリックします。</li>
+        </ul>
+        <h5>［OSがWindows 2000の場合］</h5>
+        <ul class="ul4">
+            <li class="p" xmlns="http://www.w3.org/1999/xhtml">&#160;Windows［スタート］－［ファイル名を指定して実行］を選択します。</li>
+            <li class="p" xmlns="http://www.w3.org/1999/xhtml">［名前］に regedt32 と入力し、［OK］をクリックします。</li>
+            <li class="p" xmlns="http://www.w3.org/1999/xhtml">［ローカル コンピュータ上のHKEY_CURRENT_USER］にて、［HKEY_CURRENT_USER］－［Software］－［DENSO 
+	 CREATE］を選択します。</li>
+            <li class="p" xmlns="http://www.w3.org/1999/xhtml">メニューの［セキュリティ］－［アクセス許可］をクリックします。</li>
+            <li class="p" xmlns="http://www.w3.org/1999/xhtml">表示されるダイアログでWindowsログインユーザを選択し、［フルコントロール］の［許可］にチェックを入れ、［OK］をクリックします。</li>
+        </ul>
+        <h3>サーバ設定ファイルにアクセス権がない<a name="case3" xmlns="http://www.w3.org/1999/xhtml"></a></h3>
+        <h4>【原因】</h4>
+        <p class="p3">Windowsログインユーザに、サーバ設定ファイルへのアクセス権が無い場合、サーバへの接続情報が読み込めずシステムエラーが発生します。</p>
+        <h4>【対策】</h4>
+        <p class="p3">サーバ設定ファイルのアクセス権をご確認いただき、該当のWindowsログインユーザに［読み取り］権限が付いているかご確認ください。</p>
+        <ul class="ul3">
+            <li class="p_information">アクセス権の変更につきましては、システム管理者へご相談ください。</li>
+        </ul>
+        <p>&#160;</p>
+    </body>
+</html>

@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="利用する通信ポートについて" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.完了" MadCap:lastBlockDepth="6" MadCap:lastHeight="644" MadCap:lastWidth="906">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>利用する通信ポートについて</title>
+        <link href="../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>TimeTracker FXでは、データベースサーバに、Microsoft SQL Serverを使用しており、以下の通信ポートを利用します。<br xmlns="http://www.w3.org/1999/xhtml" />SQL Serverの環境により、利用するポートが異なります。</p>
+        <h3>通信ポートについて</h3>
+        <ul type="disc">
+            <li class="p">既定のインスタンスの場合（SQL Serverを標準の設定でインストールした場合）</li>
+        </ul>
+        <p class="p3">1433/TCP</p>
+        <ul type="disc">
+            <li class="p">名前付きインスタンスの場合</li>
+        </ul>
+        <p class="p3">1434/UDP<br xmlns="http://www.w3.org/1999/xhtml" />任意のTCPポート（1025～65535/TCP）</p>
+        <ul class="ul2">
+            <li class="p_information">名前付きインスタンスは動的ポート割り当てプロセスを利用して、OSが利用していない空きポートから、任意のポートを割り当てて待ち受けます。</li>
+        </ul>
+        <p>&#160;</p>
+        <h3>通信手順について</h3>
+        <ul type="disc">
+            <li class="p">既定のインスタンスの場合（SQL Serverを標準の設定でインストールした場合）</li>
+            <table cellspacing="0" width="90%" class="table_1">
+                <col width="22" />
+                <col width="174" />
+                <col width="167" />
+                <col width="45" />
+                <col width="200" />
+                <tr valign="top">
+                    <td bgcolor="#C0C0C0" class="td_1">
+                        <p class="p8">No.</p>
+                    </td>
+                    <td bgcolor="#C0C0C0" class="td_2">
+                        <p class="p8">通信内容</p>
+                    </td>
+                    <td bgcolor="#C0C0C0" class="td_2">
+                        <p class="p8">クライアントPCの通信ポート</p>
+                    </td>
+                    <td bgcolor="#C0C0C0" class="td_2">
+                        <p class="p8" align="center">向き</p>
+                    </td>
+                    <td width="200" bgcolor="#C0C0C0" class="td_2">
+                        <p class="p8">サーバマシンの通信ポート</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="td_3">
+                        <p class="p8">1-1</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8">データベースサーバへの要求</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8">任意のTCPポート</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8" align="center">-&gt;</p>
+                    </td>
+                    <td width="200" class="td_4">
+                        <p class="p8">1433/TCP</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="td_3">
+                        <p class="p8">1-2</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8">データベースサーバからの応答</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8">任意のTCPポート</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8" align="center">&lt;-</p>
+                    </td>
+                    <td width="200" class="td_4">
+                        <p class="p8">1433/TCP</p>
+                    </td>
+                </tr>
+            </table>
+        </ul>
+        <p>&#160;</p>
+        <ul type="disc">
+            <li class="p">名前付きインスタンスの場合</li>
+            <table cellspacing="0" width="90%" class="table_1">
+                <col width="22" />
+                <col width="171" />
+                <col width="170" />
+                <col width="45" />
+                <col width="200" />
+                <tr valign="top">
+                    <td bgcolor="#C0C0C0" class="td_1">
+                        <p class="p8">No.</p>
+                    </td>
+                    <td bgcolor="#C0C0C0" class="td_2">
+                        <p class="p8">通信内容</p>
+                    </td>
+                    <td bgcolor="#C0C0C0" class="td_2">
+                        <p class="p8">クライアントPCの通信ポート</p>
+                    </td>
+                    <td bgcolor="#C0C0C0" class="td_2">
+                        <p class="p8" align="center">向き</p>
+                    </td>
+                    <td width="200" bgcolor="#C0C0C0" class="td_2">
+                        <p class="p8">サーバマシンの通信ポート</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="td_3">
+                        <p class="p8">1-1</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8">通信ポートの問い合わせ</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8">任意のUDPポート</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8" align="center">-&gt;</p>
+                    </td>
+                    <td width="200" class="td_4">
+                        <p class="p8">1434/UDP</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="td_3">
+                        <p class="p8">1-2</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8">通信ポートの通知</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8">任意のUDPポート</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8" align="center">&lt;-</p>
+                    </td>
+                    <td width="200" class="td_4">
+                        <p class="p8">1434/UDP</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="td_3">
+                        <p class="p8">2-1</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8">データベースサーバへの要求</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8">任意のTCPポート</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8" align="center">-&gt;</p>
+                    </td>
+                    <td width="200" class="td_4">
+                        <p class="p8">No.1-2で通知した任意のTCPポート</p>
+                    </td>
+                </tr>
+                <tr valign="top">
+                    <td class="td_3">
+                        <p class="p8">2-2</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8">データベースサーバからの応答</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8">任意のTCPポート</p>
+                    </td>
+                    <td class="td_4">
+                        <p class="p8" align="center">&lt;-</p>
+                    </td>
+                    <td width="200" class="td_4">
+                        <p class="p8">No.1-2で通知した任意のTCPポート</p>
+                    </td>
+                </tr>
+            </table>
+        </ul>
+        <ol class="ol3">
+            <li class="p_information" xmlns="http://www.w3.org/1999/xhtml">任意のTCP/UDPポートは、クライアントPCやサーバマシンが動的に指定する1025～65535番ポートです。</li>
+            <li class="p_information" xmlns="http://www.w3.org/1999/xhtml">名前付きインスタンスを利用している環境で、通信ポートを固定したい場合は以下のトピックをご覧ください。</li>
+        </ol>
+        <ol type="disc" class="ol2">
+            <li class="p_information" xmlns="http://www.w3.org/1999/xhtml">SQL Server 2005以降、またはSQL 
+	 Server 2005以降のExpressを利用されている場合は<a href="KB100308_02.htm">こちら</a></li>
+        </ol>
+    </body>
+</html>

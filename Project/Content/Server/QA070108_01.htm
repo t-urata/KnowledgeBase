@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.非公開" MadCap:id="SQL_Server（MSDE）のsaのパスワードを忘れました" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>SQL Server（MSDE）のsaのパスワードを忘れました</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>Windows認証でデータベースサーバにログインして、saのパスワードを変更できます。</p>
+        <p>&#160;</p>
+        <p class="title">saパスワードの変更方法</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>Windowsに管理者権限をもったアカウントでログインします。</p>
+            </li>
+            <li class="p">
+                <p>osqlユーティリティで、MSDEに接続します。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <p>osql -S サーバ名 -E</p>
+                </td>
+            </tr>
+        </table>
+        <ol start="3" class="ol_1">
+            <li class="p_info">
+                <p class="p_5">サーバ名は、［サーバマシン名 + \ + 
+	 インスタンス名］です。</p>
+            </li>
+            <li class="p">
+                <p>osqlユーティリティに、以下のコマンドを入力します。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <p>sp_password NULL,'新しいパスワード', 'sa'</p>
+                    <p>go</p>
+                </td>
+            </tr>
+        </table>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">実行例は、 <MadCap:toggler targets="t1">こちら</MadCap:toggler>をご覧ください。</p>
+                <div MadCap:targetName="t1">
+                    <table cellspacing="0" width="500" class="table_4">
+                        <col style="width: 100%;" />
+                        <tr>
+                            <td style="width: 100%;" bgcolor="#C0C0C0" class="td_1">
+                                <p>1&gt; <span class="span_1">sp_password NULL,'NewPWD', 
+				 'sa'</span></p>
+                                <p>2&gt; <span class="span_1">go</span></p>
+                                <p>パスワードは変更されました。</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ul>
+    </body>
+</html>

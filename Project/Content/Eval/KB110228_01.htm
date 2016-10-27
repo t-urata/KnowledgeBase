@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="6" MadCap:lastHeight="2565" MadCap:lastWidth="965">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>評価環境のEditionを切り替える方法と注意事項</title>
+        <link href="../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <h2>内容</h2>
+        <p>TimeTracker FXのご評価のため、現在ご利用の評価環境を<br xmlns="http://www.w3.org/1999/xhtml" />Standard EditionからProfessional Editionへ、Professional EditionからStandard 
+ Editionへ<br xmlns="http://www.w3.org/1999/xhtml" />切り替えていただく方法と、切り替え時の注意事項について説明します。</p>
+        <h3>Editionの切り替え</h3>
+        <p class="p2">Administratorにて、ライセンス情報を更新していただくことで、<br xmlns="http://www.w3.org/1999/xhtml" />現在ご評価いただいている環境のEditionを切り替えることができます。</p>
+        <ol class="ol2">
+            <li>サーバマシン上で以下をクリックし、Administratorを起動します。<br />	Windows［スタート］メニュー－［プログラム］－［TimeTracker FX］－［Administrator］<br /><br /><img src="../Image/KB110228_01_1.png" alt="" width="302" height="189" border="0" class="img_1" /><br /><br />	※管理者権限のあるアカウントのユーザ名とパスワードを入力してください。<br />	&#160;</li>
+            <li>Administratorのエクスプローラバーから［システム設定］－［ライセンスの登録］をクリックします。<br /><br /><img src="../Image/KB110228_01_2.png" alt="" width="206" height="182" border="0" class="img_1" /><br />	&#160;</li>
+            <li>切り替える評価版Editionの［プロダクトID］と［ライセンスキー］を入力し、<br />	［OK］ボタンをクリックし、ライセンス情報を更新します。<br />	&#160;<br /><img src="../Image/KB110228_01_3.png" alt="" width="320" height="252" border="0" class="img_1" /><br />	&#160;</li>
+            <li>更新情報が表示されるため、内容を確認し、Administratorを閉じます。<br /><br /><img src="../Image/KB110228_01_4.png" alt="" width="400" height="300" border="0" class="img_1" /><br />	&#160;</li>
+            <li>TimeTracker FXを再起動し、ツールバーに表示されるEditionを確認します。<br /><br /><img src="../Image/KB110228_01_5.png" alt="" width="350" height="131" border="0" class="img_1" /><br />	&#160;</li>
+            <li>切り替えたEditionにてご評価を再開してください。&#160;</li>
+        </ol>
+        <h3>切り替え時の注意事項</h3>
+        <p class="p2">切り替えを行うEditionによってご注意いただく内容が異なります。</p>
+        <ul type="disc">
+            <li>Standard EditionからProfessional Editionへ切り替える<br /><span class="span_11">Standard Editionにて利用が制限されていた機能が利用可能な状態となります。<br />	以下の点にご注意ください。</span></li>
+            <ol start="1" class="ol_1">
+                <li>Standard Editionをご評価いただいていた際に作成したデータベースをご利用いただく場合には、<br />	Professional Editionにて利用が可能となった機能に関する情報が表示されません。<br />	ご注意ください。</li>
+                <li>Professional Editionのすべての機能をご評価いただくためには、<br />	以下の内容を実施してください。</li>
+            </ol>
+            <ul type="disc">
+                <li type="circle">データベースの再作成<br />	Editionを切り替えた後、新たにサンプルデータを含むデータベースの作成を実施してください。</li>
+                <ul>
+                    <li class="p_information">サンプルデータを含むデータベースのセットアップは、<a href="../newdoc/eval_new_install_HowTo.htm" target="_blank">こちら</a>をご覧ください。</li>
+                </ul>
+            </ul>
+            <ul type="circle">
+                <li>［Excel連携アドイン］機能の追加インストール<br />	Professional Editionでは、［Excel連携アドイン］機能をご利用いただけます。<br />	［Excel連携アドイン］機能の追加インストールを実施していただき、機能をご評価ください。</li>
+                <ul>
+                    <li class="p_information">［Excel連携アドイン］機能の追加インストールについては、<a href="../Server/QA110315_01.htm">こちら</a>をご覧ください。</li>
+                </ul>
+            </ul>
+        </ul>
+        <p>&#160;</p>
+        <ul type="disc">
+            <li>Professional EditionからStandard Editionへ切り替える<br /><span class="span_11">Standard Editionにて利用が制限される機能が利用できない状態となります。<br />	以下の点にご注意ください。</span></li>
+            <ol class="ol_1">
+                <li>Standard Editionにて利用が制限される機能に関連した情報がクリア、または表示されません。ご注意ください。<br /><br /><span class="span_3"><img src="../Image/KB110228_01_7.png" alt="" width="677" height="339" border="0" class="img_1" /></span></li>
+            </ol>
+            <ol start="2" class="ol_1">
+                <li>Editionの切り替えによってクリアされた情報は、復元することができません。<br />	独自のプロジェクトやデータベースにてご評価いただいている場合には、<br />	Editionの切り替えを行う前にデータベースのバックアップを<br />	実施していただくことをご推奨いたします。</li>
+            </ol>
+            <ul class="ul2">
+                <li class="p_information">データベースのバックアップにつきましては、<a href="../newdoc/backup_manual.htm" target="_blank">こちら</a>をご覧ください。</li>
+            </ul>
+        </ul>
+        <h3>関連情報</h3>
+        <ul>
+            <li class="p_info">
+                <p>Editionによる機能制限につきましては、<a href="../newdoc/StdEdition.htm" target="_blank">こちら</a>をご覧ください。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

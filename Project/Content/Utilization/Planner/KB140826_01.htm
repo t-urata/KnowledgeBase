@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Default.Not Ready for Publish" MadCap:lastBlockDepth="8" MadCap:lastHeight="3551" MadCap:lastWidth="939">
+    <head>
+        <link href="../../KBTable.css" rel="stylesheet" MadCap:stylesheetType="table" /><title>EVMのETC(残作業コスト予測)を計算式で算出する</title>
+        <link href="../../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1>
+            <MadCap:concept term="Article" />　EVMのETC(残作業コスト予測)を計算式で算出する</h1>
+        <table style="caption-side: top;margin-left: 0;margin-right: auto;mc-table-style: url('../../KBTable.css');width: 350px;" summary="Article number, product name and version number" class="TableStyle-KBTable" cellspacing="0">
+            <col style="width: 150px;" class="Column-Column1" />
+            <col style="width: 200px;" class="Column-Column1" />
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>更新日:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">2014/8/29</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象バージョン:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">2.0以降</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象エディション:</b>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">Professional / Standard</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>&#160;</p>
+        <p>TimeTracker FX ではプロジェクトの進捗を把握するためにEVM手法による指標値が表示できますが、ETC(残作業コスト予測)には対応していません。<br />そこで、計算式の設定を活用してTimeTracker FXでETCの値を算出し、表示させる方法を紹介します。</p>
+        <h2>はじめに</h2>
+        <h3>ETCとは</h3>
+        <p class="p3">Estimate To Completionの略で、現時点からプロジェクト完了までにかかるコストを示します。</p>
+        <h3>ETCの計算方法</h3>
+        <p class="p3">ETCは以下の計算式で算出されます。		<ul><li>ETC = EAC (最終予測コスト) - AC (実績コスト)</li></ul></p>
+        <p class="p3" style="margin-bottom: 0px">つまり、残作業の予測コストは、最終的な予測コストから現在までの実コストを引いたものです。
+        <ul><li class="p_information" style="margin-left: 2px">ETCの算出に使用する指標の詳細については、<a href="KB080108_05.htm">こちら</a>をご覧ください。</li></ul></p>
+        <p class="p3">ETCを求めるための計算式を分解し、TimeTracker FXで設定できる計算式にすると以下になります。
+        <ul><li>(ActualCost * (PlannedCost - PlannedCost * Progress / 100)) / (PlannedCost * Progress / 100)</li></ul></p>
+        <p class="p5">この式をTimeTracker FXのフィールドを使用して表現すると以下になります。
+        <ul><li>(実績コスト * (計画コスト - 計画コスト * 進捗率 / 100)) / (計画コスト * 進捗率 / 100)</li></ul></p>
+        <h2>設定方法</h2>
+        <p>ETCの計算式を反映するには、以下の作業が必要です。</p>
+        <p class="p2" style="margin-bottom: 0px">Step 1. 計画テーブルにETCのフィールドを表示する<br /><div style="margin-left: 60px">TimeTracker FXの初期表示では、ETCのフィールドが表示されないため、テーブルの設定を変更してETCのフィールドを表示します。</div></p>
+        <p class="p2" style="margin-bottom: 0px">Step 2. フィールドに計算式を設定する<br /><div style="margin-left: 60px">ETCのフィールドに計算式を設定し、ETCの値が表示されるようにします。<br />設定方法は既存のノードと追加するノードで異なります。</div><ol style="list-style-type: lower-roman;"><li style="margin-left: 46px;">既存のノード…稼働中のプロジェクトなど、既存のノードに計算式を反映する方法です。</li><li style="margin-left: 46px;">追加するノード…新規にプロジェクトを作成するなど、今後追加するノードに予め計算式が設定された状態とする方法です。</li></ol></p>
+        <p>以下にそれぞれの作業の詳細手順を説明します。</p>
+        <p>&#160;</p>
+        <h3>Step 1. 計算結果を表示するフィールドを計画テーブルに表示する</h3>
+        <ol>
+            <li>ETCを表示するプロジェクトを開きます。</li>
+            <li>[ファイル]メニュー－[プロジェクトの設定]を選択します。</li>
+            <li>[プロジェクトの設定]ダイアログにて[フィールド定義]タブを選択します。</li>
+            <li>[フィールド定義]の一覧からフィールド名が[CustomNumber21]～[CustomNumber30]のいずれかを選択し、名称を変更します。<br />本トピックでは、[CustomNumber21]を[ETC]という名称に変更して進めます。<br /><img src="../../Image/KB140826_01_1.png" /><br /><br /></li>
+            <li>[プロジェクトの設定]ダイアログを閉じます。</li>
+            <li>計画テーブルの見出しを右クリックし、[テーブルの編集]を選択します。</li>
+            <li>[テーブルの編集]ダイアログにて、[フィールド一覧]の[カスタムフィールド]から、ETCフィールドを[列のカスタマイズ]にドラッグ&amp;ドロップで移動します。<br /><img src="../../Image/KB140826_01_2.png" /><br /><br /></li>
+            <li>[テーブルの編集]ダイアログを閉じます。</li>
+        </ol>
+        <p>&#160;</p>
+        <h3>Step 2. フィールドに計算式を設定する</h3>
+        <ol style="list-style-type: lower-roman;">
+            <li>既存のノードに計算式を設定する<ol><li>計画テーブルのWBSをすべて展開し、すべて選択します。<ol><li class="p_information">WBSをすべて展開する際には、WBSを右クリックして表示されるメニューから[ツール]－[すべて展開]を選択すると簡単です。</li></ol></li><li>[表示]メニュー－[ドッキングウィンドウ]－[フィールド]をクリックし、[フィールド]ドッキングウィンドウを表示します。</li><li>[フィールド]ドッキングウィンドウにて、[編集対象]を「タスク」とします。<br /><img src="../../Image/KB140826_01_3.png" /><br /><br /></li><li>ETCフィールドの[フィールド値の決定方法]を「計算式」に設定し、右端に表示される□ボタンをクリックします。<br /><img src="../../Image/KB140826_01_4.png" /><br /><br /></li><li>計算式フィールドが表示されるので、[式]欄に以下の計算式を入力します。<br />(ActualCost * (PlannedCost - PlannedCost * Progress / 100)) / (PlannedCost * Progress / 100)<br /><img src="../../Image/KB140826_01_5.png" /><br /><br /></li><li>[OK]ボタンをクリックして計算式を設定します。</li><li>[フィールド]ドッキングウィンドウにて[適用]ボタンをクリックし、すべてのタスクに対して計算式を反映します。</li><li>手順3と同様に[編集対象]を「タスクパッケージ」とし、手順4～7をタスクと同様に実施します。</li><li>すべてのタスクパッケージ・タスクにETCの値が表示されます。<br /><img src="../../Image/KB140826_01_6.png" /><br /><br /><br /></li></ol></li>
+            <li>追加するノードの初期設定値として計算式を設定する<br /><ol><li>[プロジェクトの設定]ダイアログの[フィールド定義]タブにて、[ETC]フィールドの[+]をクリックして展開します。<br /><img src="../../Image/KB140826_01_7.png" /><br /><br /></li><li>タスクの[デフォルトの決定値]を「計算式」にします。</li><li>タスクの[デフォルトの計算式]の右にあるボタンをクリックします。<br /><img src="../../Image/KB140826_01_8.png" /><br /><br /></li><li>[式エディタ]ダイアログの[式]に計算式を設定し、[OK]をクリックします。<br /><img src="../../Image/KB140826_01_5.png" /><br /><br /></li><li>タスクパッケージについても手順2～4を実施し暗す。</li><li>[プロジェクトの設定]ダイアログを閉じます。</li><br /></ol></li>
+        </ol>
+    </body>
+</html>

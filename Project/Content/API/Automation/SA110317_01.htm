@@ -1,0 +1,357 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+        <meta http_equiv="Content-Language" content="ja-JP" /><title>プロジェクト設定を取得する</title>
+        <link rel="StyleSheet" href="../../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>本ツールは、TimeTrackerFXで作成したプロジェクトの［プロジェクトの設定］を出力するサンプルツールです。</p>
+        <p>本ツールは複数プロジェクトの[プロジェクト設定]は取得できるため、組織全体のプロジェクト情報等を</p>
+        <p>一度に取得する時にご利用いただけます。</p>
+        <p>&#160;</p>
+        <p>
+            <img src="../../Image/SA110317_01_1.png" alt="" width="702" height="266" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p class="title">利用方法について</p>
+        <p>本サンプルツールの利用方法を説明します。</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>ページ末尾の［<a href="#download">ダウンロード</a>］より、［GetCurrentProject.zip］をクリックして、サンプルツールをダウンロードします。</p>
+            </li>
+            <li class="p">
+                <p>ダウンロードした圧縮ファイルを、任意のフォルダへ展開します。</p>
+            </li>
+            <li class="p">
+                <p>TimeTracker FXを起動している場合は、データを保存して終了します。</p>
+            </li>
+            <li class="p">
+                <p>［プロジェクト情報取得ツール.xls］を開きます。</p>
+            </li>
+            <li class="p">
+                <p>［プロジェクト情報取得ツール.xls］の「1.概要～5.本ツールの利用と規約」シートの「2.利用方法」の手順に従い、作業を進めます。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p class="title">出力する情報について</p>
+        <p>プロジェクト情報はサンプルツール[プロジェクト情報取得ツール.xls]の[プロジェクト情報一覧]シートに出力されます。</p>
+        <table cellspacing="0">
+            <col />
+            <col />
+            <col />
+            <tr style="height: 20px;">
+                <td bgcolor="#C0C0C0" class="td_1">
+                    <p align="right">No.</p>
+                </td>
+                <td bgcolor="#C0C0C0" class="td_2">
+                    <p>フィールド</p>
+                </td>
+                <td bgcolor="#C0C0C0" class="td_2">
+                    <p>内容</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">1</p>
+                </td>
+                <td class="td_4">
+                    <p>プロジェクトID</p>
+                </td>
+                <td class="td_4">
+                    <p>自動的にセットされるシステム全体でユニークなプロジェクトIDです。</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">2</p>
+                </td>
+                <td class="td_4">
+                    <p>プロジェクト名</p>
+                </td>
+                <td class="td_4">
+                    <p>[一般]ページのプロジェクト名です。</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">3</p>
+                </td>
+                <td class="td_4">
+                    <p>プロジェクトコード</p>
+                </td>
+                <td class="td_4">
+                    <p>[一般]ページのプロジェクトコードです。</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">4</p>
+                </td>
+                <td class="td_4">
+                    <p>マネージャ名</p>
+                </td>
+                <td class="td_4">
+                    <p>[一般]ページのマネージャです。</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">5</p>
+                </td>
+                <td class="td_4">
+                    <p>組織</p>
+                </td>
+                <td class="td_4">
+                    <p>マネージャの所属組織です。</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">6</p>
+                </td>
+                <td class="td_4">
+                    <p>計画開始日</p>
+                </td>
+                <td class="td_4">
+                    <p>[一般]ページの[開始日]です。</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">7</p>
+                </td>
+                <td class="td_4">
+                    <p>計画終了日</p>
+                </td>
+                <td class="td_4">
+                    <p>[一般]ページの[終了日]です。</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">8</p>
+                </td>
+                <td class="td_4">
+                    <p>進捗率</p>
+                </td>
+                <td class="td_4">
+                    <p>[計画テーブル]のルートノードの［進捗率］です。</p>
+                    <p>※プロジェクトのルートノードの［進捗率］から少数点以下を切り捨てた値を出力します。</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">9</p>
+                </td>
+                <td class="td_4">
+                    <p>実績開始日</p>
+                </td>
+                <td class="td_4">
+                    <p>プロジェクトに入力された実績のもっとも古い日付です。</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">10</p>
+                </td>
+                <td class="td_4">
+                    <p>実績終了日</p>
+                </td>
+                <td class="td_4">
+                    <p>プロジェクトに入力された実績のもっとも新しい日付です。</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">11</p>
+                </td>
+                <td class="td_4">
+                    <p>実績工数</p>
+                </td>
+                <td class="td_4">
+                    <p>プロジェクトに入力された実績工数の合計（分単位）です。</p>
+                </td>
+            </tr>
+            <tr style="height: 34px;">
+                <td class="td_3">
+                    <p align="right">12</p>
+                </td>
+                <td class="td_4">
+                    <p>実績工数存在状態</p>
+                </td>
+                <td class="td_4">
+                    <p>実績工数が存在する場合、[TRUE]です。</p>
+                    <p>実績工数が存在しない場合、[FALSE]です。</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">13</p>
+                </td>
+                <td class="td_4">
+                    <p>バージョン番号</p>
+                </td>
+                <td class="td_4">
+                    <p>[一般]ページの[現在のバージョン]です。</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">14</p>
+                </td>
+                <td class="td_4">
+                    <p>バージョン名</p>
+                </td>
+                <td class="td_4">
+                    <p>空文字がセットされます。</p>
+                </td>
+            </tr>
+            <tr style="height: 34px;">
+                <td class="td_3">
+                    <p align="right">15</p>
+                </td>
+                <td class="td_4">
+                    <p>ステータス</p>
+                </td>
+                <td class="td_4">
+                    <p>[一般]ページの[プロジェクトの終了]がチェックされている（終了済）場合、[終了済み]です。</p>
+                    <p>[一般]ページの[プロジェクトの終了]がチェックされていない場合、[稼働中]です。</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">16</p>
+                </td>
+                <td class="td_4">
+                    <p>終了日</p>
+                </td>
+                <td class="td_4">
+                    <p>[一般]ページ、または、Administratorツールの[プロジェクトの一覧]にて終了済に更新した日付です。</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">17</p>
+                </td>
+                <td class="td_4">
+                    <p>作成者</p>
+                </td>
+                <td class="td_4">
+                    <p>プロジェクトの作成者です。</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">18</p>
+                </td>
+                <td class="td_4">
+                    <p>登録日時</p>
+                </td>
+                <td class="td_4">
+                    <p>プロジェクトの登録日時です。</p>
+                </td>
+            </tr>
+            <tr style="height: 34px;">
+                <td class="td_3">
+                    <p align="right">19</p>
+                </td>
+                <td class="td_4">
+                    <p>最終更新者のアカウントID</p>
+                </td>
+                <td class="td_4">
+                    <p>プロジェクトの最終更新者のアカウントIDです。</p>
+                    <p>※サーバタスクの更新が最終更新の場合には、「0」を出力します。</p>
+                </td>
+            </tr>
+            <tr style="height: 34px;">
+                <td class="td_3">
+                    <p align="right">20</p>
+                </td>
+                <td class="td_4">
+                    <p>最終更新日時</p>
+                </td>
+                <td class="td_4">
+                    <p>プロジェクトの最終更新日時です。</p>
+                    <p>※サーバタスクの更新が最終更新の場合はサーバタスクが保存した日時です。</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">21</p>
+                </td>
+                <td class="td_4">
+                    <p>デフォルトの進捗率計算方法</p>
+                </td>
+                <td class="td_4">
+                    <p>デフォルトの進捗率決定方法です。</p>
+                </td>
+            </tr>
+            <tr style="height: 34px;">
+                <td class="td_3">
+                    <p align="right">22</p>
+                </td>
+                <td class="td_4">
+                    <p>稼働日に合わせてスケジューリング</p>
+                </td>
+                <td class="td_4">
+                    <p>プロジェクトの[稼働日に合わせてスケジューリング]が有効な場合、[TRUE]です。</p>
+                    <p>プロジェクトの[稼働日に合わせてスケジューリング]が無効な場合、[FALSE]です。</p>
+                </td>
+            </tr>
+            <tr style="height: 34px;">
+                <td class="td_3">
+                    <p align="right">23</p>
+                </td>
+                <td class="td_4">
+                    <p>プロジェクトの標準コスト単価</p>
+                </td>
+                <td class="td_4">
+                    <p>[メンバ]ページの[標準コスト単価]です。</p>
+                    <p>※「ログインユーザ」に［コスト単価］権限が付与されていない場合には、「0」を出力します。</p>
+                </td>
+            </tr>
+            <tr style="height: 19px;">
+                <td class="td_3">
+                    <p align="right">24</p>
+                </td>
+                <td class="td_4">
+                    <p>プロジェクトカテゴリ1～30</p>
+                </td>
+                <td class="td_4">
+                    <p>[カテゴリ]ページのプロジェクトカテゴリ1～30です。</p>
+                </td>
+            </tr>
+            <tr style="height: 34px;">
+                <td class="td_3">
+                    <p align="right">25</p>
+                </td>
+                <td class="td_4">
+                    <p>プロジェクトメンバ</p>
+                </td>
+                <td class="td_4">
+                    <p>プロジェクトのメンバ情報です。</p>
+                    <p>※無効なアカウントは[名前]の末尾に"(無効)"と出力されます。</p>
+                </td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <p class="title">サンプルツールの活用について</p>
+        <p>本サンプルツールでは、ログインユーザの[権限範囲]によって制限があります。</p>
+        <p>詳細については、「1.概要～5.本ツールの利用と制約」シートの「2.利用方法」の「2.1.利用環境と制限」をご覧ください。</p>
+        <p>&#160;</p>
+        <p>なお、サンプルツールのカスタマイズ方法についてのお問い合わせは受け付けておりません。</p>
+        <p>Excelマクロに使用するオートメーションの詳細は、オートメーションヘルプをご覧ください。</p>
+        <p class="title">&#160;</p>
+        <p class="title">ダウンロード<a name="download"></a></p>
+        <ul>
+            <li class="p_download">
+                <p class="download"><a href="../../downloads/sample/GetCurrentProject.zip">GetCurrentProject.zip</a>･･･ZIP(256KB)</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p>&#160;</p>
+    </body>
+</html>

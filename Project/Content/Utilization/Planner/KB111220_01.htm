@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+        <meta http_equiv="Content-Language" content="ja-JP" /><title>情報アイコンでノードの設定状態を把握する</title>
+        <link rel="StyleSheet" href="../../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">内容</p>
+        <p>計画テーブルの［情報］列には、各ノードの設定状態をアイコンを使って表示します。これを［情報アイコン］といいます。</p>
+        <p>［情報アイコン］を見るだけで、各ノードの設定状態が把握できます。</p>
+        <p>&#160;</p>
+        <p>
+            <img src="../../Image/KB111220_01_1.png" alt="" width="254" height="361" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p class="title">情報アイコンの種類<a name="case1"></a></p>
+        <p>表示されるアイコンの種類と意味をご説明します。</p>
+        <p>&#160;</p>
+        <table cellspacing="0" width="59.906%" border="1">
+            <col style="width: 16.879%;" />
+            <col width="400" />
+            <tr style="height: 24px;">
+                <td bgcolor="#C0C0C0" class="td_21">
+                    <p class="p_9"><span class="span_5">アイコン</span>
+                    </p>
+                </td>
+                <td bgcolor="#C0C0C0" class="td_22">
+                    <p class="p_9"><span class="span_5">意味</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height: 53px;">
+                <td class="td_23">
+                    <p class="p_9">
+                        <img src="../../Image/KB111220_01_2.png" alt="" width="51" height="27" border="0" class="img_1" />
+                    </p>
+                </td>
+                <td class="td_24">
+                    <p class="p_9"><span class="span_5">実績入力がロック状態であることを表示します。</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height: 53px;">
+                <td class="td_23">
+                    <p class="p_9">
+                        <img src="../../Image/KB111220_01_3.png" alt="" width="47" height="44" border="0" class="img_1" />
+                    </p>
+                </td>
+                <td class="td_24">
+                    <p class="p_9"><span class="span_5">公開ノードに設定されていることを表示します。</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height: 53px;">
+                <td class="td_23">
+                    <p class="p_9">
+                        <img src="../../Image/KB111220_01_4.png" alt="" width="47" height="44" border="0" class="img_1" />
+                    </p>
+                </td>
+                <td class="td_24">
+                    <p class="p_9">計画の矛盾等の警告があることを表示します。</p>
+                    <p class="p_9">アイコンにマウスをかざすと原因を表示します。</p>
+                </td>
+            </tr>
+            <tr style="height: 53px;">
+                <td class="td_23">
+                    <p class="p_9">
+                        <img src="../../Image/KB111220_01_5.png" alt="" width="47" height="49" border="0" class="img_1" />
+                    </p>
+                </td>
+                <td class="td_24">
+                    <p class="p_9">メンバからの報告があることを表示します。</p>
+                    <p class="p_9">［リソース］ドッキングウィンドウで報告を確認します。</p>
+                </td>
+            </tr>
+            <tr style="height: 53px;">
+                <td class="td_23">
+                    <p class="p_9">
+                        <img src="../../Image/KB111220_01_6.png" alt="" width="50" height="49" border="0" class="img_1" />
+                    </p>
+                </td>
+                <td class="td_24">
+                    <p class="p_9">タイムシートの［ガントチャート］ビューで表示していることを表示します。</p>
+                    <p class="p_9">※Standard Editionは表示しません。</p>
+                </td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+        <p class="title">警告について<a name="case2"></a></p>
+        <p>プロジェクト計画の期間や計画工数などで親ノードと子ノードの関係で矛盾が生じると、［警告アイコン］が表示されます。</p>
+        <p>ここでは、警告の発生条件と警告内容の確認方法を説明します。</p>
+        <p>&#160;</p>
+        <ol class="ol_1">
+            <li class="li_2">発生条件<br /><br />
+	各ノードの計画に、以下にあるいずれかの条件を満たす場合に、警告が発生します。</li>
+        </ol>
+        <ul type="disc">
+            <li>
+                <p class="p_2">期間を超えている子ノードがある</p>
+            </li>
+            <li>
+                <p class="p_2">期間がプロジェクト期間を超えている</p>
+            </li>
+            <li>
+                <p class="p_2">子ノードの計画工数の合計が、自ノードの計画工数を超えている</p>
+            </li>
+            <li>
+                <p class="p_2">部分編集時に、ルートノードの値を参照しているフィールドがある</p>
+            </li>
+            <li>
+                <p class="p_2">子ノードの計画コストの合計が自ノードの計画コストを超えている</p>
+            </li>
+            <li>
+                <p class="p_2">子ノードの実績コストの合計が自ノードの実績コストを超えている</p>
+            </li>
+            <li>
+                <p class="p_2">実績工数が存在するのに工数から実績コストを計算していない</p>
+            </li>
+            <li>
+                <p class="p_2">「リーダーの進捗率」を使用しているがリーダーが設定されていない</p>
+            </li>
+            <li>
+                <p class="p_2">計算式での計算にエラーがある</p>
+            </li>
+        </ul>
+        <p class="p_2">&#160;</p>
+        <ol start="2" class="ol_1">
+            <li class="li_2">発生条件を確認する<br /><br />
+	警告アイコンにマウスをかざすと上記の警告の発生条件を表示します。<br />
+	この表示内容に応じて、プロジェクト計画の矛盾を箇所を訂正してください。<br /><br /><img src="../../Image/KB111220_01_7.png" alt="" width="451" height="189" border="0" class="img_1" /></li>
+        </ol>
+    </body>
+</html>

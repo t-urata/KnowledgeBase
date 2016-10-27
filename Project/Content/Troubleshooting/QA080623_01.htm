@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="TimeTrackr_FXがデータベースに接続できません" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中" MadCap:lastBlockDepth="5" MadCap:lastHeight="2692" MadCap:lastWidth="1049">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>TimeTracker FXがデータベースに接続できません</title>
+        <link href="../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <p xmlns="">&#160;</p>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>TimeTracker FXはサーバマシンのデータベースに接続し、実績やプロジェクト計画の情報を蓄積します。<br xmlns="http://www.w3.org/1999/xhtml" />TimeTracker FXがデータベースに接続できなくなった場合は、ネットワーク環境などの設定が正しいかご確認ください。</p>
+        <h2>症状</h2>
+        <p>以下のような状況の場合に、TimeTracker FXのログイン画面で、ログイン名とパスワードを入力しても、エラー画面を表示し、TimeTracker 
+ FXが起動しない。</p>
+        <p>
+            <img src="../Image/QA080623_01_1.png" alt="" width="300" height="135" border="0" class="img_1" />
+        </p>
+        <ul type="disc">
+            <li class="p">TimeTracker FXをインストールして、初めてサーバマシンにアクセスする場合</li>
+            <li class="p">サーバマシンの交換をして、初めてサーバマシンにアクセスする場合</li>
+            <li class="p">サーバマシンの場所が移動して、初めてサーバマシンにアクセスする場合</li>
+        </ul>
+        <p>&#160;</p>
+        <h2>原因と対策</h2>
+        <p>本現象が起こる可能性の高い原因を列挙します。<br xmlns="http://www.w3.org/1999/xhtml" />各原因が該当しないかご確認ください。<br xmlns="http://www.w3.org/1999/xhtml" />また、各原因についての対応方法は以降に記載しております。</p>
+        <ul type="disc">
+            <li class="p"><a href="QA080623_01.htm#case5">動作対象外のバージョンを使用している</a>
+            </li>
+            <li class="p"><a href="QA080623_01.htm#case1">サーバマシンのマシン名からIPアドレスを特定できない環境でTimeTracker 
+	 FXを使用している</a>
+            </li>
+            <li class="p"><a href="QA080623_01.htm#case2">SQL Serverの通信プロトコルでTCP/IPを使用できていないため、TimeTracker 
+	 FXがSQL Serverに接続できない</a>
+            </li>
+            <li class="p"><a href="QA080623_01.htm#case4">SQL Server Expressのリモート接続を有効にしていますか</a>
+            </li>
+            <li class="p"><a href="QA080623_01.htm#case3">サーバマシンのファイアウォールで、SQL 
+	 Serverとの通信を遮断しているため接続できない</a>
+            </li>
+            <li class="p"><a href="QA080623_01.htm#case6">SQL Server Browserサービスが停止している</a>
+            </li>
+            <li class="p"><a href="QA080623_01.htm#case7">サーバ設定ファイルが正しく参照できていないか破損している</a>
+            </li>
+        </ul>&#160;<p>これらの原因が該当しない場合は、<a target="_blank" href="../Inquiry/TB061101_01.htm">お問い合わせに必要な情報</a>、およびご利用中のサーバ・クライアントの環境、TimeTracker 
+ FXで参照しているサーバ設定ファイルを添えて、<a target="_blank" href="TB061101_02.htm">こちら</a>までご連絡ください。</p><p>&#160;</p><h3>動作対象外のバージョンを使用している<a name="case5" id="case5" xmlns="http://www.w3.org/1999/xhtml"></a></h3><h4>【原因】</h4><p class="p3">ご利用環境が、動作環境と一致していない場合、TimeTracker FXを使用できません。<br xmlns="http://www.w3.org/1999/xhtml" /><a target="_blank" href="../Server/kb110323_01.htm" xmlns="http://www.w3.org/1999/xhtml">こちら</a>より動作環境の詳細をご確認ください。</p><h4>【対策】</h4><p class="p3">動作環境と一致するよう、ご利用環境を構築してください。</p><p class="p3">対策を行っても状況が改善されない場合は、次の原因をご確認ください。</p><p class="p_5">&#160;</p><h3>サーバマシンのマシン名からIPアドレスを特定できない環境でTimeTracker FXを使用している<a name="case1" id="case1" xmlns="http://www.w3.org/1999/xhtml"></a></h3><h4>【原因】</h4><p class="p3">TimeTracker FXは、サーバマシンのマシン名を使用して、サーバマシンとの接続を行います。<br xmlns="http://www.w3.org/1999/xhtml" />そのため、名前の解決で、サーバマシンのIPアドレスを特定できない環境では、接続先が見つからず、TimeTracker 
+ FXを使用できません。</p><h4>【対策】</h4><p class="p3">以下のいずれかの方法で、サーバマシンのIPアドレスを特定できる環境にしてください。</p><ul type="disc" class="ul2"><li class="p">DNSの設定を修正し、サーバマシンのマシン名からIPアドレスを特定できるようにする</li><ul><li class="p_information">DNSの設定は、ご利用のDNSによって異なります。<br />		詳細はご利用のDNSのマニュアルをご覧ください。</li></ul><li class="p">IPアドレスを使用したサーバ設定ファイルを作成して利用する</li></ul><p class="p3">以下に各バージョンでの作成手順を紹介します。<br xmlns="http://www.w3.org/1999/xhtml" />ご利用のバージョンの作成手順を行ってください。</p><p class="p3">［TimeTracker FX 2.5以降］</p><p class="p4">Server Manager ヘルプの<a href="../newdoc/db_config_file.htm" target="_blank">［サーバ設定ファイルを作成する］</a>をご覧ください。</p><p class="p3">［TimeTracker FX 2.0.x］</p><ol class="ol3"><li class="p">Windows［スタート］－［すべてのプログラム］－［TimeTracker 
+	 FX］－［管理ツール］－［サーバ設定ファイル作成ツール］を選択します。</li><li class="p">［サーバ設定ファイル作成ツール］ダイアログで、［更新］をクリックします。</li><li class="p">［サーバ名］のマシン名をIPアドレスに変更します。</li><li class="p">［ログイン名］、［パスワード］を設定し、［データベース名］をリストから選択します。</li><li class="p">［参照］をクリックし、表示する［フォルダの参照］ダイアログで、サーバ設定ファイルを出力するフォルダを選択します。</li><li class="p">［作成］をクリックし、サーバ設定ファイルを作成します。</li></ol><p class="p3">対策を行っても状況が改善されない場合は、次の原因をご確認ください。</p><p>&#160;</p><h3>SQL Serverの通信プロトコルでTCP/IPを使用できていないため、TimeTracker FXがSQL 
+ Serverに接続できない<a name="case2" id="case2" xmlns="http://www.w3.org/1999/xhtml"></a></h3><h4>【原因】</h4><p class="p3">SQL Serverの通信プロトコルでTCP/IPを使用できていないためSQL Serverに接続できない可能性があります。</p><h4>【対策】</h4><p class="p3">SQL Serverの通信プロトコルをTCP/IPのみ有効にしてください。<br xmlns="http://www.w3.org/1999/xhtml" />SQL Serverのバージョンによって、設定方法が異なります。<br xmlns="http://www.w3.org/1999/xhtml" />各バージョンの設定方法は、以下の手順をご覧ください。</p><p class="p3">［SQL Server 2000］</p><ol class="ol3"><li class="p">Windows［スタート］－［ファイル名を指定して実行］を選択します。</li><li class="p">svrnetcn と入力します。</li><li class="p">表示されるダイアログで、［有効になっているプロトコル］が「TCP/IP」のみにします。</li><li class="p">［OK］をクリックします。</li><li class="p">SQL Serverのサービスを再起動します。</li></ol><p class="p3">［SQL Server 2005および、SQL Server Express］</p><ol class="ol3"><li class="p">Windows［スタート］－［Microsoft 
+	 SQL Server 2005］－［構成ツール］－［SQL Server 構成マネージャー］を選択します。</li><li class="p">［SQL Server 2005 ネットワークの構成］－［TimeTracker 
+	 FXのインスタンス名のプロトコル］を選択します。<br />	SQL Server Expressをオートランからインストールした場合は、［TIMETRACKERFXのプロトコル］を選択します。</li><li class="p">表示されるプロトコルから、TCP/IPを［有効］にします。</li><li class="p">共有メモリ、名前付きパイプ、VIAを［無効］にします。</li><li class="p">［SQL Server 2005 のサービス］を選択します。</li><li class="p">SQL Server (TimeTracker 
+	 FXのインスタンス名)を再起動します。<br />	SQL Server Expressをオートランからインストールした場合は、SQL Server (TIMETRACKERFX)を再起動します。</li></ol><p class="p3">対策を行っても状況が改善されない場合は、次の原因をご確認ください。</p><p class="p3">&#160;</p><h3>SQL Server Expressのリモート接続を有効にしていますか<a name="case4" id="case4" xmlns="http://www.w3.org/1999/xhtml"></a></h3><h4>【原因】</h4><p class="p3">SQL Server Expressは既定でネットワーク接続を無効としています。</p><h4>【対策】</h4><p class="p3">SQL Server Expressのリモート接続を有効にする方法については、<a target="_blank" href="../Server/KB080623_01.htm" xmlns="http://www.w3.org/1999/xhtml">こちら</a>をご覧ください。</p><p>&#160;</p><h3>サーバマシンのファイアウォールで、SQL Serverの通信を遮断しているため接続できない<a name="case3" id="case3" xmlns="http://www.w3.org/1999/xhtml"></a></h3><h4>【原因】</h4><p class="p3">サーバマシンがWindows XP SP2以降、またはWindows Vista以降の場合、Windowsファイアウォールが有効となっていてSQL 
+ Serverとの通信を遮断している可能性があります。</p><h4>【対策】</h4><p class="p3">Windowsファイアウォールを有効にした状態で、SQL Serverの通信を許可する方法については、<a target="_blank" href="../Server/KB080825_02.htm">こちら</a>をご覧ください。</p><p>&#160;</p><h3>SQL Server Browserサービスが停止している<a name="case6" xmlns="http://www.w3.org/1999/xhtml"></a></h3><h4>【原因】</h4><p class="p3">TimeTracker FXで使用するデータベースが［名前付きインスタンス］で作成されている場合、SQL 
+ Server Browserサービスが停止していることでクライアントPCからのデータベース接続に失敗する可能性があります。</p><h4>【対策】</h4><p class="p3">SQL Server 構成マネージャより、SQL Server Browserサービスを開始してください。<br xmlns="http://www.w3.org/1999/xhtml" />SQL Server Browserサービスを開始する方法については、<a target="_blank" href="../Server/KB080623_01.htm#BrowserStartUp" xmlns="http://www.w3.org/1999/xhtml">こちら</a>をご覧ください。</p><p>&#160;</p><h3>サーバ設定ファイルが正しく参照できていないか破損している<a name="case7" xmlns="http://www.w3.org/1999/xhtml"></a></h3><h4>【原因】</h4><p class="p3">サーバ設定ファイル（TimeTracker.config）とは、TimeTracker 
+ FXがデータベースに接続するための情報を格納したファイルです。<br xmlns="http://www.w3.org/1999/xhtml" />何らかの原因により、サーバ設定ファイルが正しく参照できていないか破損している可能性があります。</p><h4>【対策】</h4><p class="p3">TimeTracker FXを正常にご利用いただけるメンバがお使いのサーバ設定ファイルをご利用ください。<br xmlns="http://www.w3.org/1999/xhtml" />データベースに接続できましたら、そのままTimeTracker FXをご利用ください。</p><p>&#160;</p></body>
+</html>

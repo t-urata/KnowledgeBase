@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="バックアップについて" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中" MadCap:lastBlockDepth="6" MadCap:lastHeight="930" MadCap:lastWidth="534">
+    <head>
+        <link href="../KBTable.css" rel="stylesheet" MadCap:stylesheetType="table" />
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>データベースのバックアップ</title>
+        <link href="../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <table style="caption-side: top;margin-left: 0;margin-right: auto;mc-table-style: url('../KBTable.css');width: 350px;" summary="Article number, product name and version number" class="TableStyle-KBTable" cellspacing="0">
+            <col style="width: 150px;" class="Column-Column1" />
+            <col style="width: 200px;" class="Column-Column1" />
+            <tbody>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>更新日:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">2015/7/31</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyE-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象バージョン:</b>
+                        </p>
+                    </td>
+                    <td class="BodyD-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">2.5以降</p>
+                    </td>
+                </tr>
+                <tr class="Body-Body1">
+                    <td class="BodyB-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable"><b>対象エディション:</b>
+                        </p>
+                    </td>
+                    <td class="BodyA-Column1-Body1" style="padding-left: 4px;">
+                        <p class="toptable">Professional / Standard</p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p xmlns="">&#160;</p>
+        <p>TimeTracker FXのデータはSQL Serverで管理するデータベースに格納されます。<br xmlns="http://www.w3.org/1999/xhtml" />何らかのトラブルが発生してデータが損失しても、バックアップがあればデータを復旧することができます。</p>
+        <p>TimeTracker FXでは、同梱のデータベース管理ツールServer Managerにバックアップ機能が搭載されています。<br xmlns="http://www.w3.org/1999/xhtml" />SQL Serverに詳しくない方でも簡単なユーザーインターフェース上でバックアップを実行できます。</p>
+        <p>バックアップから復旧可能なデータは、バックアップを実行した時点のものです。<br xmlns="http://www.w3.org/1999/xhtml" />したがって、なるべく最新のデータをバックアップしておく必要があります。<br xmlns="http://www.w3.org/1999/xhtml" />その都度手動でバックアップを実行することができますが、お奨めは、自動的にバックアップが実行されるようにスケジュールを設定しておくことです。<br xmlns="http://www.w3.org/1999/xhtml" />Server Managerはこの定期バックアップにも対応しています。</p>
+        <p>Server Managerでバックアップを設定する方法については、<a href="../newdoc/backup_schedule.htm" xmlns="http://www.w3.org/1999/xhtml">こちら</a>をご覧ください。</p>
+        <ul>
+            <li class="p_information">TimeTracker FXのバックアップは［完全バックアップ］となります。</li>
+            <li class="p_warning">SQL Server Express Editionでは定期バックアップを設定することができません。手動バックアップは可能です。</li>
+        </ul>
+        <h2>定期バックアップ実施時によくあるトラブル</h2>
+        <p>Server Managerでデータベースを定期バックアップする際に、よくお問い合わせをいただくトラブルを紹介します。<br xmlns="http://www.w3.org/1999/xhtml" />バックアップを実施する前にご確認ください。
+		</p>
+        <h3>定期バックアップの実施に必要なプログラムがインストールされていない</h3>
+        <p class="p3">SQL Server 2008以降では、追加のプログラムをインストールする必要があります。<br xmlns="http://www.w3.org/1999/xhtml" />詳細については、以下のリンクをご確認ください。</p>
+        <ul type="disc">
+            <li class="p"><a href="../Bug/BG100707_01.htm" xmlns="http://www.w3.org/1999/xhtml">SQL Server 2008以降で定期バックアップを実行できない</a>
+            </li>
+        </ul>
+        <h3>定期バックアップの実施に必要なサービスが停止している</h3>
+        <p class="p3">スケジュールに従ってデータベースのバックアップを実行するには、SQL Server Agentというサービスが動作している必要があります。<br xmlns="http://www.w3.org/1999/xhtml" />以下に紹介する手順で、このサービスを実行状態にしてください。</p>
+        <ol class="ol_1">
+            <li class="p">Windows［スタート］メニューから、［（すべてのプログラム）］-［Microsoft SQL Server XXXX(バージョン)］-［構成ツール］を開きます。</li>
+            <li>［SQL Server 構成マネージャー］をクリックします。</li>
+            <li>［SQL Serverのサービス］をクリックします。</li>
+            <li>［SQL Server Agent］を右クリックして、［プロパティ］をクリックします。</li>
+            <li>［サービスの実行状態］を確認して、［停止中］であれば［開始］をクリックします。</li>
+            <li>［サービス］タブをクリックします。</li>
+            <li>［開始モード］を自動に設定します。</li>
+            <li xmlns="">［OK］ボタンをクリックします。</li>
+        </ol>
+        <p>&#160;</p>
+    </body>
+</html>

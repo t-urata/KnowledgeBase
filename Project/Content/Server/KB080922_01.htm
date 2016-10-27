@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="ログファイルを圧縮する" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>データベースのログファイルを圧縮する</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>TimeTracker FXで使用するデータベースのログファイルは、ファイルサイズが増大しやすいので、各環境に合わせた方法で圧縮してください。</p>
+        <p>&#160;</p>
+        <p class="title">Server Managerで圧縮する</p>
+        <p>TimeTracker FX 2.5以降を利用されている方は、この方法を実施してください。</p>
+        <p>TimeTracker FXのServer Managerには、データベースを圧縮する機能がございます。</p>
+        <p>この機能を使用することで、SQL Serverのデータベース管理ツールを使用せずにTimeTracker FXのデータベースを圧縮できます。</p>
+        <p>データベースを圧縮する方法については、Server Managerヘルプの <a href="../newdoc/db_shurink_log.htm" target="_blank">［ログファイルを圧縮する］</a>をご覧ください。</p>
+        <p>&#160;</p>
+        <p class="title">SQL Server EnterpriseManagerで圧縮する</p>
+        <p>データベースにSQL Server 2000をご利用でTimeTracker FX 2.0をご利用の方は、この方法を実施してください。</p>
+        <p>TimeTracker FX 2.0でServer Managerを利用されている方は、［Server Managerで圧縮する］方法をご利用ください。</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>Windows［スタート］－［すべてのプログラム］－［Microsoft SQL Server］－［Enterprise 
+	 Manager］を選択します。</p>
+            </li>
+            <li class="p">
+                <p>左側のツリーから、［コンソールルート］－［Microsoft SQL Servers］－［SQL Server 
+	 グループ］－［対象のSQL Server］－［データベース］－［TimeTracker FXのデータベース］を選択します。</p>
+            </li>
+            <li class="p">
+                <p>右クリックで表示されるメニューから［すべてのタスク］－［データベースの圧縮］を選択します。</p>
+            </li>
+            <li class="p">
+                <p>［データベースの圧縮］ダイアログを表示しますので、［ファイルの圧縮］内にある、［ファイル］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［Shrink File］ダイアログを表示しますので、データベースファイルに、ログファイルを指定します。<br />
+	ログファイルの名前は、初期値ではデータベース名_logとなります。</p>
+            </li>
+            <li class="p">
+                <p>［ファイル詳細］でファイルの種類がLog Fileとなっていることを確認します。</p>
+            </li>
+            <li class="p">
+                <p>［圧縮操作］は［ページを圧縮後、ファイルから空き領域を切り詰める］を選択します。</p>
+            </li>
+        </ol>
+        <p class="p_5">
+            <img src="../Image/KB080922_01_2.png" alt="" width="500" height="389" border="0" class="img_1" />
+        </p>
+        <ol start="8" class="ol_1">
+            <li class="p">
+                <p>［OK］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［ログファイルが正常に圧縮されました］と表示するので、［OK］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［データベースの圧縮］ダイアログで［OK］をクリックします。</p>
+            </li>
+            <li class="p">
+                <p>［データベースは正常に圧縮されました］と表示するので、［OK］をクリックします。</p>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p class="title">SQL Server Management Studioで圧縮する</p>
+        <p>データベースにSQL Server 2005をご利用でTimeTracker FX 2.0をご利用の方は、この方法を実施してください。</p>
+        <p>TimeTracker FX 2.0でServer Managerを利用されている方は、［Server Managerで圧縮する］方法をご利用ください。</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>Windows［スタート］－［すべてのプログラム］－［Microsoft SQL Server 2005］－［SQL 
+	 Server Management Studio］を選択します。</p>
+            </li>
+            <li class="p">
+                <p>左側のツリーから、［対象のSQL Server］－［データベース］－［TimeTracker FXのデータベース］を選択します。</p>
+            </li>
+            <li class="p">
+                <p>右クリックで表示されるメニューから［タスク］－［圧縮］－［ファイル］を選択します。</p>
+            </li>
+            <li class="p">
+                <p>［ファイルの圧縮］ダイアログを表示しますので、［ファイルの種類］で「ログ」を選択します。</p>
+            </li>
+            <li class="p">
+                <p>［圧縮アクション］で［未使用領域を開放する］を選択して［OK］をクリックします。</p>
+            </li>
+        </ol>
+        <p class="p_5">
+            <img src="../Image/KB080922_01_1.png" alt="" width="500" height="448" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+        <p class="title">OSQLユーティリティを利用して圧縮する</p>
+        <p>上記圧縮方法で問題が解決しない場合や、SQL ServerにMSDEもしくはSQL Server Expressをご使用の場合は、この方法を実施してください。</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>［<a href="KB070108_03.htm">osqlユーティリティでデータベース（MSDE）に接続する方法</a>］をご参照いただき、データベースに接続します。</p>
+            </li>
+            <li class="p">
+                <p>無事接続できたら、以下のコマンドを入力します。</p>
+                <table cellspacing="0" width="500">
+                    <col style="width: 100%;" />
+                    <tr valign="top">
+                        <td style="width: 100%;" class="td_1">
+                            <p>BACKUP LOG データベース名 WITH NO_LOG<br />
+			go</p>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="p">
+                <p>手順2を実行後、Enterキーを入力します。</p>
+            </li>
+            <li class="p">
+                <p>引き続き以下のコマンドを入力します。</p>
+                <table cellspacing="0" width="500">
+                    <col style="width: 100%;" />
+                    <tr valign="top">
+                        <td style="width: 100%;" class="td_1">
+                            <p>DBCC SHRINKDATABASE ('データベース名', 
+			 0)<br />
+			go</p>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+            <li class="p">
+                <p>手順4を実行後、Enterキーを入力します。</p>
+            </li>
+            <li class="p">
+                <p>引き続き以下のコマンドを入力して、Enterキーを入力します。</p>
+                <table cellspacing="0" width="500">
+                    <col style="width: 100%;" />
+                    <tr valign="top">
+                        <td style="width: 100%;" class="td_1">
+                            <p>exit</p>
+                        </td>
+                    </tr>
+                </table>
+            </li>
+        </ol>
+        <p>&#160;</p>
+        <p>【実行例】</p>
+        <p>以下の環境の実行例です。</p>
+        <ul type="disc">
+            <li class="p">
+                <p>サーバマシン名・・・TT-SVR</p>
+            </li>
+            <li class="p">
+                <p>SQL Serverインスタンス名・・・TimeTracker</p>
+            </li>
+            <li class="p">
+                <p>SQL Server saアカウントのパスワード・・・admin</p>
+            </li>
+            <li class="p">
+                <p>TimeTracker FXのデータベース名・・・TimeTrackerFXDB</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p>入力するコマンドの例</p>
+        <table cellspacing="0" width="500" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" bgcolor="#C0C0C0" class="td_1">
+                    <p>C:\&gt;<span class="span_1">osql 
+		 -S TT-SVR\TimeTracker -U sa -P admin</span></p>
+                    <p>1&gt;<span class="span_1">BACKUP LOG TimeTrackerFXDB 
+		 WITH NO_LOG</span></p>
+                    <p>2&gt;<span class="span_1">go</span></p>
+                    <p>1&gt;<span class="span_1">DBCC SHRINKDATABASE ('TimeTrackerFXDB', 
+		 0)</span></p>
+                    <p>2&gt;<span class="span_1">go</span></p>
+                    <p><span class="span_1">&#160;</span>DbId &#160;&#160;&#160;&#160;&#160;FileId 
+		 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;CurrentSize 
+		 &#160;&#160;MinimumSize &#160;UsedPages &#160;&#160;&#160;&#160;EstimatedPages</p>
+                    <p>&#160;------ ----------- ----------- ----------- ----------- 
+		 --------------</p>
+                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;5 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;1 
+		 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2432 
+		 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;96 
+		 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2408 
+		 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2408</p>
+                    <p>&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;5 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;2 
+		 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;63 
+		 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;63 
+		 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;56 
+		 &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;56</p>
+                    <p>(2 行処理されました)</p>
+                    <p>DBCC の実行が完了しました。DBCC がエラー メッセージを出力した場合は、システム</p>
+                    <p>管理者に相談してください。</p>
+                    <p>1&gt;<span class="span_1">exit</span></p>
+                    <p>&#160;</p>
+                    <p>C:\&gt;</p>
+                </td>
+            </tr>
+        </table>
+        <p>&#160;</p>
+    </body>
+</html>

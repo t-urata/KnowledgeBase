@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:id="公開情報を手動で更新した場合、先週の推移データが削除される場合がある" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中" MadCap:conditions="Primary.非公開">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>公開情報を手動で更新した場合、先週の推移データが削除される場合がある</title>
+        <link rel="StyleSheet" href="../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p class="title">問題の発生するバージョン</p>
+        <p>TimeTracker FX 2.5.0</p>
+        <p>&#160;</p>
+        <p class="title">問題が修正されるバージョン</p>
+        <p>TimeTracker FX 2.7.0</p>
+        <p>&#160;</p>
+        <p class="title">内容</p>
+        <p>以下の条件をすべて満たすときに、プランナーの［ファイル］メニューの［公開情報を更新する］で、推移データを作成すると、先週の推移データが削除される。</p>
+        <ul>
+            <li class="p_warning_1">
+                <p class="warning">本現象で削除された推移データは復元できません。</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p>【条件】</p>
+        <ul type="disc">
+            <li class="p">
+                <p>サーバタスクの［推移データの作成］の周期で［曜日］が「日曜日」に設定されている</p>
+            </li>
+        </ul>
+        <ul>
+            <li class="p_info">
+                <p class="p_5">［推移データの作成］の初期設定は、「日曜日」の「4:00」です。</p>
+            </li>
+        </ul>
+        <ul type="disc">
+            <li class="p">
+                <p>サーバの時計で、日曜日を除いた各日の12:00～23:59の間に、［公開情報を更新する］で、推移データを作成する</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">回避方法</p>
+        <p>サーバタスクの［推移データの作成］の周期で［曜日］を「土曜日」に変更してください。</p>
+        <p>&#160;</p>
+    </body>
+</html>

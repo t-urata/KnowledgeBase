@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="2806" MadCap:lastWidth="986">
+    <head>
+        <meta http_equiv="Content-Language" content="ja-JP" /><title>クイックレポートで業務の取り組み状況を確認する</title>
+        <link href="../../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>カスタムレポートを利用して、自分が取り組むべき主要な業務に実績工数を投入できているかを確認する、具体的な使用方法をご紹介します。</p>
+        <h3>このトピックの対象</h3>
+        <p>TimeTracker FX 2.7.0以降</p>
+        <h2>はじめに</h2>
+        <p>例として、サンプルデータにあるプロジェクトの実績を、以下のような業務に分けます。</p>
+        <ul type="disc">
+            <li class="p">主要業務</li>
+            <ul>
+                <li class="p" type="circle">B製品の開発</li>
+                <li class="p" type="circle">S機器の開発</li>
+            </ul>
+            <li class="p">支援業務</li>
+            <ul>
+                <li class="p" type="circle">［タスクツリー］にある、主要業務以外のプロジェクトです。</li>
+            </ul>
+        </ul>
+        <p>この例では、主要業務に該当する［B製品の開発］プロジェクトと［S機器の開発］プロジェクトに、実績工数が適切に投入できているかを確認します。</p>
+        <h2>主要業務と支援業務の配分を分析するカスタムレポートを作成する</h2>
+        <p>実際に、実績工数の投入状況を確認するカスタムレポートを作成してみましょう。</p>
+        <h3>【手順】</h3>
+        <ol class="ol_1">
+            <li class="p">［クイックレポート］ウィンドウを右クリックし、コンテキストメニューから［新しいレポート］を選択します。</li>
+            <li class="p">［名前の設定］ダイアログが表示されるので、新規レポートの名前を設定します。</li>
+            <p class="p_2">
+                <img src="../../Image/KB091208_01_1.png" alt="" width="339" height="148" border="0" class="img_1" />
+                <br />&#160;</p>
+            <li class="p">
+                <p>［クイックレポート］ウィンドウを右クリックし、コンテキストメニューから［新しいグループ］を選択します。<br />	［クイックレポート］ウィンドウに新しいグループが追加されます。</p>
+            </li>
+            <p class="p_2">
+                <img src="../../Image/KB091208_01_2.png" alt="" width="650" height="350" border="0" class="img_1" />
+            </p>
+            <li class="p">［タスクツリー］から以下のプロジェクトを選択し、手順3.で追加した「新しいグループ」にドラッグ&amp;ドロップして登録します。</li>
+            <ul type="disc">
+                <li class="p">B製品の開発</li>
+                <li class="p">S機器の開発</li>
+            </ul>
+            <p class="p_2">
+                <img src="../../Image/KB091208_01_3.png" alt="" width="650" height="337" border="0" class="img_1" />
+            </p>
+            <ul>
+                <li class="p_information">［タスクツリー］上で［Ctrl］キーを押下しながら選択すると、複数のノードが選択できます。</li>
+            </ul>
+            <ul>
+                <li class="p_warning">［クイックレポート］ウィンドウのグループ以外にドラッグ&amp;ドロップをすると、新しいグループとして追加されます。</li>
+            </ul>
+            <li class="p">「新しいグループ」を選択し、［F2］キーを押下してグループ名を変更します。<br />	主要業務の、実績工数を集計したグループの完成です。</li>
+            <p class="p_2">
+                <img src="../../Image/KB091208_01_4.png" alt="" width="554" height="158" border="0" class="img_1" />
+            </p>
+            <li class="p">手順3.～5.と同様にして、支援業務のグループを作成します。<br />	主要業務に設定したプロジェクト以外の実績工数が集計されます。</li>
+            <p class="p_2">
+                <img src="../../Image/KB091208_01_5.png" alt="" width="379" height="546" border="0" class="img_1" />
+            </p>
+        </ol>
+        <p>以上で、主要業務と支援業務の、実績工数の投入状況を確認するカスタムレポートの作成は完了です。</p>
+        <h2>作成したレポートで業務の取り組み状況を確認する</h2>
+        <p>作成したカスタムレポートを確認し、業務の取り組み状況を振り返ってみましょう。</p>
+        <p class="p2">
+            <img src="../../Image/KB091208_01_6.png" alt="" width="650" height="417" border="0" class="img_1" />
+        </p>
+        <p>&#160;</p>
+    </body>
+</html>

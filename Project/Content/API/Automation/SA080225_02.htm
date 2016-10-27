@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:conditions="Primary.非公開" MadCap:id="サンプルスクリプト_-_「割り当てられたタスク」ツリーを取得する" MadCap:timeEstimate="0" MadCap:priority="0" MadCap:fileTags="RoboHelpStatus.進行中">
+    <head><title>サンプルスクリプト - 「割り当てられたタスク」のタスクIDを取得する</title>
+        <link rel="StyleSheet" href="../../fx_support.css" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>TimeSheet.Application.GetTaskTreeメソッドを使い、ログインユーザの「割り当てられたタスク」ツリー情報を取得するためのサンプルスクリプトです</p>
+        <p>［サンプルスクリプト - 作業実績をタイムシートにインポートする］の実績ファイル作成時に、タスクIDを入力する補助として使います。</p>
+        <p>ユーザはこのスクリプトで出力したファイルのタスクIDを参考にし、実績ファイルを作成してください。</p>
+        <p>&#160;</p>
+        <p class="title">利用方法について</p>
+        <p>本サンプルスクリプトの利用方法を説明します。</p>
+        <ol class="ol_1">
+            <li class="p">
+                <p>ページ末尾の<a href="#download">［ダウンロード］</a>より、［GetTaskID.zip］をクリックしてサンプルスクリプトをダウンロードします。</p>
+            </li>
+            <li class="p">
+                <p>ダウンロードした圧縮ファイルを、任意のフォルダへ展開します。</p>
+            </li>
+            <li class="p">
+                <p>TimeTracker FXを起動している場合は、データを保存して終了します。</p>
+            </li>
+            <li class="p">
+                <p>コマンドプロンプトを起動します。</p>
+            </li>
+            <li class="p">
+                <p>以下のコマンドを入力します。</p>
+            </li>
+        </ol>
+        <table cellspacing="0" width="550" class="table_1">
+            <col style="width: 100%;" />
+            <tr valign="top">
+                <td style="width: 100%;" class="td_1">
+                    <p>cd サンプルスクリプトを展開したフォルダ</p>
+                    <p>cscript.exe GetTaskID.vbs ログイン名 パスワード</p>
+                </td>
+            </tr>
+        </table>
+        <ol start="6" class="ol_1">
+            <li class="p">
+                <p>表示するダイアログにプロジェクト名を入力します。</p>
+            </li>
+            <li class="p">
+                <p>表示するダイアログにタスク名を入力します。</p>
+            </li>
+        </ol>
+        <ul>
+            <li class="p_info">
+                <p class="info">実行例は
+<MadCap:toggler targets="t1">こちら</MadCap:toggler>をご覧ください。</p>
+                <div MadCap:targetName="t1">
+                    <table cellspacing="0" width="700">
+                        <col style="width: 100%;" />
+                        <tr valign="top">
+                            <td style="width: 100%;" bgcolor="#C0C0C0" class="td_1">
+                                <p>C:\&gt;<span class="span_1">cd Sample</span></p>
+                                <p>C:\Sample&gt;<span class="span_1">cscript.exe GetTaskID.vbs okamoto password</span></p>
+                                <p>Microsoft (R) Windows Script Host Version 5.6</p>
+                                <p>Copyright (C) Microsoft Corporation 1996-2001. All rights reserved.</p>
+                                <p>&#160;</p>
+                                <p>T商品の開発の要求ヒアリングは、タスクIDが308です</p>
+                                <p>&#160;</p>
+                                <p>C:\Sample&gt;</p>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </li>
+        </ul>
+        <p>&#160;</p>
+        <p class="title">サンプルスクリプトの活用について</p>
+        <p>本サンプルスクリプトを自社の業務にあわせて自由に編集できます。</p>
+        <p>編集方法についてのお問い合わせは受け付けておりません。オートメーションの詳細は、オートメーションヘルプをご覧ください。</p>
+        <p>&#160;</p>
+        <p class="title">ダウンロード<a name="download" id="download"></a></p>
+        <ul>
+            <li class="p_download">
+                <p class="download"><a href="../../../downloads/GetTaskTree.zip">GetTaskID.zip</a>･･･ZIP（34KB）</p>
+            </li>
+        </ul>
+        <p>&#160;</p>
+    </body>
+</html>

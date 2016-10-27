@@ -1,0 +1,360 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:MadCap="http://www.madcapsoftware.com/Schemas/MadCap.xsd" MadCap:lastBlockDepth="5" MadCap:lastHeight="1505" MadCap:lastWidth="854">
+    <head>
+        <meta http_equiv="X-UA-Compatible" content="IE=EmulateIE7" /><title>［メモ］欄の改行コードを削除した実績をCSV形式でエクスポートする</title>
+        <link href="../../FX_KB.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>
+        <h1><MadCap:variable name="System.Title" />
+        </h1>
+        <p>本ツールは、［メモ］欄の改行コードを削除してCSV形式のファイルに実績をエクスポートするサンプルツールです。</p>
+        <h2>内容</h2>
+        <p>［メモ］欄に改行コードを含む実績を対象に、CSV形式にて［実績のエクスポート］を実行すると<br xmlns="http://www.w3.org/1999/xhtml" />［メモ］欄の改行コードが認識され、正常なフォーマットにて実績情報を出力することができません。</p>
+        <p>本サンプルツールでは、オートメーションAPIから［実績のエクスポート］を実行し、<br xmlns="http://www.w3.org/1999/xhtml" />取得した実績情報から［メモ］欄の改行コードを削除して、CSV形式のファイルに出力いたします。<br xmlns="http://www.w3.org/1999/xhtml" />［メモ］欄に改行コードを含む実績をCSV形式にてエクスポートする際にご利用ください。</p>
+        <p>
+            <img src="../../Image/SA090629_01_3.png" alt="" width="854" height="224" border="0" class="img_1" />
+        </p>
+        <h2>利用方法について</h2>
+        <p>本サンプルツールの利用方法を説明します。</p>
+        <ol start="1" class="ol_1">
+            <li class="p">ページ末尾の<a href="SA090629_01.htm#download">［ダウンロード］</a>より、［DeleteCRLF.zip］をクリックしてサンプルツールをダウンロードします。</li>
+            <li class="p">ダウンロードした圧縮ファイルを、任意のフォルダへ展開します。</li>
+            <li class="p">TimeTracker FXを起動している場合は、データを保存して終了します。</li>
+            <li class="p">［実績エクスポート(メモの改行削除)ツール.xls］を開きます。</li>
+            <li class="p">［実績エクスポート(メモの改行削除)ツール.xls］の「1.概要～5.本ツールの利用と規約」シートの「2.利用方法」の手順に従い、作業を進めます。</li>
+        </ol>
+        <p>&#160;</p>
+        <h2>出力する情報について</h2>
+        <p>本サンプルツールは、以下の情報をCSVファイルに出力します。</p>
+        <table style="height: 549px;" cellspacing="0" width="604" class="table_3">
+            <col width="10" />
+            <col width="200" />
+            <col width="320" />
+            <tr valign="top">
+                <td bgcolor="#C0C0C0" class="td_1">
+                    <p class="p8" align="right">No.</p>
+                </td>
+                <td bgcolor="#C0C0C0" class="td_2">
+                    <p class="p8">フィールド</p>
+                </td>
+                <td bgcolor="#C0C0C0" class="td_2">
+                    <p class="p8">内容</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td class="td_3">
+                    <p class="p8" align="right">1</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">アカウント名</p>
+                </td>
+                <td class="td_4">&#160;</td>
+            </tr>
+            <tr valign="top">
+                <td class="td_3">
+                    <p class="p8" align="right">2</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">アカウントコード</p>
+                </td>
+                <td class="td_4">&#160;</td>
+            </tr>
+            <tr valign="top">
+                <td class="td_3">
+                    <p class="p8" align="right">3</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">組織</p>
+                </td>
+                <td class="td_4">&#160;</td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">4</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">役割</p>
+                </td>
+                <td class="td_4">&#160;</td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">5</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">日付</p>
+                </td>
+                <td class="td_4">&#160;</td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">6</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">開始時刻</p>
+                </td>
+                <td class="td_4">&#160;</td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">7</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">終了時刻</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">8</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">作業時間</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">9</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">プロジェクト名</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">10</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">プロジェクトコード</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">11</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">プロジェクトカテゴリ 
+		 1～30</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">設定されたカテゴリのみ表示します。</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">12</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">パッケージ名</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">親ノードとなるタスクパッケージの名称となります。</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">13</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">パッケージコード</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">親ノードとなるタスクパッケージのコードとなります。</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">14</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">タスク名</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">15</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">タスクコード</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">16</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">アウトライン番号</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">17</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">アクティビティ名 
+		 カテゴリ 1 </p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">18</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">アクティビティコード 
+		 カテゴリ 1 </p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">19</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">アクティビティ名 
+		 カテゴリ 2 </p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">20</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">アクティビティコード 
+		 カテゴリ 2 </p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">21</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">アクティビティ名 
+		 カテゴリ 3 </p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">22</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">アクティビティコード 
+		 カテゴリ 3 </p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">23</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">アクティビティ名 
+		 カテゴリ 4 </p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">24</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">アクティビティコード 
+		 カテゴリ 4 </p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">25</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">アクティビティ名 
+		 カテゴリ 5 </p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">26</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">アクティビティコード 
+		 カテゴリ 5 </p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">27</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">進捗率</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">&#160;</p>
+                </td>
+            </tr>
+            <tr valign="top">
+                <td valign="middle" class="td_3">
+                    <p class="p8" align="right">28</p>
+                </td>
+                <td valign="middle" class="td_4">
+                    <p class="p8">メモ</p>
+                </td>
+                <td class="td_4">
+                    <p class="p8">改行コードを除外した値となります。</p>
+                </td>
+            </tr>
+        </table>
+        <h2>サンプルツールの活用について</h2>
+        <p>実績エクスポート(メモの改行削除)ツール.xlsをご覧ください。<br xmlns="http://www.w3.org/1999/xhtml" />なお、サンプルツールのカスタマイズ方法についてのお問い合わせは受け付けておりません。<br xmlns="http://www.w3.org/1999/xhtml" />Excelマクロに使用するオートメーションの詳細は、オートメーションヘルプをご覧ください。</p>
+        <h2>ダウンロード</h2>
+        <ul>
+            <li class="p_download"><a href="../../downloads/sample/DeleteCRLF.zip" target="_blank">DeleteCRLF.zip</a>･･･ZIP（73KB）<a name="download"></a></li>
+        </ul>
+        <p>&#160;</p>
+    </body>
+</html>
