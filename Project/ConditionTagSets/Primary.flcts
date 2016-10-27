@@ -1,8 +1,0 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<CatapultConditionTagSet>
-    <ConditionTag Name="EVM" BackgroundColor="#800000" />
-    <ConditionTag Name="オンライン" BackgroundColor="#00ff00" />
-    <ConditionTag Name="印刷" BackgroundColor="#ff0000" />
-    <ConditionTag Name="非公開" BackgroundColor="#0000ff" />
-    <ConditionTag Name="髱槫・髢" BackgroundColor="#008000" />
-</CatapultConditionTagSet>
